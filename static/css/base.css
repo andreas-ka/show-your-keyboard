@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Roboto:wght@400;500&display=swap');
+
+:root {
+/** Fonts and colors */
+    --title: 'EB Garamond', serif;
+    --main-font: 'Roboto', serif;
+    --lime: #C9F234;
+    --darkblue: #041d2f;
+    --black: #000000;
+}
+
+
+body, html {
+    height: 100%
+}
+
+/* navbar styling */
+.navbar-background {
+    background-color: #C9F234;
+}
