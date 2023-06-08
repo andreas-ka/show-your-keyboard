@@ -5,7 +5,7 @@ from .models import Post
 class CreatePostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('user', 'title', 'description', 'case', 'switches', 'keycaps', 'tags')
+        fields = ('title', 'description', 'case', 'switches', 'keycaps', 'tags')
 
         widgets = {
             'user': forms.Select(attrs={'class': 'form-control'}),

@@ -4,13 +4,18 @@
 
 {% block content %}
 {% if user.is_authenticated %}
+    {% if user.id == post.user.id %}
     <a href="{% url 'post_edit' post.pk %}">Edit</a>
     <a href="{% url 'post_delete' post.pk %}">Delete</a>
+    {% endif %}
 {% endif %}
-    <h1> post_detail.html</h1>
-
-    <h3> {{ post.title }}</h3>
-    <h3> {{ post.description }}</h3>
+    <h1>Post Details...</h1><br>
+    <h3>By: {{ post.user }} - {{ post.created }}</h3>
+    <h3>Title: {{ post.title }}</h3>
+    <h4>Description: {{ post.description }}</h4>
+    <h3>Case: {{ post.case }}</h3>
+    <h3>Switches: {{ post.switches }}</h3>
+    <h3>Keycaps: {{ post.keycaps }}</h3>
 
     <br/>
     <a href ="{% url 'posts' %}" class="btn btn-dark">Back</a>

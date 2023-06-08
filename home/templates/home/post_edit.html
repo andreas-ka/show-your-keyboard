@@ -5,17 +5,21 @@
 {% block content %}
 
 {% if user.is_authenticated %}
-    <h1>Update post</h1>
-    <br/>
-    <div class="form-group">
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button class="btn btn-dark">Update</button>
-    </form>
-    </div>
-    <br/>
-    <a href ="{% url 'posts' %}" class="btn btn-dark">Back</a>
+    {% if user.id == post.user.id %}
+        <h1>Update post</h1>
+        <br/>
+        <div class="form-group">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn btn-dark">Update</button>
+        </form>
+        </div>
+    {% else %}
+        <h3>Please register and login to view this page...</h3>
+        <br/>
+        <a href ="{% url 'posts' %}" class="btn btn-dark">Back</a>
+    {% endif %}
 {% else %}
     <h3>Please register and login to view this page...</h3>    
 {% endif %}

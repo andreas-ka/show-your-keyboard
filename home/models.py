@@ -4,6 +4,7 @@ from django_resized import ResizedImageField
 from PIL import Image
 from django.urls import reverse
 from datetime import datetime, date
+from cloudinary.models import CloudinaryField
 
 
 class Post(models.Model):
