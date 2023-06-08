@@ -6,11 +6,12 @@
 
 <h1> Create a post</h1>
 <br/>
+<div class="form-group">
 <form method="POST">
     {% csrf_token %}
     {{ form.as_p }}
     <button class="btn btn-dark">Create</button>
 </form>
-
+</div>
 
 {% endblock %}

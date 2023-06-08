@@ -6,10 +6,15 @@
 
 <h1>Post_view page</h1>
 
-{% for post in object_list %}
-    <p><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></p> </br>
-    <p>User: {{ post.user.first_name }}</p> </br>
-    <p>Case: {{ post.case }}</p>
-{% endfor%}
+<div class="container">
+    {% for post in object_list %}
+    <div class="col">
+        <p><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a> - By - {{ post.user.first_name }}
+        <a href="{% url 'post_edit' post.pk %}">Edit</a></p>
+        <p>Description: {{ post.description }}</p>
+        <hr>
+    </div>
+    {% endfor%}
+</div>
 
 {% endblock %}

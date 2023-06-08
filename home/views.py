@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DeleteView, DetailView, CreateView
+from django.views.generic import ListView, DeleteView, DetailView, CreateView, UpdateView
 from .models import Post
+from .forms import CreatePostForm, EditPostForm
 
 
 class Index(ListView):
@@ -24,5 +25,12 @@ class PostDetailView(DetailView):
 
 class PostCreateView(CreateView):
     model = Post
+    form_class = CreatePostForm
     template_name = 'home/post_create.html'
-    fields = '__all__'
+
+
+class PostUpdateView(UpdateView):
+    model = Post
+    form_class = EditPostForm
+    template_name = 'home/post_edit.html'
+    #fields = ['title', 'description', 'case', 'switches', 'keycaps', 'tags']

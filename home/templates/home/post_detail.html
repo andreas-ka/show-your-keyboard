@@ -3,10 +3,12 @@
 {% block title %} {{ post.title }} {% endblock %}
 
 {% block content %}
+<a href="{% url 'post_edit' post.pk %}">Edit</a>
 
 <h1> post_detail.html</h1>
 
-<h1> {{ post.title }}</h1>
+<h3> {{ post.title }}</h3>
+<h3> {{ post.description }}</h3>
 
 <br/>
 <a href ="{% url 'posts' %}" class="btn btn-dark">Back</a>
