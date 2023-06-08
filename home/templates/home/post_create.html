@@ -4,14 +4,18 @@
 
 {% block content %}
 
-<h1> Create a post</h1>
-<br/>
-<div class="form-group">
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button class="btn btn-dark">Create</button>
-</form>
-</div>
+{% if user.is_authenticated %}
+    <h1> Create a post</h1>
+    <br/>
+    <div class="form-group">
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-dark">Create</button>
+    </form>
+    </div>
+{% else %}
+    <h3>Please register and login to view this page...</h3>    
+{% endif %}
 
 {% endblock %}

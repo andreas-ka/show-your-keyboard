@@ -4,17 +4,20 @@
 
 {% block content %}
 
-
-<h1>Delete post</h1>
-<br/>
-<h3>Are you sure you want to delete {{ post.title }}? </h3><br/>
-<div class="form-group">
-<form method="POST">
-    {% csrf_token %}
-    <button class="btn btn-dark">Delete</button>
-</form>
-</div>
-<br/>
-<a href ="{% url 'posts' %}" class="btn btn-dark">Back</a>
+{% if user.is_authenticated %}
+    <h1>Delete post</h1>
+    <br/>
+    <h3>Are you sure you want to delete {{ post.title }}? </h3><br/>
+    <div class="form-group">
+    <form method="POST">
+        {% csrf_token %}
+        <button class="btn btn-dark">Delete</button>
+    </form>
+    </div>
+    <br/>
+    <a href ="{% url 'posts' %}" class="btn btn-dark">Back</a>
+{% else %}
+    <h3>Please register and login to view this page...</h3>    
+{% endif %}
 
 {% endblock %}
