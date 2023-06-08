@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django_resized import ResizedImageField
 from PIL import Image
+from django.urls import reverse
 
 
 class Post(models.Model):
@@ -17,3 +18,6 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title + ' | ' + str(self.user)
+
+    def get_absolute_url(self):
+        return reverse('post_detail', args=(str(self.id)))
