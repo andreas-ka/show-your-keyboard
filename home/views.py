@@ -17,6 +17,7 @@ class Index(ListView):
 class PostView(ListView):
     model = Post
     template_name = 'home/post_view.html'
+    ordering = ['-created']
 
 
 class PostDetailView(DetailView):
@@ -35,6 +36,7 @@ class PostUpdateView(UpdateView):
     model = Post
     form_class = EditPostForm
     template_name = 'home/post_edit.html'
+    success_url = reverse_lazy('posts')
 
 
 class PostDeleteView(DeleteView):

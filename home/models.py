@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django_resized import ResizedImageField
 from PIL import Image
 from django.urls import reverse
+from datetime import datetime, date
 
 
 class Post(models.Model):
