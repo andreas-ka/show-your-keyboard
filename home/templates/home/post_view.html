@@ -10,7 +10,8 @@
     {% for post in object_list %}
     <div class="col">
         <p><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a> - By - {{ post.user.first_name }}
-        <a href="{% url 'post_edit' post.pk %}">Edit</a></p>
+        <a href="{% url 'post_edit' post.pk %}">Edit</a>
+        <a href="{% url 'post_delete' post.pk %}">Delete</a></p>
         <p>Description: {{ post.description }}</p>
         <hr>
     </div>
