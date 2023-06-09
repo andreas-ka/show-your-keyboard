@@ -3,37 +3,70 @@
 {% block title %} {{ post.title }} {% endblock %}
 
 {% block content %}
+<!-- Post details section -->
 {% if user.is_authenticated %}
-    {% if user.id == post.user.id %}
-    <a href="{% url 'post_edit' post.pk %}">Edit</a>
-    <a href="{% url 'post_delete' post.pk %}">Delete</a>
-    {% endif %}
+{% if user.id == post.user.id %}
+<a href="{% url 'post_edit' post.pk %}">Edit</a>
+<a href="{% url 'post_delete' post.pk %}">Delete</a>
 {% endif %}
-    <h1>Post Details...</h1><br>
-    <h3>By: {{ post.user }} - {{ post.created }}</h3>
-    <h3>Title: {{ post.title }}</h3>
-    <h4>Description: {{ post.description }}</h4>
-    <h3>Case: {{ post.case }}</h3>
-    <h3>Switches: {{ post.switches }}</h3>
-    <h3>Keycaps: {{ post.keycaps }}</h3>
+{% endif %}
+<h1>Post Details...</h1><br>
+<h3>By: {{ post.user }} - {{ post.created }}</h3>
+<h3>Title: {{ post.title }}</h3>
+<h4>Description: {{ post.description }}</h4>
+<h3>Case: {{ post.case }}</h3>
+<h3>Switches: {{ post.switches }}</h3>
+<h3>Keycaps: {{ post.keycaps }}</h3>
+<div class="col">
+    <img src="{{ post.image.url }}">
+</div>
+<hr>
+<!-- Like section -->
+<p>Total <i class="fa-solid fa-heart"></i>: {{ total_likes }}</p>
+<form action="{% url 'post_like' post.pk %}" method="POST">
+    {% csrf_token %}
+    {% if user.is_authenticated %}
+    {% if liked %}
+    <button type="submit" name="post_like_btn" value="{{ post.id }}" class="btn btn-danger"><i
+            class="fa-solid fa-heart"></i> Unlike</button>
+    {% else %}
+    <button type="submit" name="post_like_btn" value="{{ post.id }}" class="btn btn-success"><i
+            class="fa-regular fa-heart"></i> Like</button>
+    {% endif %}
+    {% else %}
+    <p>You must register or login to like posts...</p>
+    {% endif %}
+</form>
+<br />
+<div>
+    <h3>Comments...</h3>
     <hr>
-    <p>Total <i class="fa-solid fa-heart"></i>: {{ total_likes }}</p>
-    <h3>Like</h3>
-    <form action="{% url 'post_like' post.pk %}" method="POST">
-        {% csrf_token %}
-        {% if user.is_authenticated %}
-            {% if liked %}
-                <button type="submit" name="post_like_btn" value="{{ post.id }}" class="btn btn-danger"><i class="fa-solid fa-heart"></i> Unlike</button>
-            {% else %}
-                <button type="submit" name="post_like_btn" value="{{ post.id }}" class="btn btn-success"><i class="fa-regular fa-heart"></i> Like</button>
-            {% endif %}
+    <div class="card-body">
+        {% if not post.comments.all %}
+        <p>No comments ont his post...</p>
         {% else %}
-            <p>You must register or login to like posts...</p>
+        {% for comment in post.comments.all %}
+        <h5>By: {{ comment.user }} - {{ comment.created_on }}</h5>
+        {{ comment.body }}
+        <hr>
+        {% endfor%}
         {% endif %}
-    </form>
-    <br/>
-    <div>
     </div>
-    <a href ="{% url 'posts' %}" class="btn btn-dark">Back</a>
+</div>
+<div class="card-body">
+    <div class="form-group">
+        <form method="POST">
+            {% csrf_token %}
+            {{ comment_form }}
+            <button type="submit" class="btn btn-dark">
+                Add comment...
+            </button>
+        </form>
+    </div>
+</div>
+
+
+</br>
+<a href="{% url 'posts' %}" class="btn btn-dark">Back</a>
 
 {% endblock %}

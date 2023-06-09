@@ -1,8 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DeleteView, DetailView, CreateView, UpdateView
-from .models import Post
+from .models import Post, Comment
 from django.http import HttpResponseRedirect
-from .forms import CreatePostForm, EditPostForm
+from .forms import CreatePostForm, EditPostForm, CommentPostForm
 from django.urls import reverse_lazy, reverse
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Sum, Count
@@ -35,7 +35,9 @@ class PostDetailView(DetailView):
     template_name = 'home/post_detail.html'
 
     def get_context_data(self, *args, **kwargs):
-        context = super(PostDetailView, self).get_context_data(**kwargs) 
+        context = super(PostDetailView, self).get_context_data(**kwargs)
+        context = super().get_context_data(**kwargs) 
+        context['comment_form'] = CommentPostForm()
 
         get_post = get_object_or_404(Post, id=self.kwargs['pk'])
         total_likes = get_post.total_likes()
@@ -87,3 +89,5 @@ def LikeView(request, pk):
         post.likes.add(request.user)
         liked = True
     return HttpResponseRedirect(reverse('post_detail', args=[str(pk)]))
+
+

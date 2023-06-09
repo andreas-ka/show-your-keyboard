@@ -1,11 +1,11 @@
 from django import forms
-from .models import Post
+from .models import Post, Comment
 
 
 class CreatePostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('title', 'description', 'case', 'switches', 'keycaps', 'tags')
+        fields = ('title', 'description', 'case', 'switches', 'keycaps', 'tags', 'image')
 
         widgets = {
             'user': forms.Select(attrs={'class': 'form-control'}),
@@ -31,3 +31,9 @@ class EditPostForm(forms.ModelForm):
             'keycaps': forms.TextInput(attrs={'class': 'form-control'}),
             'tags': forms.TextInput(attrs={'class': 'form-control'}),
         }
+
+
+class CommentPostForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ('user','body',)
