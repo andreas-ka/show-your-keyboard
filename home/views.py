@@ -32,6 +32,7 @@ class PostView(ListView):
 """View too see details about a specific post"""
 class PostDetailView(DetailView):
     model = Post
+    form_class = CommentPostForm
     template_name = 'home/post_detail.html'
 
     def get_context_data(self, *args, **kwargs):
@@ -50,7 +51,34 @@ class PostDetailView(DetailView):
         context["liked"] = liked
         return context
 
+    def post(self, request, *args, **kwargs):
 
+        queryset = Post.objects.all
+        post = get_object_or_404(Post, id=self.kwargs['pk'])
+        comments = post.comments.order_by("-created_on")
+        liked = False
+        if post.likes.filter(id=self.request.user.id).exists():
+            liked = True
+
+        comment_form = CommentPostForm(data=request.POST)
+        if comment_form.is_valid():
+            comment_form.instance.email = request.user.email
+            comment_form.instance.name = request.user.username
+            comment = comment_form.save(commit=True)
+            comment.post = post
+        else:
+            comment_form = CommentPostForm()
+
+        return render(
+            request,
+            "home/post_detail.html",
+            {
+                "post": post,
+                "comments": comments,
+                "comment_form": comment_form,
+                "liked": liked
+            },
+        )
 """View to create a new post"""
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
