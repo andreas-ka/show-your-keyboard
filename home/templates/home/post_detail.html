@@ -16,8 +16,24 @@
     <h3>Case: {{ post.case }}</h3>
     <h3>Switches: {{ post.switches }}</h3>
     <h3>Keycaps: {{ post.keycaps }}</h3>
-
+    <hr>
+    <p>Total <i class="fa-solid fa-heart"></i>: {{ total_likes }}</p>
+    <h3>Likes:</h3>
+    {% if user.is_authenticated %}
+    <form action="{% url 'post_like' post.pk %}" method="POST">
+        {% csrf_token %}
+        {% if liked %}
+        <button type="submit" name="post_like_btn" value="{{ post.id }}" class="btn-like"><i class="fa-solid fa-heart"></i></button>
+        {% else %}
+        <button type="submit" name="post_like_btn" value="{{ post.id }}" class="btn-like"><i class="fa-regular fa-heart"></i></button>
+        {% endif %}
+    </form>
+    {% else %}
+    <span class="text-secondary"><i class="fa-regular fa-heart"></i></span>
+    {% endif %}
     <br/>
+    <div>
+    </div>
     <a href ="{% url 'posts' %}" class="btn btn-dark">Back</a>
 
 {% endblock %}
