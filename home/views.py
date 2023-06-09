@@ -17,9 +17,9 @@ class Index(ListView):
     def get_context_data(self, **kwargs):
         context = super(Index, self).get_context_data(**kwargs)
         context['total_likes'] = Post.objects.all().aggregate(sum_all=Sum('likes')).get('sum_all')
-        #context_posts['total_posts'] = Post.objects.all().aggregate(sum_all=Sum('title')).get('sum_all')
-        total_posts = Post.objects.annotate(total_posts = Count('title'))
-        return context, total_posts
+        post_numbers = Post.objects.all().count()
+        context['post_numbers'] = post_numbers
+        return context
 
 
 """View for seeing all the posts"""
@@ -39,7 +39,13 @@ class PostDetailView(DetailView):
 
         get_post = get_object_or_404(Post, id=self.kwargs['pk'])
         total_likes = get_post.total_likes()
+
+        liked = False
+        if get_post.likes.filter(id=self.request.user.id).exists():
+            liked = True
+
         context["total_likes"] = total_likes
+        context["liked"] = liked
         return context
 
 
@@ -70,7 +76,14 @@ class PostDeleteView(DeleteView):
     success_url = reverse_lazy('posts')
 
 
+"""View to see likes"""
 def LikeView(request, pk):
     post = get_object_or_404(Post, id=request.POST.get('post_like_btn'))
-    post.likes.add(request.user)
+    liked = False
+    if post.likes.filter(id=request.user.id).exists():
+        post.likes.remove(request.user)
+        liked = False
+    else:
+        post.likes.add(request.user)
+        liked = True
     return HttpResponseRedirect(reverse('post_detail', args=[str(pk)]))
