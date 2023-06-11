@@ -15,11 +15,15 @@ class Index(ListView):
     context_object_name = 'post'
 
     def get_context_data(self, **kwargs):
-        context = super(Index, self).get_context_data(**kwargs)
-        context['total_likes'] = Post.objects.all().aggregate(sum_all=Sum('likes')).get('sum_all')
-        print(context)
+        context = super().get_context_data(**kwargs)
         post_numbers = Post.objects.all().count()
         context['post_numbers'] = post_numbers
+
+        total_likes = 0
+        for post in context['post']:
+            total_likes += post.likes.count()
+        context['total_likes'] = total_likes
+
         return context
 
 
