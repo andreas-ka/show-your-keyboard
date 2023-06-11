@@ -39,7 +39,7 @@ class CommentPostForm(forms.ModelForm):
         fields = ('body', 'post')
 
         widgets = {
-            #'post': forms.HiddenInput(),
+            'post': forms.HiddenInput(),
             'body': forms.Textarea(attrs={'rows': 3, 'class': 'form-control'}),
 
         }

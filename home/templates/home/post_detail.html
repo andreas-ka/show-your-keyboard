@@ -49,16 +49,17 @@
     <hr>
     <div class="card-body">
         {% if not post.comments.all %}
-        <p>No comments on this post...</p>
+            <p>No comments on this post...</p>
         {% else %}
-        {% for comment in post.comments.all %}
-        <h5>By: {{ comment.post.user }} {{ comment.user.username }} - {{ comment.created_on }}</h5>
-        {{ comment.body }}
-        <hr>
-        {% endfor%}
+            {% for comment in post.comments.all %}
+                <h5>By: {{ comment.user }} - {{ comment.created_on }}</h5>
+                {{ comment.body }}
+                 <hr>
+            {% endfor%}
         {% endif %}
     </div>
 </div>
+{% if user.is_authenticated %}
 <div class="card-body">
     <div class="form-group">
         <form method="POST">
@@ -68,6 +69,7 @@
         </form>
     </div>
 </div>
+{% endif %}
 
 
 </br>

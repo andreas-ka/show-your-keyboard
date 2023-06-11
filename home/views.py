@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import ListView, DeleteView, DetailView, CreateView, UpdateView
 from .models import Post, Comment
 from django.http import HttpResponseRedirect
@@ -17,6 +17,7 @@ class Index(ListView):
     def get_context_data(self, **kwargs):
         context = super(Index, self).get_context_data(**kwargs)
         context['total_likes'] = Post.objects.all().aggregate(sum_all=Sum('likes')).get('sum_all')
+        print(context)
         post_numbers = Post.objects.all().count()
         context['post_numbers'] = post_numbers
         return context
@@ -62,10 +63,10 @@ class PostDetailView(DetailView):
 
         comment_form = CommentPostForm(data=request.POST)
         if comment_form.is_valid():
-            comment_form.instance.email = request.user.email
-            comment_form.instance.name = request.user.username
+            comment_form.instance.user = self.request.user
             comment = comment_form.save(commit=True)
             comment.post = post
+            return redirect(request.path)
         else:
             comment_form = CommentPostForm()
 
@@ -74,11 +75,12 @@ class PostDetailView(DetailView):
             "home/post_detail.html",
             {
                 "post": post,
-                "comments": comments,
                 "comment_form": comment_form,
                 "liked": liked
             },
         )
+
+
 """View to create a new post"""
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post

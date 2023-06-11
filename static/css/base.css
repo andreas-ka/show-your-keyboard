@@ -14,6 +14,17 @@ body, html {
     height: 100%
 }
 
+/* Background image for site */
+/*body {
+    background: url("../media/background-image.webp") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: white;
+}
+*/
+
 /* navbar styling */
 .navbar-background {
     background-color: #C9F234;
