@@ -2,6 +2,7 @@ from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.contrib.auth.models import User
 from django import forms
 from .models import User, Profile
+from cloudinary.models import CloudinaryField
 
 
 class RegisterForm(UserCreationForm):
@@ -27,7 +28,7 @@ class ProfileEditForm(UserChangeForm):
     email = forms.EmailField(widget=forms.EmailInput({'class': 'form-control'}))
     first_name = forms.CharField(max_length=150, widget=forms.TextInput(attrs={'class': 'form-control'}))
     last_name = forms.CharField(max_length=150, widget=forms.TextInput(attrs={'class': 'form-control'}))
-    image = forms.ImageField(required=False, widget=forms.ClearableFileInput(attrs={'class': 'form-control'}))
+    image = CloudinaryField('image', blank=True, null=True)
 
 
     class Meta:

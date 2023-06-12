@@ -35,3 +35,22 @@ body {
 .navbar-background {
     background-color: #C9F234;
 }
+
+/* Carousel Styling*/
+.hero-item {
+    height: 480px;
+}
+
+.hero-item-img {
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.5);
+}
+
+.lime-h1 {
+    color: #C9F234;
+}
+
+.btn-lime {
+    background-color: #C9F234;
+}

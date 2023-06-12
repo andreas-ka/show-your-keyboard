@@ -1,26 +1,75 @@
 {% extends 'base.html' %}
-
 {% block content %}
-
 {% for post in object_list %}
-    <p></p>
-{% endfor %}
 
-<a href ="{% url 'posts' %}">Posts</a>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col index-header">
-            <img class="img-fluid" src="/static/media/show-your-keeb-hero.webp" alt="Image of a keyboard">
+{% endfor %}
+<!-- Carousel -->
+<div id="hero-carousel" class="carousel slide" data-bs-ride="carousel">
+
+    <!-- Indicators/dots -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+    </div>
+  
+    <!-- The slideshow/carousel -->
+    <div class="carousel-inner">
+      <div class="carousel-item active hero-item">
+        <img src="static/media/carousel1.png" alt="" class="d-block w-100 hero-item-img">
+        <div class="carousel-caption top-0 mt-5">
+            <h1>Show the community </br><span class="lime-h1">your</span> keyboard</h1>
+            <p>Join in and register on the site to create posts, make comments</br>
+                and get inspired by all custom builds!
+            </p>
+            <a href="{% url 'register' %}" class="btn btn-lime mt-5">Register now!</a>
+          </div>
+      </div>
+      <div class="carousel-item hero-item">
+        <img src="static/media/carousel2.png" alt="" class="d-block w-100 hero-item-img">
+        <div class="carousel-caption top-0 mt-5">
+            <h1>Show the community </br><span class="lime-h1">your</span> keyboard</h1>
+            <p>Join in and register on the site to create posts, make comments</br>
+                and get inspired by all custom builds!
+            </p>
+            <a href="{% url 'register' %}" class="btn btn-lime mt-5">Register now!</a>
+          </div>
+      </div>
+      <div class="carousel-item hero-item">
+        <img src="static/media/carousel3.png" alt="" class="d-block w-100 hero-item-img">
+        <div class="carousel-caption top-0 mt-5">
+            <h1>Show the community </br><span class="lime-h1">your</span> keyboard</h1>
+            <p>Join in and register on the site to create posts, make comments</br>
+                and get inspired by all custom builds!
+            </p>
+            <a href="{% url 'register' %}" class="btn btn-lime mt-5">Register now!</a>
+          </div>
+      </div>
+    </div>
+  
+    <!-- Left and right controls/icons -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#hero-carousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+<hr>
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col col-lg-2 text-center">
+            <h3>Total posts </br> 
+                {{ post_numbers }}</h3>
         </div>
-        <div class="col">
-            <h2>Show the community your keyboard</h2>
-        </div>
-        <div class="col text-end">
-            <img class="img-fluid" src="/static/media/show-your-keeb-hero-switches.png" alt="Image of a switches, springs and brush">
+        <div class="col col-lg-2 text-center">|</div>
+        <div class="col col-lg-2 text-center">
+            <h3>Total likes </br>
+                {{ total_likes }} </h3>
         </div>
     </div>
 </div>
-<h1>Total likes {{ total_likes }} </h1>
-<h1>Total posts {{ post_numbers }}</h1>
+
+<a href ="{% url 'posts' %}">Posts</a>
 
 {% endblock %}
