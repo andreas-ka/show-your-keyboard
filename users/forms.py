@@ -28,8 +28,9 @@ class ProfileEditForm(UserChangeForm):
     first_name = forms.CharField(max_length=150, widget=forms.TextInput(attrs={'class': 'form-control'}))
     last_name = forms.CharField(max_length=150, widget=forms.TextInput(attrs={'class': 'form-control'}))
     date_joined = forms.CharField(max_length=150, widget=forms.TextInput(attrs={'class': 'form-control'}))
+    image = forms.ImageField(widget=forms.ClearableFileInput(attrs={'class': 'form-control'}))
 
 
     class Meta:
         model = User
-        fields = ('username', 'first_name', 'last_name', 'email', 'date_joined',)
+        fields = ('username', 'first_name', 'last_name', 'email', 'date_joined', 'image')

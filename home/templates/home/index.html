@@ -6,9 +6,21 @@
     <p></p>
 {% endfor %}
 
-<h1>index.html</h1>
+<a href ="{% url 'posts' %}">Posts</a>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col index-header">
+            <img class="img-fluid" src="/static/media/show-your-keeb-hero.webp" alt="Image of a keyboard">
+        </div>
+        <div class="col">
+            <h2>Show the community your keyboard</h2>
+        </div>
+        <div class="col text-end">
+            <img class="img-fluid" src="/static/media/show-your-keeb-hero-switches.png" alt="Image of a switches, springs and brush">
+        </div>
+    </div>
+</div>
 <h1>Total likes {{ total_likes }} </h1>
 <h1>Total posts {{ post_numbers }}</h1>
-<a href ="{% url 'posts' %}">Posts</a>
 
 {% endblock %}

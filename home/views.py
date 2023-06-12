@@ -52,6 +52,9 @@ class PostDetailView(DetailView):
         if get_post.likes.filter(id=self.request.user.id).exists():
             liked = True
 
+        profile = self.request.user.profile
+
+        context["profile"] = profile
         context["total_likes"] = total_likes
         context["liked"] = liked
         return context
@@ -67,12 +70,13 @@ class PostDetailView(DetailView):
 
         comment_form = CommentPostForm(data=request.POST)
         if comment_form.is_valid():
-            comment_form.instance.user = self.request.user
-            comment = comment_form.save(commit=True)
+            comment = comment_form.save(commit=False)
             comment.post = post
+            comment.user_profile = self.request.user.profile.user
+            comment.save()
             return redirect(request.path)
         else:
-            comment_form = CommentPostForm()
+            comment_form = CommentPostForm(request.POST)
 
         return render(
             request,

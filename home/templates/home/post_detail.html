@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
+{% load cloudinary %}
 
 {% block title %} {{ post.title }} {% endblock %}
 
 {% block content %}
 <!-- Post details section -->
-<div class="container-fluid">
+<div class="container">
     <div class="row">
         <div class="col">
             {% if user.is_authenticated %}
@@ -24,7 +25,7 @@
         <div class="col">
             <img src="{{ post.image.url }}">
         </div>
-</div>
+    </div>
 </div>
 <hr>
 <!-- Like section -->
@@ -49,14 +50,27 @@
     <hr>
     <div class="card-body">
         {% if not post.comments.all %}
-            <p>No comments on this post...</p>
+        <p>No comments on this post...</p>
         {% else %}
-            {% for comment in post.comments.all %}
-                <h5>By: {{ comment.user }} - {{ comment.created_on }} <img src="{{ user.profile.image.url }}" width="100" height="100" class="rounded-circle"></h5>
-                {{ comment.body }}
-                 <hr>
+        {% for comment in post.comments.all %}
+        <div class="container">
+        <div class="row">
+            <div class="col">
+                {% if comment.user_profile.image %}
+                    <img src="{{ comment.user_profile.image.url }}" width="100" height="100" class="rounded-circle">
+                {% else %}
+                    <img src="/static/media/user-default.png" alt="Default Profile Image">
+                </div>
+                {% endif %}
+            </div>
+            <div class="col">
+                <h5>By: {{ comment.user_profile }} - {{ comment.created_on }}
+                <div class="col-6">{{ comment.body }}</div>
+            </div>
+            <hr>
             {% endfor%}
-        {% endif %}
+            {% endif %}
+        </div>
     </div>
 </div>
 {% if user.is_authenticated %}
