@@ -56,10 +56,10 @@
         <div class="container">
         <div class="row">
             <div class="col">
-                {% if comment.user_profile.image %}
-                    <img src="{{ comment.user_profile.image.url }}" width="100" height="100" class="rounded-circle">
+                {% if comment.user_profile.profile.image %}
+                    <img src="{{ comment.user_profile.profile.image.url }}" width="100" height="100" class="rounded-circle">
                 {% else %}
-                    <img src="/static/media/user-default.png" alt="Default Profile Image">
+                    <img src="/static/media/user-default.png" width="100" height="100" class="rounded-circle" alt="Default Profile Image">
                 </div>
                 {% endif %}
             </div>

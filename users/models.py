@@ -13,7 +13,7 @@ def profile_image_upload_path(instance, filename):
 class Profile(models.Model):
 
     user = models.OneToOneField(User, related_name="profile", on_delete=models.CASCADE)
-    image = CloudinaryField(blank=True, null=True)
+    image = CloudinaryField('image', blank=True, null=True)
     keyboards = models.CharField(max_length=1000, null=True, blank=True)
 
     def __str__(self):

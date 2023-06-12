@@ -8,11 +8,11 @@
 
 <h1> Profile</h1>
 <br/>
-<div class="form-group">
+<div class="form-group" enctype="multipart/form-data">
 <form method="POST">
     {% csrf_token %}
     {{ form.as_p }}
-    <button class="btn btn-dark">Update Profile</button>
+    <button class="btn btn-dark">Update Profile.....</button>
 </form>
 </div>
 
