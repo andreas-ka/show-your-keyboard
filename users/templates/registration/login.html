@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %} Login {% endblock %}
 
@@ -10,7 +11,7 @@
 <form method="POST">
     {% csrf_token %}
     {{ form.as_p }}
-    <button class="btn btn-dark">Login</button>
+    <button class="btn btn-lime">Login</button>
 </form>
 </div>
 

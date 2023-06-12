@@ -6,70 +6,104 @@
 <!-- Carousel -->
 <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel">
 
-    <!-- Indicators/dots -->
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-      <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-      <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-    </div>
-  
-    <!-- The slideshow/carousel -->
-    <div class="carousel-inner">
-      <div class="carousel-item active hero-item">
-        <img src="static/media/carousel1.png" alt="" class="d-block w-100 hero-item-img">
-        <div class="carousel-caption top-0 mt-5">
-            <h1>Show the community </br><span class="lime-h1">your</span> keyboard</h1>
-            <p>Join in and register on the site to create posts, make comments</br>
-                and get inspired by all custom builds!
-            </p>
-            <a href="{% url 'register' %}" class="btn btn-lime mt-5">Register now!</a>
-          </div>
-      </div>
-      <div class="carousel-item hero-item">
-        <img src="static/media/carousel2.png" alt="" class="d-block w-100 hero-item-img">
-        <div class="carousel-caption top-0 mt-5">
-            <h1>Show the community </br><span class="lime-h1">your</span> keyboard</h1>
-            <p>Join in and register on the site to create posts, make comments</br>
-                and get inspired by all custom builds!
-            </p>
-            <a href="{% url 'register' %}" class="btn btn-lime mt-5">Register now!</a>
-          </div>
-      </div>
-      <div class="carousel-item hero-item">
-        <img src="static/media/carousel3.png" alt="" class="d-block w-100 hero-item-img">
-        <div class="carousel-caption top-0 mt-5">
-            <h1>Show the community </br><span class="lime-h1">your</span> keyboard</h1>
-            <p>Join in and register on the site to create posts, make comments</br>
-                and get inspired by all custom builds!
-            </p>
-            <a href="{% url 'register' %}" class="btn btn-lime mt-5">Register now!</a>
-          </div>
-      </div>
-    </div>
-  
-    <!-- Left and right controls/icons -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#hero-carousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </button>
+  <!-- Indicators/dots -->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
   </div>
-<hr>
-<div class="container">
-    <div class="row justify-content-md-center">
-        <div class="col col-lg-2 text-center">
-            <h3>Total posts </br> 
-                {{ post_numbers }}</h3>
-        </div>
-        <div class="col col-lg-2 text-center">|</div>
-        <div class="col col-lg-2 text-center">
-            <h3>Total likes </br>
-                {{ total_likes }} </h3>
-        </div>
+
+  <!-- The slideshow/carousel -->
+  <div class="carousel-inner">
+    <div class="carousel-item active hero-item">
+      <img src="static/media/carousel1.png" alt="" class="d-block w-100 hero-item-img">
+      <div class="carousel-caption top-0 mt-5">
+        <h1>Show the community </br><span class="lime-h1">your</span> keyboard</h1>
+        <p>Join in and register on the site to create posts, make comments</br>
+          and get inspired by all custom builds!
+        </p>
+        <a href="{% url 'register' %}" class="btn btn-lime mt-5">Register now!</a>
+      </div>
     </div>
+    <div class="carousel-item hero-item">
+      <img src="static/media/carousel3.png" alt="" class="d-block w-100 hero-item-img">
+      <div class="carousel-caption top-0 mt-5">
+        <h1>Show the community </br><span class="lime-h1">your</span> keyboard</h1>
+        <p>Join in and register on the site to create posts, make comments</br>
+          and get inspired by all custom builds!
+        </p>
+        <a href="{% url 'register' %}" class="btn btn-lime mt-5">Register now!</a>
+      </div>
+    </div>
+    <div class="carousel-item hero-item">
+      <img src="static/media/carousel4.png" alt="" class="d-block w-100 hero-item-img">
+      <div class="carousel-caption top-0 mt-5">
+        <h1>Show the community </br><span class="lime-h1">your</span> keyboard</h1>
+        <p>Join in and register on the site to create posts, make comments</br>
+          and get inspired by all custom builds!
+        </p>
+        <a href="{% url 'register' %}" class="btn btn-lime mt-5">Register now!</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Left and right controls/icons -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#hero-carousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col col-lg-2 text-center">
+      <h3>Total posts </br>
+        {{ post_numbers }}</h3>
+    </div>
+    <div class="col col-lg-2 text-center">|</div>
+    <div class="col col-lg-2 text-center">
+      <h3>Total likes </br>
+        {{ total_likes }} </h3>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row justify-content-center text-center">
+    <div class="col-12 col-md-6">
+      <h2>Activity Feed</h2>
+      <div class="mx-auto" style="max-width: 25rem;">
+        {% for comment in latest_comments %}
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title">{{ comment.user_profile }} Commented on:</h5>
+            <p class="card-text">{{ comment.post }}</p>
+            <p class="card-text"><img src="{{ comment.post.image.url }}" width="100px" height="100px"></p>
+            <p class="card-text">{{ comment.body }}</p>
+            <a href="#" class="btn btn-lime">Go somewhere</a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="col-12 col-md-6">
+      <h2>Latest Posts</h2>
+      <div class="mx-auto" style="max-width: 25rem;">
+        {% for comment in latest_comments %}
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title">{{ comment.user_profile }} Commented on:</h5>
+            <p class="card-text">{{ comment.post }}</p>
+            <p class="card-text"><img src="{{ comment.post.image.url }}" width="100px" height="100px"></p>
+            <p class="card-text">{{ comment.body }}</p>
+            <a href="#" class="btn btn-lime">Go somewhere</a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
 </div>
 
-<a href ="{% url 'posts' %}">Posts</a>
 
 {% endblock %}

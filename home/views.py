@@ -19,6 +19,9 @@ class Index(ListView):
         post_numbers = Post.objects.all().count()
         context['post_numbers'] = post_numbers
 
+        latest_comments = Comment.objects.order_by('-created_on')[:3]
+        context['latest_comments'] = latest_comments
+
         total_likes = 0
         for post in context['post']:
             total_likes += post.likes.count()
