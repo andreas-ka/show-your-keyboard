@@ -19,9 +19,13 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+  }
+
+body {
+    margin: 0;
+    flex-direction: column;
+
 }
-
-
 
 /* Background image for site */
 body {
@@ -31,8 +35,6 @@ body {
     -o-background-size: cover;
     background-size: cover;
     color: white;
-    margin: 0;
-    flex-direction: column;
 }
 
 
@@ -92,19 +94,15 @@ body {
     border-style: 1px solid;
 }
 
+.cards:hover {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.16), 0 4px 10px rgba(0,0,0,0.23);
+}
+  
+
 /* footer */
-.wrapper {
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .content {
-    flex: 1;
-  }
-  
+
   footer {
-    background-color: #f8f9fa;
+    background-color: #f8f9fa00;
     padding: 10px;
     text-align: center;
   }

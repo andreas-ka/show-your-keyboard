@@ -70,61 +70,60 @@
   </div>
 </div>
 
+
 <div class="container">
   <div class="row">
+    <!-- 1st column -->
     <div class="col">
-      <div class="card">
-        <h5 class="card-header">Latest Posts</h5>
-        {% for post in latest_posts %}
-        <div class="card mb-3 " style="max-width: 540px;">
-          <div class="row g-0 row-index ">
-            <div class="col-md-4 ">
-              <img src="{{ post.image.url }}" class="img-fluid rounded-start" style="width: 100%; height: 100%; object-fit: cover;" alt="...">
-            </div>
-            <div class="col-md-8 ">
-              <div class="card-body">
-                <a href="{% url 'post_detail' post.pk %}" class="card-link">
-                  <h5 class="card-title">{{ post.title }}</h5>
-                </a>
-                <p class="card-text">{{ post.description|slice:":150" }}</p>
-                <p class="card-text"><small class="text-muted">{{ post.created }} By: {{ post.user }}</small></p>
-                <p class="card-text text-end"><small class="text-muted"><i
-                  class="fa-solid fa-heart fa-sm"></i>{{ post.total_likes}} <i class="fa-solid fa-comment fa-sm"></i> {{ post.comments.count }}</small></p>
-              </div>
-            </div>
+      {% for post in latest_posts %}
+      <div class="card text-white bg-dark mb-3 shadow-lg" style="max-width: 540px">
+        <div class="card-header">{{ post.created }} By: {{ post.user }}</div>
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{{ post.image.url }}" class="img-fluid rounded-start" style="width: 100%; height: 100%; object-fit: cover;" alt="...">
           </div>
-        </div>
-        {% endfor %}
-      </div>
-    </div>
-    <div class="col">
-      <div class="card">
-        <h5 class="card-header">Activity feed</h5>
-        {% for comment in latest_comments %}
-        <div class="card-body">
-          <div class="card">
+          <div class="col-md-8">
             <div class="card-body">
-              <p class="card-text">Commented on: {{ comment.post }}</p>
-              <p class="card-text">"{{ comment.body }}"</p>
-              <div class="d-flex justify-content-between">
-                <div class="d-flex flex-row align-items-center">
-                  <img src="{{ comment.user_profile.profile.image.url }}" alt="avatar" width="45" height="45"
-                    height="25" />
-                  <p class="small mb-0 ms-2">{{ comment.user_profile }}</p>
-                </div>
-                <div class="d-flex flex-row align-items-center">
-                  <p class="small text-muted mb-0">{{ comment.created_on}}</p>
-                </div>
-              </div>
+              <a href="{% url 'post_detail' post.pk %}" class="card-link">
+                <h5 class="card-title">{{ post.title }}</h5>
+              </a>
+              <p class="card-text">{{ post.description|slice:":150" }}</p>
+              <br>
+              <p class="card-text text-end text-white">
+                <i class="fa-solid fa-heart fa-sm text-white"></i> {{ post.total_likes }}
+                <i class="fa-solid fa-comment fa-sm text-white"></i> {{ post.comments.count }}
+              </p>
             </div>
           </div>
         </div>
-        {% endfor %}
       </div>
+      {% endfor %}
+    </div>
+
+    <!-- 2nd column -->
+    <div class="col">
+      {% for comment in latest_comments %}
+      <div class="card text-white bg-dark mb-3 shadow-lg" style="max-width: 540px">
+        <div class="card-header">Commented on: {{ comment.post }}</div>
+        <div class="row g-0">
+          <div class="col-md-4 text-center">
+            <img src="{{ comment.user_profile.profile.image.url }}" class="mt-4" alt="avatar" width="90" height="90">
+            <p class="small mt-4">{{ comment.user_profile }}</p>
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">{{ post.title }}</h5>
+
+              <p class="card-text">"{{ comment.body }}"</p>
+              <br>
+              <p class="card-text text-end text-white">{{ comment.created_on}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
     </div>
   </div>
 </div>
-
-
-
+</div>
 {% endblock %}
