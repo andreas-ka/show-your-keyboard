@@ -6,6 +6,7 @@ from .forms import CreatePostForm, EditPostForm, CommentPostForm
 from django.urls import reverse_lazy, reverse
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Sum, Count
+from django.db.models import Q
 
 
 """View for the index or home page"""
@@ -136,3 +137,14 @@ def LikeView(request, pk):
     return HttpResponseRedirect(reverse('post_detail', args=[str(pk)]))
 
 
+""" Search the website and posts """
+class SearchResultsView(ListView):
+    model = Post
+    template_name = 'home/search_results.html'
+
+    def get_queryset(self):  # new
+        query = self.request.GET.get("q")
+        object_list = Post.objects.filter(
+            Q(title__icontains=query) | Q(description__icontains=query)
+        )
+        return object_list

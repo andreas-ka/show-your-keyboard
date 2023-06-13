@@ -28,7 +28,6 @@ class ProfileEditForm(UserChangeForm):
     email = forms.EmailField(widget=forms.EmailInput({'class': 'form-control'}))
     first_name = forms.CharField(max_length=150, widget=forms.TextInput(attrs={'class': 'form-control'}))
     last_name = forms.CharField(max_length=150, widget=forms.TextInput(attrs={'class': 'form-control'}))
-    image = CloudinaryField('image', blank=True, null=True)
 
 
     class Meta:

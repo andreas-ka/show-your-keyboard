@@ -15,11 +15,13 @@
     --black: #000000;
 }
 
-
-body {
+html, body {
+    height: 100%;
     margin: 0;
-
+    padding: 0;
 }
+
+
 
 /* Background image for site */
 body {
@@ -29,6 +31,8 @@ body {
     -o-background-size: cover;
     background-size: cover;
     color: white;
+    margin: 0;
+    flex-direction: column;
 }
 
 
@@ -88,7 +92,19 @@ body {
     border-style: 1px solid;
 }
 
-.footer {
-    background-color: #CCCCFF;
-    margin-top: auto;
-}
+/* footer */
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .content {
+    flex: 1;
+  }
+  
+  footer {
+    background-color: #f8f9fa;
+    padding: 10px;
+    text-align: center;
+  }

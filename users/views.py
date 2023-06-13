@@ -6,13 +6,14 @@ from .forms import RegisterForm, ProfileEditForm
 from django.urls import reverse_lazy, reverse
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-
+""" View for user registration """
 class UserRegister(generic.CreateView):
     form_class = RegisterForm
     template_name = 'registration/register.html'
     success_url = reverse_lazy('login')
 
 
+""" View for edit your profile """
 class ProfileEdit(generic.UpdateView):
     form_class = ProfileEditForm
     template_name = 'registration/profile.html'

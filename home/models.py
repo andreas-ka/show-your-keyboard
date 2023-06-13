@@ -18,7 +18,7 @@ class Post(models.Model):
     tags = models.CharField(max_length=200)
     image = ResizedImageField(
         size=[300, None],
-        quality=75,
+        quality=100,
         upload_to="home/",
         force_format="WEBP",
         blank=True,

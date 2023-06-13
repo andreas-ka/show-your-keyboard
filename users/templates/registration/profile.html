@@ -11,8 +11,11 @@
 <div class="form-group" enctype="multipart/form-data">
 <form method="POST">
     {% csrf_token %}
+    {{ form.media }}
     {{ form.as_p }}
-    <button class="btn btn-lime">Update Profile.....</button>
+    <div class="col text-center mt-4">
+        <button class="btn btn-lime">Update Profile.....</button>
+    </div>
 </form>
 </div>
 
