@@ -12,7 +12,9 @@
 <form method="POST">
     {% csrf_token %}
     {{ form.as_p }}
-    <button class="btn btn-lime">Register</button>
+    <div class="col text-center">
+        <button class="btn btn-lime mb-5">Register</button>
+    </div>
 </form>
 </div>
 

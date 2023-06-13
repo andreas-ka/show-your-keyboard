@@ -59,13 +59,12 @@
 <div class="container">
   <div class="row justify-content-md-center">
     <div class="col col-lg-2 text-center">
-      <h3><span class="lime-h1">Total Posts</span> </br>
-        {{ post_numbers }}</h3>
+      <h5><span class="lime-h1">Total Posts</span> </br>
+        {{ post_numbers }}</h5>
     </div>
-    <div class="col col-lg-2 text-center">|</div>
     <div class="col col-lg-2 text-center">
-      <h3><span class="lime-h1">Total Likes</span> </br>
-        {{ total_likes }} </h3>
+      <h5><span class="lime-h1">Total Likes</span> </br>
+        {{ total_likes }} </h5>
     </div>
   </div>
 </div>
@@ -75,6 +74,7 @@
   <div class="row">
     <!-- 1st column -->
     <div class="col">
+      <div class="text-center"><h3>Latest <span class="lime-h1">Posts</span></h3></div>
       {% for post in latest_posts %}
       <div class="card text-white bg-dark mb-3 shadow-lg" style="max-width: 540px">
         <div class="card-header">{{ post.created }} By: {{ post.user }}</div>
@@ -102,6 +102,7 @@
 
     <!-- 2nd column -->
     <div class="col">
+      <div class="text-center"><h3>Activity <span class="lime-h1">Feed</span></h3></div>
       {% for comment in latest_comments %}
       <div class="card text-white bg-dark mb-3 shadow-lg" style="max-width: 540px">
         <div class="card-header">Commented on: {{ comment.post }}</div>
@@ -112,10 +113,10 @@
           </div>
           <div class="col-md-8">
             <div class="card-body">
-                <h5 class="card-title">{{ post.title }}</h5>
-
               <p class="card-text">"{{ comment.body }}"</p>
-              <br>
+            </div>
+            <br>
+            <div class="card-body mt-3">
               <p class="card-text text-end text-white">{{ comment.created_on}}</p>
             </div>
           </div>

@@ -5,32 +5,32 @@
 
 {% block content %}
 <div class="col text-center mt-4">
-<h1> Login</h1>
-</div>
-<br />
-<div class="form-group">
-    <form method="POST">
-        {% csrf_token %}
-        <div class="form-group mb-4">
-            <input type="text" name="username" class="form-control" placeholder="Username" />
-        </div>
-        <div class="form-group mb-4">
-            <input type="password" name="password" class="form-control" placeholder="Password" />
-        </div>
-        <div class="row mb-4">
-            
-            <div class="col text-center">
-                <a href="#!">Forgot password?</a>
-                <br>
-                <button class="btn btn-lime mb-4 mt-4">Sign in</button>
+    <h1> Login</h1>
+        <br>
+    <div class="form-group">
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-group mb-4">
+                <input type="text" name="username" class="form-control" placeholder="Username" />
             </div>
-        </div>
+            <div class="form-group mb-4">
+                <input type="password" name="password" class="form-control" placeholder="Password" />
+            </div>
+            <div class="row mb-4">
 
-        <!-- Register buttons -->
-        <div class="text-center">
-            <p>Not a member? <a href="{% url 'register' %}">Register</a></p>
-        </div>
-    </form>
+                <div class="col text-center">
+                    <a href="#!">Forgot password?</a>
+                    <br>
+                    <button class="btn btn-lime mb-4 mt-4">Sign in</button>
+                </div>
+            </div>
+
+            <!-- Register buttons -->
+            <div class="text-center">
+                <p>Not a member? <a href="{% url 'register' %}">Register</a></p>
+            </div>
+        </form>
+    </div>
 </div>
 
 {% endblock %}

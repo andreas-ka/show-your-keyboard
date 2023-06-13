@@ -24,7 +24,14 @@ html, body {
 body {
     margin: 0;
     flex-direction: column;
+    min-height: 100vh;
+    display: flex;
 
+}
+
+/* Total likes on post details */
+#total_likes {
+    padding-right: 10px;
 }
 
 /* Background image for site */
@@ -77,7 +84,8 @@ body {
 
 /* Create Post Form */
 .form-group {
-    max-width: 50%;
+    max-width: 320px;
+    min-width: 250px;
     margin: auto;
 }
 
@@ -101,8 +109,8 @@ body {
 
 /* footer */
 
-  footer {
-    background-color: #f8f9fa00;
-    padding: 10px;
-    text-align: center;
+.footer {
+    font-size: 16px;
+    background-color: #C9F234
+    height: 20px;
   }

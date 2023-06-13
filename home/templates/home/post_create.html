@@ -14,7 +14,9 @@
         {% csrf_token %}
         {{ form.media }}
         {{ form.as_p }}
-        <button class="btn btn-dark">Create</button>
+        <div class="col text-center">
+            <button class="btn btn-lime mt-2 mb-5">Create Post</button>
+        </div>
     </form>
     </div>
 {% else %}
