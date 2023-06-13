@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Roboto:wght@400;500&display=swap');
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+  }  
+
+
 :root {
 /** Fonts and colors */
     --title: 'EB Garamond', serif;
@@ -10,14 +16,9 @@
 }
 
 
-body, html {
+body {
     margin: 0;
-    padding: 0;
-    height: 100%
-}
 
-main {
-    flex: 1 0 auto;
 }
 
 /* Background image for site */
@@ -62,21 +63,6 @@ body {
     color: #FFF;
 }
 
-/* footer */
-
-footer {
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-i {
-    font-size: 30px;
-    letter-spacing: 5px;
-}
-
 /* Post view cards*/
 
 .card {
@@ -92,10 +78,6 @@ i {
 /* Index.html columns */
 
 
-.card {
-    background-color: gray;
-}
-
 .card-header {
     background-color: #C9F234;
     color: #000000;
@@ -106,6 +88,7 @@ i {
     border-style: 1px solid;
 }
 
-.card-likes {
-    color: #FFF;
+.footer {
+    background-color: #CCCCFF;
+    margin-top: auto;
 }
