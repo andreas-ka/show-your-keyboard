@@ -22,7 +22,7 @@ main {
 
 /* Background image for site */
 body {
-    background: url("../media/background-image.webp") no-repeat center center fixed;
+    background: url("../media/ddf1.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -79,7 +79,6 @@ i {
 
 /* Post view cards*/
 
-
 .card {
     margin: 5% 0%;
 }
@@ -88,4 +87,25 @@ i {
 .form-group {
     max-width: 50%;
     margin: auto;
+}
+
+/* Index.html columns */
+
+
+.card {
+    background-color: gray;
+}
+
+.card-header {
+    background-color: #C9F234;
+    color: #000000;
+}
+
+.card-body {
+    border-color: #FFF;
+    border-style: 1px solid;
+}
+
+.card-likes {
+    color: #FFF;
 }

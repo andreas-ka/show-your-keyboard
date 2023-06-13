@@ -33,15 +33,11 @@
 </div>
 -->
 <div class="container">
-  {% for post in object_list %}
-  <!-- Card deck -->
-  <div class="card-deck row">
+  <div class="row">
+    {% for post in object_list %}
+    <div class="col-md-4">
+      <div class="card mb-4">
 
-    <div class="col-xs-12 col-sm-6 col-md-4">
-      <!-- Card -->
-      <div class="card">
-
-        <!--Card image-->
         <div class="view overlay">
           <img class="card-img-top" src="{{ post.image.url }}" alt="Card image cap">
           <a href="#!">
@@ -49,31 +45,28 @@
           </a>
         </div>
 
-        <!--Card content-->
         <div class="card-body">
-
-          <!--Title-->
           <h4 class="card-title">{{ post.title }}</h4>
-          <!--Text-->
           <small>By - {{ post.user }} - {{ post.created }}</small>
           <p class="card-text mt-1">Description: {{ post.description|slice:":100" }}....</p>
-          <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+
           {% if user.is_authenticated %}
           {% if user.id == post.user.id %}
           <a href="{% url 'post_edit' post.pk %}">Edit</a>
           <a href="{% url 'post_delete' post.pk %}">Delete</a></p>
           {% endif %}
           {% endif %}
-          <a href="{% url 'post_detail' post.pk %}" class="btn btn-lime mt-1">See more</a>
 
+          <a href="{% url 'post_detail' post.pk %}" class="btn btn-lime mt-1">See more</a>
         </div>
 
       </div>
-      <!-- Card -->
-      {% endfor%}
     </div>
+    {% endfor %}
+  </div>
+</div>
 
 
 
 
-    {% endblock %}
+{% endblock %}
