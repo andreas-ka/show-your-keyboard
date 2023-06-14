@@ -6,7 +6,7 @@ from django.urls import reverse
 from datetime import datetime, date
 
 
-
+### Post model ###
 class Post(models.Model):
     user = models.ForeignKey(User, related_name="post_owner", on_delete=models.CASCADE)
     title = models.CharField(max_length=200, null=False, blank=False)
@@ -35,7 +35,7 @@ class Post(models.Model):
     def total_likes(self):
         return self.likes.count()
 
-
+### Comment model ###
 class Comment(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE,
                              related_name="comments")

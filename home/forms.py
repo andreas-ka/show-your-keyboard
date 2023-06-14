@@ -1,7 +1,7 @@
 from django import forms
 from .models import Post, Comment
 
-
+### Create a new post form ###
 class CreatePostForm(forms.ModelForm):
     class Meta:
         model = Post
@@ -17,7 +17,7 @@ class CreatePostForm(forms.ModelForm):
             'tags': forms.TextInput(attrs={'class': 'form-control'}),
         }
 
-
+### Edit post form ###
 class EditPostForm(forms.ModelForm):
     class Meta:
         model = Post
@@ -32,7 +32,7 @@ class EditPostForm(forms.ModelForm):
             'tags': forms.TextInput(attrs={'class': 'form-control'}),
         }
 
-
+### Comment form ###
 class CommentPostForm(forms.ModelForm):
     class Meta:
         model = Comment
@@ -40,5 +40,4 @@ class CommentPostForm(forms.ModelForm):
 
         widgets = {
             'body': forms.Textarea(attrs={'rows': 3, 'class': 'form-control'}),
-
         }

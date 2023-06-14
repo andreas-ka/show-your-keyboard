@@ -4,6 +4,7 @@
 
 {% block content %}
 
+<!-- Delete post form -->
 {% if user.is_authenticated %}
     {% if user.id == post.user.id %}
     <div class="container text-center mt-5 md-1">

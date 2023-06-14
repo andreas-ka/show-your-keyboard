@@ -29,50 +29,54 @@
             </div>
             <div class="col-md-8 d-flex flex-column">
                 <div class="card-body">
-                  <div class="row">
-                    <div class="col">
-                      <h5 class="card-title">{{ post.title }}</h5>
-                      <small>By - {{ post.user }} - {{ post.created }}</small><br>
+                    <div class="row">
+                        <div class="col">
+                            <h5 class="card-title">{{ post.title }}</h5>
+                            <small>By - {{ post.user }} - {{ post.created }}</small><br>
+                        </div>
+                        <div class="col text-end">
+                            {% if post.user.profile.image %}
+                            <img src="{{ post.user.profile.image.url }}" width="100" height="100"
+                                class="rounded-circle">
+                            {% else %}
+                            <img src="/static/media/user-default.png" width="100" height="100" class="rounded-circle"
+                                alt="Default Profile Image">
+                            {% endif %}
+                        </div>
                     </div>
-                    <div class="col text-end">
-                      {% if post.user.profile.image %}
-                      <img src="{{ post.user.profile.image.url }}" width="100" height="100" class="rounded-circle">
-                      {% else %}
-                      <img src="/static/media/user-default.png" width="100" height="100" class="rounded-circle" alt="Default Profile Image">
-                      {% endif %}
-                    </div>
-                  </div>
-                  <br>
-                  <p class="card-text">{{ post.description }}</p>
+                    <br>
+                    <p class="card-text">{{ post.description }}</p>
                 </div>
-                
+
                 <!-- Like div -->
                 <div class="mt-auto text-end">
-                  <form action="{% url 'post_like' post.pk %}" method="POST">
-                    {% csrf_token %}
-                    {% if user.is_authenticated %}
-                    {% if liked %}
-                    <div class="col mb-3 px-2">
-                      <span id="total_likes"><i class="fa-solid fa-heart"></i> {{ total_likes }}</span>
-                      <button type="submit" name="post_like_btn" value="{{ post.id }}" class="btn btn-danger mt-1"><i class="fa-solid fa-heart"></i> Unlike</button>
-                    </div>
-                    {% else %}
-                    <div class="col mb-3 px-2">
-                        <button type="submit" name="post_like_btn" value="{{ post.id }}" class="btn btn-success mt-1"><i class="fa-regular fa-heart"></i> Like</button>
-                    </div>
-                    {% endif %}
-                    {% else %}
-                    <p>You must register or login to like posts...</p>
-                    {% endif %}
-                  </form>
+                    <form action="{% url 'post_like' post.pk %}" method="POST">
+                        {% csrf_token %}
+                        {% if user.is_authenticated %}
+                        {% if liked %}
+                        <div class="col mb-3 px-2">
+                            <span id="total_likes"><i class="fa-solid fa-heart"></i> {{ total_likes }}</span>
+                            <button type="submit" name="post_like_btn" value="{{ post.id }}"
+                                class="btn btn-danger mt-1"><i class="fa-solid fa-heart"></i> Unlike</button>
+                        </div>
+                        {% else %}
+                        <div class="col mb-3 px-2">
+                            <button type="submit" name="post_like_btn" value="{{ post.id }}"
+                                class="btn btn-success mt-1"><i class="fa-regular fa-heart"></i> Like</button>
+                        </div>
+                        {% endif %}
+                        {% else %}
+                        <p>You must register or login to like posts...</p>
+                        {% endif %}
+                    </form>
                 </div>
-              </div>
-              
-              </div>
-              
             </div>
+
         </div>
+
     </div>
+</div>
+</div>
 </div>
 <br />
 <!--Comments section -->

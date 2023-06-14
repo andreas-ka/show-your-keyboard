@@ -1,6 +1,7 @@
 # Show your Keeb
 
-### Title
+### A community website for all the mechanical keyboard lovers out here. 
+### Create a user and post your own keayboard, like and comment on others posts.
       
 
 ### Link to the finished site: 
@@ -46,6 +47,10 @@ _____________________________________________________________________________
 
 _____________________________________________________________________________
 ## Lucid chart
+![Screenshot](static/media/lucid_chart.png)
+
+## DrawSql chart
+![Screenshot](static/media/drawSQL-keebs-display-export-2023-06-14.png)
 
 _____________________________________________________________________________ 
 ## Project goals and target audience.  

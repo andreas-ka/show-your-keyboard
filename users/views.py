@@ -15,7 +15,9 @@ class UserRegister(generic.CreateView):
 
 
 """ View for edit your profile """
+
 class ProfileEdit(generic.UpdateView):
+
     model = Profile
     form_class = ProfileEditForm
     template_name = 'registration/profile.html'
