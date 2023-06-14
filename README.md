@@ -52,6 +52,20 @@ _____________________________________________________________________________
 ## DrawSql chart
 ![Screenshot](static/media/drawSQL-keebs-display-export-2023-06-14.png)
 
+## Balsamiq templates
+### Landing page (index.html)
+![Screenshot](static/media/balsamiq_index.png)
+
+### See all posts (post_view.html)
+![Screenshot](static/media/balsamiq_postview.png)
+
+### Details about a specific post (post_detail.html)
+![Screenshot](static/media/balsamiq_postdetail.png)
+
+### Login page (login.html)
+![Screenshot](static/media/balsamiq_login.png)
+
+
 _____________________________________________________________________________ 
 ## Project goals and target audience.  
 ### Achieved:
@@ -67,6 +81,8 @@ _____________________________________________________________________________
 
 _____________________________________________________________________________  
 ## Colour Scheme
+### Wanted a simple design with a good contrast. The "lime" green pops and makes it eye catching.
+![Screenshot](static/media/color_palette.png)
 
 _____________________________________________________________________________  
 ## User Experience (UX)   
