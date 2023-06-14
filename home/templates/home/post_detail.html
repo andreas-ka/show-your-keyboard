@@ -20,7 +20,7 @@
                 <br>
                 {% if user.is_authenticated %}
                 {% if user.id == post.user.id %}
-                <div>
+                <div class="mb-3">
                     <a href="{% url 'post_edit' post.pk %}" class="btn btn-success mt-4 ms-3">Edit</a>
                     <a href="{% url 'post_delete' post.pk %}" class="btn btn-danger mt-4">Delete</a>
                 </div>

@@ -5,6 +5,7 @@ from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from .forms import RegisterForm, ProfileEditForm
 from django.urls import reverse_lazy, reverse
 from django.contrib.auth.mixins import LoginRequiredMixin
+from .models import Profile
 
 """ View for user registration """
 class UserRegister(generic.CreateView):
@@ -15,9 +16,10 @@ class UserRegister(generic.CreateView):
 
 """ View for edit your profile """
 class ProfileEdit(generic.UpdateView):
+    model = Profile
     form_class = ProfileEditForm
     template_name = 'registration/profile.html'
     success_url = reverse_lazy('posts')
 
     def get_object(self):
-        return self.request.user
+        return self.request.user.profile

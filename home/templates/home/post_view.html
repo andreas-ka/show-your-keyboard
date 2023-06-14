@@ -4,7 +4,7 @@
 
 {% block content %}
 <div class="container text-center mt-5 mb-5">
-<h1>Keyboard posts</h1>
+<h1>Keyboard <span class="lime-h1">posts</span></h1>
 </div>
 <div class="container">
   <div class="row">
@@ -30,8 +30,17 @@
           <a href="{% url 'post_delete' post.pk %}">Delete</a></p>
           {% endif %}
           {% endif %}
-
-          <a href="{% url 'post_detail' post.pk %}" class="btn btn-lime mt-1">See more</a>
+          <div class="row">
+            <div class="col">
+              <a href="{% url 'post_detail' post.pk %}" class="btn btn-lime mt-1">See more</a>
+            </div>
+            <div class="col mt-3">
+              <p class="card-text text-end text-white">
+                <i class="fa-solid fa-heart fa-sm text-white"></i> {{ post.total_likes }}
+                <i class="fa-solid fa-comment fa-sm text-white"></i> {{ post.comments.count }}
+              </p>
+            </div>
+          </div>
         </div>
 
       </div>

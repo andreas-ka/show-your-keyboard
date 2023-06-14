@@ -60,7 +60,9 @@ class PostDetailView(DetailView):
         if get_post.likes.filter(id=self.request.user.id).exists():
             liked = True
 
-        profile = self.request.user.profile
+        profile = None
+        if self.request.user.is_authenticated:
+            profile = self.request.user.profile
 
         context["profile"] = profile
         context["total_likes"] = total_likes
