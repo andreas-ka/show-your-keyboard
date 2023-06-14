@@ -50,6 +50,10 @@ body {
     background-color: #C9F234;
 }
 
+.navbar {
+    z-index: 2;
+}
+
 /* Carousel Styling*/
 .hero-item {
     height: 480px;
@@ -76,6 +80,14 @@ body {
     color: #FFF;
 }
 
+
+.main-text-carousel {
+    position: absolute;
+    top: 100px;
+    width: 96.66666666666666%;
+    color: #FFF;
+}
+
 /* Post view cards*/
 
 .card {
@@ -84,8 +96,8 @@ body {
 
 /* Create Post Form */
 .form-group {
-    max-width: 320px;
-    min-width: 250px;
+    max-width: 360px;
+    min-width: 280px;
     margin: auto;
 }
 
@@ -112,5 +124,5 @@ body {
 .footer {
     font-size: 16px;
     background-color: #C9F234
-    height: 20px;
-  }
+
+}

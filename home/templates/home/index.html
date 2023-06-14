@@ -18,31 +18,16 @@
     <div class="carousel-item active hero-item">
       <img src="static/media/carousel1.png" alt="" class="d-block w-100 hero-item-img">
       <div class="carousel-caption top-0 mt-5">
-        <h1>Show the community </br><span class="lime-h1">your</span> keyboard</h1>
-        <p>Join in and register on the site to create posts, make comments</br>
-          and get inspired by all custom builds!
-        </p>
-        <a href="{% url 'register' %}" class="btn btn-lime mt-5">Register now!</a>
       </div>
     </div>
     <div class="carousel-item hero-item">
       <img src="static/media/carousel3.png" alt="" class="d-block w-100 hero-item-img">
       <div class="carousel-caption top-0 mt-5">
-        <h1>Show the community </br><span class="lime-h1">your</span> keyboard</h1>
-        <p>Join in and register on the site to create posts, make comments</br>
-          and get inspired by all custom builds!
-        </p>
-        <a href="{% url 'register' %}" class="btn btn-lime mt-5">Register now!</a>
       </div>
     </div>
     <div class="carousel-item hero-item">
       <img src="static/media/carousel4.png" alt="" class="d-block w-100 hero-item-img">
       <div class="carousel-caption top-0 mt-5">
-        <h1>Show the community </br><span class="lime-h1">your</span> keyboard</h1>
-        <p>Join in and register on the site to create posts, make comments</br>
-          and get inspired by all custom builds!
-        </p>
-        <a href="{% url 'register' %}" class="btn btn-lime mt-5">Register now!</a>
       </div>
     </div>
   </div>
@@ -54,6 +39,15 @@
   <button class="carousel-control-next" type="button" data-bs-target="#hero-carousel" data-bs-slide="next">
     <span class="carousel-control-next-icon"></span>
   </button>
+</div>
+<div class="main-text-carousel hidden-xs">
+  <div class="col-md-12 text-center">
+    <h1>Show the community </br><span class="lime-h1">your</span> keyboard</h1>
+    <p>Join in and register on the site to create posts, make comments</br>
+      and get inspired by all custom builds!
+    </p>
+    <a href="{% url 'register' %}" class="btn btn-lime mt-5">Register now!</a><a href="{% url 'login' %}" class="btn btn-lime mt-5 ms-3">Login</a>
+  </div>
 </div>
 <br>
 <div class="container">
@@ -73,7 +67,7 @@
 <div class="container">
   <div class="row">
     <!-- 1st column -->
-    <div class="col">
+    <div class="col-md">
       <div class="text-center"><h3>Latest <span class="lime-h1">Posts</span></h3></div>
       {% for post in latest_posts %}
       <div class="card text-white bg-dark mb-3 shadow-lg" style="max-width: 540px">
@@ -101,7 +95,7 @@
     </div>
 
     <!-- 2nd column -->
-    <div class="col">
+    <div class="col-md">
       <div class="text-center"><h3>Activity <span class="lime-h1">Feed</span></h3></div>
       {% for comment in latest_comments %}
       <div class="card text-white bg-dark mb-3 shadow-lg" style="max-width: 540px">
