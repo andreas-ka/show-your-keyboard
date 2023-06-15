@@ -14,7 +14,14 @@ def profile_image_upload_path(instance, filename):
 class Profile(models.Model):
     ### Profile form ###
     user = models.OneToOneField(User, related_name="profile", on_delete=models.CASCADE)
-    image = CloudinaryField('image', blank=True, null=True)
+    image = ResizedImageField(
+        size=[300, None],
+        quality=100,
+        upload_to="profiles/",
+        force_format="WEBP",
+        blank=True,
+        null=True,
+    )
     keyboards = models.CharField(max_length=1000, null=True, blank=True)
 
     def __str__(self):
