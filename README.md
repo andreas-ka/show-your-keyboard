@@ -47,23 +47,23 @@ _____________________________________________________________________________
 
 _____________________________________________________________________________
 ## Lucid chart
-![Screenshot](static/media/lucid_chart.png)
+![Screenshot](static/images/lucid_chart.png)
 
 ## DrawSql chart
-![Screenshot](static/media/drawSQL-keebs-display-export-2023-06-14.png)
+![Screenshot](static/images/drawSQL-keebs-display-export-2023-06-14.png)
 
 ## Balsamiq templates
 ### Landing page (index.html)
-![Screenshot](static/media/balsamiq_index.png)
+![Screenshot](static/images/balsamiq_index.png)
 
 ### See all posts (post_view.html)
-![Screenshot](static/media/balsamiq_postview.png)
+![Screenshot](static/images/balsamiq_postview.png)
 
 ### Details about a specific post (post_detail.html)
-![Screenshot](static/media/balsamiq_postdetail.png)
+![Screenshot](static/images/balsamiq_postdetail.png)
 
 ### Login page (login.html)
-![Screenshot](static/media/balsamiq_login.png)
+![Screenshot](static/images/balsamiq_login.png)
 
 
 _____________________________________________________________________________ 
@@ -82,7 +82,7 @@ _____________________________________________________________________________
 _____________________________________________________________________________  
 ## Colour Scheme
 ### Wanted a simple design with a good contrast. The "lime" green pops and makes it eye catching.
-![Screenshot](static/media/color_palette.png)
+![Screenshot](static/images/color_palette.png)
 
 _____________________________________________________________________________  
 ## User Experience (UX)   
@@ -101,7 +101,6 @@ _____________________________________________________________________________
 
 _____________________________________________________________________________  
 ## Languages
-![Screenshot](/assets/images/languages_used.png)
 - HTML5 from CodeInstitute Template(some own modifications to style the website)
 - CSS from CodeInstitute Template(some own modifications to style the website)
 - Javascript from CodeInstitute Template
