@@ -9,8 +9,8 @@ from django.db.models import Sum, Count
 from django.db.models import Q
 
 
-"""View for the index or home page"""
 class Index(ListView):
+    """View for the index or home page"""
     template_name = 'home/index.html'
     model = Post
     context_object_name = 'post'
@@ -31,19 +31,18 @@ class Index(ListView):
             total_likes += post.likes.count()
         context['total_likes'] = total_likes
 
-
         return context
 
 
-"""View for seeing all the posts"""
 class PostView(ListView):
+    """View for seeing all the posts"""
     model = Post
     template_name = 'home/post_view.html'
     ordering = ['-created']
 
 
-"""View too see details about a specific post"""
 class PostDetailView(DetailView):
+    """View too see details about a specific post"""
     model = Post
     form_class = CommentPostForm
     template_name = 'home/post_detail.html'
@@ -99,8 +98,8 @@ class PostDetailView(DetailView):
         )
 
 
-"""View to create a new post"""
 class PostCreateView(LoginRequiredMixin, CreateView):
+    """View to create a new post"""
     model = Post
     form_class = CreatePostForm
     template_name = 'home/post_create.html'
@@ -111,23 +110,23 @@ class PostCreateView(LoginRequiredMixin, CreateView):
         return super(PostCreateView, self).form_valid(form)
 
 
-"""View to update your post when logged in"""
 class PostUpdateView(UpdateView):
+    """View to update your post when logged in"""
     model = Post
     form_class = EditPostForm
     template_name = 'home/post_edit.html'
     success_url = reverse_lazy('posts')
 
 
-"""View to delete your posts"""
 class PostDeleteView(DeleteView):
+    """View to delete your posts"""
     model = Post
     template_name = 'home/post_delete.html'
     success_url = reverse_lazy('posts')
 
 
-"""View to see likes"""
 def LikeView(request, pk):
+    """View to see likes"""
     post = get_object_or_404(Post, id=request.POST.get('post_like_btn'))
     liked = False
     if post.likes.filter(id=request.user.id).exists():
@@ -139,8 +138,8 @@ def LikeView(request, pk):
     return HttpResponseRedirect(reverse('post_detail', args=[str(pk)]))
 
 
-""" Search the website and posts """
 class SearchResultsView(ListView):
+    """ Search the website and posts """
     model = Post
     template_name = 'home/search_results.html'
 

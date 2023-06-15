@@ -7,16 +7,15 @@
 <!-- Register form -->
 <div class="col text-center mt-4">
     <h1>Register</h1>
-    </div>
-<br/>
-<div class="form-group">
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <div class="col text-center">
-        <button class="btn btn-lime mb-5">Register</button>
-    </div>
-</form>
 </div>
-
+<br />
+<div class="form-group">
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="col text-center">
+            <button class="btn btn-lime mb-5">Register</button>
+        </div>
+    </form>
+</div>
 {% endblock %}

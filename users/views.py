@@ -7,17 +7,16 @@ from django.urls import reverse_lazy, reverse
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Profile
 
-""" View for user registration """
+
 class UserRegister(generic.CreateView):
+    """ View for user registration """
     form_class = RegisterForm
     template_name = 'registration/register.html'
     success_url = reverse_lazy('login')
 
 
-""" View for edit your profile """
-
 class ProfileEdit(generic.UpdateView):
-
+    """ View for edit your profile """
     model = Profile
     form_class = ProfileEditForm
     template_name = 'registration/profile.html'

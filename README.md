@@ -63,24 +63,24 @@ _____________________________________________________________________________
 
 _____________________________________________________________________________
 ## Lucid chart
-![Screenshot](static/images/lucid_chart.png)
+![Screenshot](./static/images/lucid_chart.png)
 
 ## DrawSql chart
-![Screenshot](static/images/drawSQL-keebs-display-export-2023-06-14.png)
+![Screenshot](./static/images/drawSQL-keebs-display-export-2023-06-14.png)
 
 ## Balsamiq templates   
 
 ### Landing page (index.html)
-![Screenshot](static/images/balsamiq_index.png)
+![Screenshot](./static/images/balsamiq_index.png)
 
 ### See all posts (post_view.html)
-![Screenshot](static/images/balsamiq_postview.png)
+![Screenshot](./static/images/balsamiq_postview.png)
 
 ### Details about a specific post (post_detail.html)
-![Screenshot](static/images/balsamiq_postdetail.png)
+![Screenshot](./static/images/balsamiq_postdetail.png)
 
 ### Login page (login.html)
-![Screenshot](static/images/balsamiq_login.png)
+![Screenshot](./static/images/balsamiq_login.png)
 
 [Back to top](#show-your-keyboard)
 _____________________________________________________________________________ 
@@ -167,7 +167,7 @@ _____________________________________________________________________________
 ## Colour Scheme
 
 ### Wanted a simple design with a good contrast. The "lime" green pops and makes it eye catching.
-![Screenshot](static/images/color_palette.png)
+![Screenshot](./static/images/color_palette.png)
 [Back to top](#show-your-keyboard)
 _____________________________________________________________________________  
 

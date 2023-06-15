@@ -7,29 +7,28 @@
 
 <!-- Delete post form -->
 {% if user.is_authenticated %}
-    {% if user.id == post.user.id %}
-    <div class="container text-center mt-5 md-1">
+{% if user.id == post.user.id %}
+<div class="container text-center mt-5 md-1">
     <h1> Delete post</h1>
-    <br/>
-        <h3>Are you sure you want to delete {{ post.title }}? </h3><br/>
-    </div>
-        <div class="form-group">
-        <form method="POST">
-            {% csrf_token %}
-            <div class="container text-center mt-5 md-1">
-                <button class="btn btn-danger">Delete</button>
-                <br/>
-                <a href ="{% url 'posts' %}" class="btn btn-lime mt-5">Back</a>
-            </div>
-        </form>
+    <br />
+    <h3>Are you sure you want to delete {{ post.title }}? </h3><br />
+</div>
+<div class="form-group">
+    <form method="POST">
+        {% csrf_token %}
+        <div class="container text-center mt-5 md-1">
+            <button class="btn btn-danger">Delete</button>
+            <br />
+            <a href="{% url 'posts' %}" class="btn btn-lime mt-5">Back</a>
         </div>
-    {% else %}
-        <h3>Please register and login to view this page...</h3>  
-        <br/>
-        <a href ="{% url 'posts' %}" class="btn btn-lime">Back</a>
-        {% endif %}
+    </form>
+</div>
 {% else %}
-    <h3>Please register and login to view this page...</h3>    
+<h3>Please register and login to view this page...</h3>
+<br />
+<a href="{% url 'posts' %}" class="btn btn-lime">Back</a>
 {% endif %}
-
+{% else %}
+<h3>Please register and login to view this page...</h3>
+{% endif %}
 {% endblock %}

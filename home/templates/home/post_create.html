@@ -6,11 +6,11 @@
 {% block content %}
 <!-- Create a new post form -->
 {% if user.is_authenticated %}
-    <div class="container text-center mt-5 md-1">
+<div class="container text-center mt-5 md-1">
     <h1> Create a post</h1>
-    </div>
-    <br/>
-    <div class="form-group">
+</div>
+<br />
+<div class="form-group">
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.media }}
@@ -19,9 +19,8 @@
             <button class="btn btn-lime mt-2 mb-5">Create Post</button>
         </div>
     </form>
-    </div>
+</div>
 {% else %}
-    <h3>Please register and login to view this page...</h3>    
+<h3>Please register and login to view this page...</h3>
 {% endif %}
-
 {% endblock %}

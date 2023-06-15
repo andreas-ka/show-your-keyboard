@@ -4,8 +4,9 @@ from django import forms
 from .models import User, Profile
 from cloudinary.models import CloudinaryField
 
-### Register on the site form ###
+
 class RegisterForm(UserCreationForm):
+    ### Register on the site form ###
     email = forms.EmailField(widget=forms.EmailInput({'class': 'form-control'}))
     first_name = forms.CharField(max_length=150, widget=forms.TextInput(attrs={'class': 'form-control'}))
     last_name = forms.CharField(max_length=150, widget=forms.TextInput(attrs={'class': 'form-control'}))
@@ -23,8 +24,9 @@ class RegisterForm(UserCreationForm):
         self.fields['password1'].widget.attrs['class'] = 'form-control'
         self.fields['password2'].widget.attrs['class'] = 'form-control'
 
-### Edit your profile form ###
+
 class ProfileEditForm(forms.ModelForm):
+    ### Edit your profile form ###
     image = CloudinaryField('image', blank=True, null=True)
 
     class Meta:

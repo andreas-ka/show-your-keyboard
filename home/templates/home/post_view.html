@@ -13,19 +13,16 @@
     {% for post in object_list %}
     <div class="col-md-4">
       <div class="card text-white bg-dark mb-3 shadow-lg mb-4">
-
         <div class="view overlay">
           <img class="card-img-top" src="{{ post.image.url }}" alt="Card image cap">
           <a href="#!">
             <div class="mask rgba-white-slight"></div>
           </a>
         </div>
-
         <div class="card-body">
           <h4 class="card-title">{{ post.title }}</h4>
           <small>By - {{ post.user }} - {{ post.created }}</small>
           <p class="card-text mt-1">Description: {{ post.description|slice:":100" }}....</p>
-
           {% if user.is_authenticated %}
           {% if user.id == post.user.id %}
           <a href="{% url 'post_edit' post.pk %}">Edit</a>
@@ -44,7 +41,6 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
     {% endfor %}

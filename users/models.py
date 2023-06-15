@@ -7,12 +7,12 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 
 
-
 def profile_image_upload_path(instance, filename):
     return f"profiles/{instance.user.username}/{filename}"
 
-### Profile form ###
+
 class Profile(models.Model):
+    ### Profile form ###
     user = models.OneToOneField(User, related_name="profile", on_delete=models.CASCADE)
     image = CloudinaryField('image', blank=True, null=True)
     keyboards = models.CharField(max_length=1000, null=True, blank=True)

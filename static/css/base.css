@@ -3,27 +3,27 @@
 * {
     box-sizing: border-box;
     margin: 0;
-  }  
+}
 
 :root {
-/** Fonts and colors */
+    /** Fonts and colors */
     --title: 'EB Garamond', serif;
     --main-font: 'Roboto', serif;
     --lime: #C9F234;
     --black: #000000;
 }
 
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
-  }
+}
 
 body {
     margin: 0;
     flex-direction: column;
     min-height: 100vh;
     display: flex;
-
 }
 
 /* btn and link styling */
@@ -90,7 +90,6 @@ body {
     color: #FFF;
 }
 
-
 .main-text-carousel {
     position: absolute;
     top: 100px;
@@ -99,7 +98,6 @@ body {
 }
 
 /* Post view cards*/
-
 .card {
     margin: 5% 0%;
 }
@@ -112,8 +110,6 @@ body {
 }
 
 /* Index.html columns */
-
-
 .card-header {
     background-color: #C9F234;
     color: #000000;
@@ -125,15 +121,12 @@ body {
 }
 
 .cards:hover {
-    box-shadow: 0 4px 10px rgba(0,0,0,0.16), 0 4px 10px rgba(0,0,0,0.23);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.16), 0 4px 10px rgba(0, 0, 0, 0.23);
 }
-  
 
 /* footer */
-
 footer {
     font-size: 16px;
     background-color: #C9F234;
     margin-top: auto;
-
 }
