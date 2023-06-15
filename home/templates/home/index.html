@@ -1,9 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-{% for post in object_list %}
 
-{% endfor %}
 <!-- Carousel -->
 <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel">
   <!-- Indicators/dots -->
@@ -15,17 +13,17 @@
   <!-- The slideshow/carousel -->
   <div class="carousel-inner">
     <div class="carousel-item active hero-item">
-      <img src="static/images/carousel1.png" alt="" class="d-block w-100 hero-item-img" alt="Image of keyboard">
+      <img src="{% static 'images/carousel1.png'%}" alt="" class="d-block w-100 hero-item-img" alt="Image of keyboard">
       <div class="carousel-caption top-0 mt-5">
       </div>
     </div>
     <div class="carousel-item hero-item">
-      <img src="static/images/carousel3.png" alt="" class="d-block w-100 hero-item-img" alt="Image of keyboard">
+      <img src="{% static 'images/carousel3.png'%}" alt="" class="d-block w-100 hero-item-img" alt="Image of keyboard">
       <div class="carousel-caption top-0 mt-5">
       </div>
     </div>
     <div class="carousel-item hero-item">
-      <img src="static/images/carousel4.png" alt="" class="d-block w-100 hero-item-img" alt="Image of keyboard">
+      <img src="{% static 'images/carousel4.png'%}" alt="" class="d-block w-100 hero-item-img" alt="Image of keyboard">
       <div class="carousel-caption top-0 mt-5">
       </div>
     </div>

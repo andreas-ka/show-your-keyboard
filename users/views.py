@@ -4,8 +4,8 @@ from django.views import generic
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from .forms import RegisterForm, ProfileEditForm
 from django.urls import reverse_lazy, reverse
-from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Profile
+from django.contrib import messages
 
 
 class UserRegister(generic.CreateView):
