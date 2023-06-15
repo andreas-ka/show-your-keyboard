@@ -35,7 +35,7 @@ _____________________________________________________________________________
         - [Comments on posts](#comments-on-posts)
         - [Update your profile image](#update-your-profile-image)
         - [Footer](#footer)
-        - [Search page with results](#search-page-with-results)
+        - [Search page with results](#search-page-with-or-without-results)
     - [Colour Scheme](#colour-scheme)
     - [Typography](#typography)
     - [Imagery](#imagery)
@@ -127,41 +127,66 @@ As a site owner the goal is to provide a stable and enjoyable user experience wi
 _____________________________________________________________________________ 
 ## Design and Features:   
 
-### Navbar
-[Back to top](#show-your-keyboard)
+## Navbar
+_____________________________________________________________________________ 
+### Bootstrap navbar that also collapses on smaller devices
+![Screenshot](./static/images/navbar_readme.png)   
 
-### Register
-[Back to top](#show-your-keyboard)
 
-### Login
-[Back to top](#show-your-keyboard)
+## Register
+_____________________________________________________________________________ 
+### Register form
+![Screenshot](./static/images/register_readme.png)  
 
-### Landing page
-[Back to top](#show-your-keyboard)
+## Login
+_____________________________________________________________________________ 
+### Login page with form
+![Screenshot](./static/images/login_readme.png)  
 
-### Create a post
-[Back to top](#show-your-keyboard)
+## Landing page
+_____________________________________________________________________________ 
+### Carousel header, toggling 3 images.        
+![Screenshot](./static/images/landing_header_readme.png)   
+### Latest post and comments shown on landing page.     
+![Screenshot](./static/images/landing_latest_readme.png)     
 
-### Posts (view all posts)
-[Back to top](#show-your-keyboard)
 
-### Post details ( See details about a post)
-[Back to top](#show-your-keyboard)
+## Create a post
+_____________________________________________________________________________ 
+### A form for creating a new post with the possibillity to upload a image.   
+![Screenshot](./static/images/create_post_readme.png)    
 
-### Like a post
-[Back to top](#show-your-keyboard)
 
-### Comments on posts
-[Back to top](#show-your-keyboard)
 
-### Update your profile image
-[Back to top](#show-your-keyboard)
+## Posts (view all posts)
+_____________________________________________________________________________ 
+### See all posts on the website.   
+![Screenshot](./static/images/post_view_readme.png)     
 
-### Footer
-[Back to top](#show-your-keyboard)
 
-### Search page with results
-[Back to top](#show-your-keyboard)
+## Post details ( See details about a post)
+_____________________________________________________________________________ 
+### Shows details about post, gives you the choice to like and comment on the post.   
+![Screenshot](./static/images/post_detail_readme.png)    
+
+
+## Update your profile image
+_____________________________________________________________________________ 
+### On the profile page you can add your inventory of keyboards and upload a profile image.   
+![Screenshot](./static/images/profile_image_readme.png)     
+
+
+## Footer
+_____________________________________________________________________________ 
+### Consists of links to social media and the credits to Tristan for the images.   
+![Screenshot](./static/images/footer_readme.png)    
+
+
+## Search page with or without results
+_____________________________________________________________________________ 
+![Screenshot](./static/images/search_result_readme.png)    
+![Screenshot](./static/images/search_noresult_readme.png)  
+
 
 _____________________________________________________________________________  
 ## Colour Scheme
