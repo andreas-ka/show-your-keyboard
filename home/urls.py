@@ -13,5 +13,4 @@ urlpatterns = [
     path('postlike/<int:pk>', LikeView, name='post_like'),
     path("search", SearchResultsView.as_view(), name="search_results"),
 
-
 ]

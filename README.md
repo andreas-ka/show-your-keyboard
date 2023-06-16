@@ -210,8 +210,7 @@ _____________________________________________________________________________
 ## Languages
 
 - HTML5 from CodeInstitute Template(some own modifications to style the website)
-- CSS from CodeInstitute Template(some own modifications to style the website)
-- Javascript from CodeInstitute Template
+- CSS
 - Python / Django code, all done by myself
 [Back to top](#show-your-keyboard)
 ____________________________________________________________________________  
@@ -251,7 +250,6 @@ Was deployed using Heroku with the following steps:
 - Click New in the Heroku dashboard and select ”Create new app.”
 - Write a name for the app and choose your region and click ”Create App.”
 - In the settings tab for the new application, created one Config name PORT and has a value of 8000
-- Two build pack scripts were added: Python and Nodejs (in that order)
 - Connect your Heroku with your GitHub account and the repository you are working on
 - Then at the bottom, you can do a manual deployment or set it to automatic deployment to deploy every time your repo is updated.   
 ![Screenshot] 

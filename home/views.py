@@ -10,6 +10,7 @@ from django.db.models import Q
 from django.contrib import messages
 
 
+
 class Index(ListView):
     """View for the index or home page"""
     template_name = 'home/index.html'
@@ -150,3 +151,4 @@ class SearchResultsView(ListView):
             Q(title__icontains=query) | Q(description__icontains=query) | Q(tags__icontains=query)
         )
         return object_list
+    

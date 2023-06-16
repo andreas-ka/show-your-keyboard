@@ -130,3 +130,20 @@ footer {
     background-color: #C9F234;
     margin-top: auto;
 }
+
+.messages {
+    background: #f6f6f6;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.messages.success {
+    background: #d4edda;
+    color: #155724;
+}
+
+.messages.error {
+    background: #f8d7da;
+    color: #721c24;
+}

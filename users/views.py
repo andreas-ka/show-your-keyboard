@@ -6,6 +6,23 @@ from .forms import RegisterForm, ProfileEditForm
 from django.urls import reverse_lazy, reverse
 from .models import Profile
 from django.contrib import messages
+from django.contrib.auth import authenticate, login, logout
+
+
+def login_user(request):
+    if request.method == "POST":
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            messages.success(request, "You have been successfully logged in.")
+            return redirect('/')
+        else:
+            messages.error(request, "There was an error during login.")
+            return redirect('login')
+    else:
+        return render(request, 'register/login.html')
 
 
 class UserRegister(generic.CreateView):
