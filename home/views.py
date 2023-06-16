@@ -154,3 +154,6 @@ class SearchResultsView(ListView):
         )
         return object_list
     
+
+def error_404(request, exception):
+    return render(request, 'error_404.html')

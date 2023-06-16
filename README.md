@@ -10,11 +10,6 @@ _____________________________________________________________________________
 
 _____________________________________________________________________________
 ## Content:
-- ### Wireframes and templates
-    - [Lucid Chart](#lucid-chart)
-    - [DrawSql Chart](#drawsql-chart)
-    - [Database Structure](#database-and-structure)
-    - [Balsamiq Template](#balsamiq-templates)
 - ### Project Goals and target audience
     - [Achieved](#achieved)
     - [Future implements](#future-projects)
@@ -24,6 +19,11 @@ _____________________________________________________________________________
     - [Site user goal](#site-user-goal)
     - [Site owner goal](#site-owner-goal)
     - [User Stories](#user-stories)
+- ### Wireframes and templates
+    - [Lucid Chart](#lucid-chart)
+    - [DrawSql Chart](#drawsql-chart)
+    - [Database Structure](#database-and-structure)
+    - [Balsamiq Template](#balsamiq-templates)
 - ### Design and Features
     - [Design and Features](#design-and-features)
         - [Navbar](#navbar)
@@ -53,7 +53,8 @@ _____________________________________________________________________________
     - [Bug testing](#bug-testing)
     - [Responsiveness](#responsiveness-and-further-testing)
     - [Fixed bugs](#fixed-bugs)
-- ### Deployment
+- ### Development and Deployment
+    - [Development](#development)
     - [Deploy to Heroku](#deployment)
 - ### Credits
     - [Code](#code)
@@ -64,31 +65,6 @@ _____________________________________________________________________________
 
 
 _____________________________________________________________________________
-## Lucid chart
-![Screenshot](./static/images/lucid_chart.png)
-
-## DrawSql chart
-![Screenshot](./static/images/drawSQL-keebs-display-export-2023-06-14.png)
-
-## Database and structure
-![Screenshot](./static/images/db_readme.png)   
-
-## Balsamiq templates   
-
-### Landing page (index.html)
-![Screenshot](./static/images/balsamiq_index.png)
-
-### See all posts (post_view.html)
-![Screenshot](./static/images/balsamiq_postview.png)
-
-### Details about a specific post (post_detail.html)
-![Screenshot](./static/images/balsamiq_postdetail.png)
-
-### Login page (login.html)
-![Screenshot](./static/images/balsamiq_login.png)
-
-[Back to top](#show-your-keyboard)
-_____________________________________________________________________________ 
 ## Project goals and target audience.  
 ### Achieved:
 
@@ -146,6 +122,33 @@ _____________________________________________________________________________
 ## Site Owner Stories
 - As a Site Owner I want to restrict access to sections of an app to unauthenticated users so that basic standards of data protection are met
 - As a Site Owner I would like that authenticated users have full access to web app and its functionality
+
+_____________________________________________________________________________ 
+
+## Lucid chart
+![Screenshot](./static/images/lucid_chart.png)
+
+## DrawSql chart
+![Screenshot](./static/images/drawSQL-keebs-display-export-2023-06-14.png)
+
+## Database and structure
+![Screenshot](./static/images/db_readme.png)   
+
+## Balsamiq templates   
+
+### Landing page (index.html)
+![Screenshot](./static/images/balsamiq_index.png)
+
+### See all posts (post_view.html)
+![Screenshot](./static/images/balsamiq_postview.png)
+
+### Details about a specific post (post_detail.html)
+![Screenshot](./static/images/balsamiq_postdetail.png)
+
+### Login page (login.html)
+![Screenshot](./static/images/balsamiq_login.png)
+
+[Back to top](#show-your-keyboard)
 
 _____________________________________________________________________________ 
 ## Design and Features:   
@@ -220,7 +223,7 @@ _____________________________________________________________________________
 _____________________________________________________________________________  
 
 ## Typography
-- Garamon is used on the whole site.
+- Garamon and Roboto is used on the whole site.
 [Back to top](#show-your-keyboard)
 _____________________________________________________________________________
 ## Imagery
@@ -238,8 +241,15 @@ _____________________________________________________________________________
 [Back to top](#show-your-keyboard)
 ____________________________________________________________________________  
 ## Frameworks, Packages & Programs Used
+
 - Lucidchart for overwiev of code.
 - Google Sheets to make a bug testing sheet.
+- DrawSql for the database
+- Django packages used:
+    - render, reverse_lazy, reverse, messages, HttpResponseDirect, get_object_or_404
+    - ListView, DeleteView, DetalView, CreateView, UpdateView, LoginRequiredMixin
+    - Sum, Count, Q
+
 
 [Back to top](#show-your-keyboard)
 ____________________________________________________________________________  
@@ -269,6 +279,11 @@ ____________________________________________________________________________
 [Back to top](#show-your-keyboard)
 _____________________________________________________________________________  
 
+## Development
+- Was done in Gitpod
+- Comitted and pushed to my GitHub repository
+[ElephantSQL](https://www.elephantsql.com/) used for Postgres
+
 ## Deployment
 Was deployed using Heroku with the following steps:
 - Before deployment hide the confidential data in env.py
@@ -279,7 +294,7 @@ Was deployed using Heroku with the following steps:
 - In the settings tab for the new application, created one Config name PORT and has a value of 8000
 - Connect your Heroku with your GitHub account and the repository you are working on
 - Then at the bottom, you can do a manual deployment or set it to automatic deployment to deploy every time your repo is updated.   
-![Screenshot] 
+
 [Back to top](#show-your-keyboard)
 
 _____________________________________________________________________________  
@@ -314,13 +329,9 @@ This is the bootstrap footer template i used for the website
 Static text on a carousel
 [Link](http://www.prepbootstrap.com/bootstrap-template/carousel-static-headline)
 
-### Code.  
+Helpful tutorial by CI's own Dee MC
+[Link](https://www.youtube.com/watch?v=sBjbty691eI&ab_channel=DeeMc)
 
-
-### Contents  
-
-
-### Media  
 
 ### Acknowledgements
 - My Mentor for continuous helpful feedback.

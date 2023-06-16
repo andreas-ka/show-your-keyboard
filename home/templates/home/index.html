@@ -1,7 +1,21 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-
+<!-- Alert container when logged in -->
+{% if messages %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      {% for message in messages %}
+      <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endif %}
 <!-- Carousel -->
 <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel">
   <!-- Indicators/dots -->
@@ -13,17 +27,17 @@
   <!-- The slideshow/carousel -->
   <div class="carousel-inner">
     <div class="carousel-item active hero-item">
-      <img src="{% static 'images/carousel1.png'%}" alt="" class="d-block w-100 hero-item-img" alt="Image of keyboard">
+      <img src="{% static 'images/carousel1.png'%}" class="d-block w-100 hero-item-img" alt="Image of keyboard">
       <div class="carousel-caption top-0 mt-5">
       </div>
     </div>
     <div class="carousel-item hero-item">
-      <img src="{% static 'images/carousel3.png'%}" alt="" class="d-block w-100 hero-item-img" alt="Image of keyboard">
+      <img src="{% static 'images/carousel3.png'%}" class="d-block w-100 hero-item-img" alt="Image of keyboard">
       <div class="carousel-caption top-0 mt-5">
       </div>
     </div>
     <div class="carousel-item hero-item">
-      <img src="{% static 'images/carousel4.png'%}" alt="" class="d-block w-100 hero-item-img" alt="Image of keyboard">
+      <img src="{% static 'images/carousel4.png'%}" class="d-block w-100 hero-item-img" alt="Image of keyboard">
       <div class="carousel-caption top-0 mt-5">
       </div>
     </div>
@@ -42,8 +56,13 @@
     <p>Join in and register on the site to create posts, make comments</br>
       and get inspired by all custom builds!
     </p>
+    {% if user.is_authenticated %}
+    <br>
+    <a href="{% url 'posts' %}" class="btn btn-lime mt-5">See all posts</a>
+    {% else %}
     <a href="{% url 'register' %}" class="btn btn-lime mt-5">Register now!</a><a href="{% url 'login' %}"
       class="btn btn-lime mt-5 ms-3">Login</a>
+    {% endif %}
   </div>
 </div>
 <br>
@@ -98,19 +117,20 @@
       </div>
       {% for comment in latest_comments %}
       <div class="card text-white bg-dark mb-3 shadow-lg" style="max-width: 540px">
-        <div class="card-header">Commented on: {{ comment.post }}</div>
+        <div class="card-header">Commented on: <a href="{% url 'post_detail' comment.post.pk %}" style="color:black;" class="card-link">{{ comment.post }}</a></div>
         <div class="row g-0">
           <div class="col-md-4 text-center">
             <img src="{{ comment.user_profile.profile.image.url }}" class="mt-4 rounded-circle" alt="avatar" width="90" height="90" alt="Profile image">
             <p class="small mt-4">{{ comment.user_profile }}</p>
+            <p class="text-white" style="font-size: 12px;">{{ comment.created_on }}</p>
           </div>
           <div class="col-md-8">
             <div class="card-body">
-              <p class="card-text">"{{ comment.body }}"</p>
+              <p class="card-text p-3">"{{ comment.body }}"</p>
             </div>
             <br>
-            <div class="card-body mt-3">
-              <p class="card-text text-end text-white">{{ comment.created_on}}</p>
+            <div class="position-absolute bottom-0 end-0">
+              <a href="{% url 'post_detail' comment.post.pk %}" class="btn btn-sm btn-lime m-3">See more</a>
             </div>
           </div>
         </div>
