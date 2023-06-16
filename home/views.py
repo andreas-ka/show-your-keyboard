@@ -1,5 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.views.generic import ListView, DeleteView, DetailView, CreateView, UpdateView
+from django.views.generic import ( 
+                                  ListView, DeleteView, DetailView, 
+                                  CreateView, UpdateView
+                                )
 from .models import Post, Comment
 from django.http import HttpResponseRedirect
 from .forms import CreatePostForm, EditPostForm, CommentPostForm
@@ -8,7 +11,6 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Sum, Count
 from django.db.models import Q
 from django.contrib import messages
-
 
 
 class Index(ListView):
@@ -31,7 +33,7 @@ class Index(ListView):
         total_likes = 0
         for post in context['post']:
             total_likes += post.likes.count()
-        context['total_likes'] = total_likes
+            context['total_likes'] = total_likes
 
         return context
 

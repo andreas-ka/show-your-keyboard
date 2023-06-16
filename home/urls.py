@@ -1,5 +1,10 @@
 from django.urls import path
-from .views import Index, PostView, PostDetailView, PostCreateView, PostUpdateView, PostDeleteView, LikeView, SearchResultsView
+from .views import ( 
+                    Index, PostView, PostDetailView, 
+                    PostCreateView, PostUpdateView, 
+                    PostDeleteView, LikeView, 
+                    SearchResultsView
+                    )
 from .import views
 
 

@@ -72,12 +72,6 @@
       </div>
     </div>
   </nav>
-  {% if messages %}
-    {% for message in messages %}
-    <div class="messages">
-      {{ messages }}
-    {% endfor %}
-  {% endif %}
   <!-- Alert container when logged in -->
   {% if messages %}
   <div class="container">
@@ -92,7 +86,6 @@
       </div>
     </div>
   </div>
-  gdfgfdgdf
   {% endif %}
   {% block content %}
   {% endblock %}

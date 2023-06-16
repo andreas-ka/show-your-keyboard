@@ -18,18 +18,16 @@
                 <input type="password" name="password" class="form-control" placeholder="Password" />
             </div>
             <div class="row mb-4">
-
                 <div class="col text-center">
-                    <a href="#!">Forgot password?</a>
                     <br>
-                    <button class="btn btn-lime mb-4 mt-4">Sign in</button>
+                    <button type="submit" class="btn btn-lime mb-4 mt-4">Sign in</button>
                 </div>
             </div>
-            <!-- Register buttons -->
-            <div class="text-center">
-                <p>Not a member? <a href="{% url 'register' %}">Register</a></p>
-            </div>
         </form>
+        <!-- Register buttons -->
+        <div class="text-center">
+            <p>Not a member? <a href="{% url 'register' %}">Register</a></p>
+        </div>
     </div>
 </div>
 {% endblock %}

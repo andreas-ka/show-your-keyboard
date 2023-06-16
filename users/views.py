@@ -10,6 +10,7 @@ from django.contrib.auth import authenticate, login, logout
 
 
 def login_user(request):
+    """ Login form and messages """
     if request.method == "POST":
         username = request.POST['username']
         password = request.POST['password']
@@ -17,7 +18,7 @@ def login_user(request):
         if user is not None:
             login(request, user)
             messages.success(request, "You have been successfully logged in.")
-            return redirect('/')
+            return redirect('home')
         else:
             messages.error(request, "There was an error during login.")
             return redirect('login')
