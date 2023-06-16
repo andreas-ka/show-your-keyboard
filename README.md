@@ -229,7 +229,8 @@ _____________________________________________________________________________
 ## Imagery
 
 - All images on the website are from Tristan ("Captain Sterling"), a legend in the keyboard community.
-- Profile avatars are free images found on Pexel and other sites.
+- Profile avatars are free images found on [Pexel](https://www.pexels.com/)
+- Avatars and background are from [freepik](https://www.freepik.com/) and free to use.
 [Back to top](#show-your-keyboard)
 
 _____________________________________________________________________________  
