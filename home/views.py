@@ -11,13 +11,23 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Sum, Count
 from django.db.models import Q
 from django.contrib import messages
+from django.contrib.messages import get_messages
+from django.contrib.messages.views import SuccessMessageMixin
+    
 
-
-class Index(ListView):
+class Index(SuccessMessageMixin, ListView):
     """View for the index or home page"""
     template_name = 'home/index.html'
     model = Post
     context_object_name = 'post'
+    success_message = "Success message"
+
+    
+    def get_messages(self):
+        storage = get_messages(self.request)
+        for message in storage:
+            print(message)
+
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -29,6 +39,8 @@ class Index(ListView):
 
         latest_posts = Post.objects.order_by('-created')[:3]
         context['latest_posts'] = latest_posts
+        
+        context['messages'] = messages.get_messages(self.request)
 
         total_likes = 0
         for post in context['post']:

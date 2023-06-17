@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+{% include 'messages.html' %}
 <!-- Carousel -->
 <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel">
   <!-- Indicators/dots -->
@@ -60,6 +61,15 @@
     <div class="col col-lg-2 text-center">
       <h5><span class="lime-h1">Total Likes</span> </br>
         {{ total_likes }} </h5>
+      {% for message in messages %}
+      <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+        <p>{{ messages }}</p>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        {{ message }}
+      </div>
+      {% endfor %}
     </div>
   </div>
 </div>
@@ -102,10 +112,12 @@
       </div>
       {% for comment in latest_comments %}
       <div class="card text-white bg-dark mb-3 shadow-lg" style="max-width: 540px">
-        <div class="card-header">Commented on: <a href="{% url 'post_detail' comment.post.pk %}" style="color:black;" class="card-link">{{ comment.post }}</a></div>
+        <div class="card-header">Commented on: <a href="{% url 'post_detail' comment.post.pk %}" style="color:black;"
+            class="card-link">{{ comment.post }}</a></div>
         <div class="row g-0">
           <div class="col-md-4 text-center">
-            <img src="{{ comment.user_profile.profile.image.url }}" class="mt-4 rounded-circle" alt="avatar" width="90" height="90" alt="Profile image">
+            <img src="{{ comment.user_profile.profile.image.url }}" class="mt-4 rounded-circle" alt="avatar" width="90"
+              height="90" alt="Profile image">
             <p class="small mt-4">{{ comment.user_profile }}</p>
             <p class="text-white" style="font-size: 12px;">{{ comment.created_on }}</p>
           </div>

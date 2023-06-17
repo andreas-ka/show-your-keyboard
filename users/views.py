@@ -23,7 +23,7 @@ def login_user(request):
             messages.error(request, "There was an error during login.")
             return redirect('login')
     else:
-        return render(request, 'register/login.html')
+        return render(request, 'register/login.html', {'messages': messages.get_messages(request)})
 
 
 class UserRegister(generic.CreateView):
