@@ -1,139 +1,135 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load cloudinary %}
-
 {% block title %} {{ post.title }} {% endblock %}
-
 {% block content %}
 <!-- Post details section -->
 <div class="wrapper d-flex justify-content-center">
-    <div class="card text-white bg-dark mb-3 shadow-lg mb-6" style="max-width: 840px;">
-        <div class="row no-gutters">
-            <div class="col-md-4">
-                <img src="{{ post.image.url }}" class="card-img" alt="...">
-                <br>
-                <br>
-                <p class="card-text ms-3">Case: {{ post.case }}</p>
-                <hr>
-                <p class="card-text ms-3">Switches: {{ post.switches }}</p>
-                <hr>
-                <p class="card-text ms-3">Keycaps: {{ post.keycaps }}</p>
-                <br>
-                {% if user.is_authenticated %}
-                {% if user.id == post.user.id %}
-                <div class="mb-3">
-                    <a href="{% url 'post_edit' post.pk %}" class="btn btn-success mt-4 ms-3">Edit</a>
-                    <a href="{% url 'post_delete' post.pk %}" class="btn btn-danger mt-4">Delete</a>
-                </div>
-                {% endif %}
-                {% endif %}
+   <div class="card text-white bg-dark mb-3 shadow-lg mb-6" style="max-width: 840px;">
+      <div class="row no-gutters">
+         <div class="col-md-4">
+            <img src="{{ post.image.url }}" class="card-img" alt="...">
+            <br>
+            <br>
+            <p class="card-text ms-3">Case: {{ post.case }}</p>
+            <hr>
+            <p class="card-text ms-3">Switches: {{ post.switches }}</p>
+            <hr>
+            <p class="card-text ms-3">Keycaps: {{ post.keycaps }}</p>
+            <br>
+            {% if user.is_authenticated %}
+            {% if user.id == post.user.id %}
+            <div class="mb-3">
+               <a href="{% url 'post_edit' post.pk %}" class="btn btn-success mt-4 ms-3">Edit</a>
+               <a href="{% url 'post_delete' post.pk %}" class="btn btn-danger mt-4">Delete</a>
             </div>
-            <div class="col-md-8 d-flex flex-column">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col">
-                            <h5 class="card-title">{{ post.title }}</h5>
-                            <small>By - {{ post.user }} - {{ post.created }}</small><br>
-                        </div>
-                        <div class="col text-end">
-                            {% if post.user.profile.image %}
-                            <img src="{{ post.user.profile.image.url }}" width="100" height="100"
-                                class="rounded-circle">
-                            {% else %}
-                            <img src="{% static 'images/user-default.png' %}" width="100" height="100" class="rounded-circle"
-                                alt="Default Profile Image">
-                            {% endif %}
-                        </div>
-                    </div>
-                    <br>
-                    <p class="card-text">{{ post.description }}</p>
-                </div>
-                <!-- Like div -->
-                <div class="mt-auto text-end">
-                    <form action="{% url 'post_like' post.pk %}" method="POST">
-                        {% csrf_token %}
-                        {% if user.is_authenticated %}
-                        {% if liked %}
-                        <div class="col mb-3 px-2">
-                            <span id="total_likes"><i class="fa-solid fa-heart"></i> {{ total_likes }}</span>
-                            <button type="submit" name="post_like_btn" value="{{ post.id }}"
-                                class="btn btn-danger mt-1"><i class="fa-solid fa-heart"></i> Unlike</button>
-                        </div>
-                        {% else %}
-                        <div class="col mb-3 px-2">
-                            <span id="total_likes"><i class="fa-solid fa-heart"></i> {{ total_likes }}</span>
-                            <button type="submit" name="post_like_btn" value="{{ post.id }}"
-                                class="btn btn-success mt-1"><i class="fa-regular fa-heart"></i> Like</button>
-                        </div>
-                        {% endif %}
-                        {% else %}
-                        <p>You must register or login to like posts...</p>
-                        {% endif %}
-                    </form>
-                </div>
+            {% endif %}
+            {% endif %}
+         </div>
+         <div class="col-md-8 d-flex flex-column">
+            <div class="card-body">
+               <div class="row">
+                  <div class="col">
+                     <h5 class="card-title">{{ post.title }}</h5>
+                     <small>By - {{ post.user }} - {{ post.created }}</small><br>
+                  </div>
+                  <div class="col text-end">
+                     {% if post.user.profile.image %}
+                     <img src="{{ post.user.profile.image.url }}" width="100" height="100"
+                        class="rounded-circle">
+                     {% else %}
+                     <img src="{% static 'images/user-default.png' %}" width="100" height="100" class="rounded-circle"
+                        alt="Default Profile Image">
+                     {% endif %}
+                  </div>
+               </div>
+               <br>
+               <p class="card-text">{{ post.description }}</p>
             </div>
-
-        </div>
-
-    </div>
+            <!-- Like div -->
+            <div class="mt-auto text-end">
+               <form action="{% url 'post_like' post.pk %}" method="POST">
+                  {% csrf_token %}
+                  {% if user.is_authenticated %}
+                  {% if liked %}
+                  <div class="col mb-3 px-2">
+                     <span id="total_likes"><i class="fa-solid fa-heart"></i> {{ total_likes }}</span>
+                     <button type="submit" name="post_like_btn" value="{{ post.id }}"
+                        class="btn btn-danger mt-1"><i class="fa-solid fa-heart"></i> Unlike</button>
+                  </div>
+                  {% else %}
+                  <div class="col mb-3 px-2">
+                     <span id="total_likes"><i class="fa-solid fa-heart"></i> {{ total_likes }}</span>
+                     <button type="submit" name="post_like_btn" value="{{ post.id }}"
+                        class="btn btn-success mt-1"><i class="fa-regular fa-heart"></i> Like</button>
+                  </div>
+                  {% endif %}
+                  {% else %}
+                  <p>You must register or login to like posts...</p>
+                  {% endif %}
+               </form>
+            </div>
+         </div>
+      </div>
+   </div>
 </div>
 </div>
 </div>
 <br />
 <!--Comments section -->
 <div>
-    <h3 class="text-center">Comments...</h3>
-    <hr>
-    <div class="card-body">
-        {% if not post.comments.all %}
-        <p>No comments on this post...</p>
-        {% else %}
-        {% for comment in post.comments.all %}
-        <div class="container">
-            <div class="row bg-dark">
-                <div class="col-4 text-center">
-                    <div class="row">
-                        <div class="col">
-                            {{ comment.user_profile }}
-                        </div>
-                    </div>
-                    {% if comment.user_profile.profile.image %}
-                    <img src="{{ comment.user_profile.profile.image.url }}" width="80" height="80"
-                        class="rounded-circle" alt="Profile image">
-                    {% else %}
-                    <img src="{% static 'images/user-default.png' %}" width="80" height="80" class="rounded-circle"
-                        alt="Default Profile Image">
-                    {% endif %}
-                </div>
-                <div class="col-8">
-                    <small>{{ comment.created_on }}</small>
-                    <br>
-                    <div class="col-6 mt-2">
-                        "{{ comment.body }}"
-                    </div>
-                </div>
+   <h3 class="text-center">Comments...</h3>
+   <hr>
+   <div class="card-body">
+      {% if not post.comments.all %}
+      <p>No comments on this post...</p>
+      {% else %}
+      {% for comment in post.comments.all %}
+      <div class="container">
+         <div class="row bg-dark">
+            <div class="col-4 text-center">
+               <div class="row">
+                  <div class="col">
+                     {{ comment.user_profile }}
+                  </div>
+               </div>
+               {% if comment.user_profile.profile.image %}
+               <img src="{{ comment.user_profile.profile.image.url }}" width="80" height="80"
+                  class="rounded-circle" alt="Profile image">
+               {% else %}
+               <img src="{% static 'images/user-default.png' %}" width="80" height="80" class="rounded-circle"
+                  alt="Default Profile Image">
+               {% endif %}
             </div>
-            <hr>
-        </div>
-        {% endfor %}
-        {% endif %}
-    </div>
+            <div class="col-8">
+               <small>{{ comment.created_on }}</small>
+               <br>
+               <div class="col-6 mt-2">
+                  "{{ comment.body }}"
+               </div>
+            </div>
+         </div>
+         <hr>
+      </div>
+      {% endfor %}
+      {% endif %}
+   </div>
 </div>
 {% if user.is_authenticated %}
 <div class="card-body">
-    <div class="form-group">
-        <form method="POST">
-            {% csrf_token %}
-            {{ comment_form.as_p }}
-            <div class="text-center">
-                <button class="btn btn-lime">Add comment...</button>
-            </div>
-        </form>
-    </div>
+   <div class="form-group">
+      <form method="POST">
+         {% csrf_token %}
+         {{ comment_form.as_p }}
+         <div class="text-center">
+            <button class="btn btn-lime">Add comment...</button>
+         </div>
+      </form>
+   </div>
 </div>
 {% endif %}
 </br>
 <div class="d-flex justify-content-center">
-    <a href="{% url 'posts' %}" class="btn btn-lime mt-5 mb-5">Back</a>
+   <a href="{% url 'posts' %}" class="btn btn-lime mt-5 mb-5">Back</a>
 </div>
 {% endblock %}

@@ -4,137 +4,138 @@
 {% include 'messages.html' %}
 <!-- Carousel -->
 <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel">
-  <!-- Indicators/dots -->
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-  </div>
-  <!-- The slideshow/carousel -->
-  <div class="carousel-inner">
-    <div class="carousel-item active hero-item">
-      <img src="{% static 'images/carousel1.png'%}" class="d-block w-100 hero-item-img" alt="Image of keyboard">
-      <div class="carousel-caption top-0 mt-5">
+   <!-- Indicators/dots -->
+   <div class="carousel-indicators">
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+   </div>
+   <!-- The slideshow/carousel -->
+   <div class="carousel-inner">
+      <div class="carousel-item active hero-item">
+         <img src="{% static 'images/carousel1.png'%}" class="d-block w-100 hero-item-img" alt="Image of keyboard">
+         <div class="carousel-caption top-0 mt-5">
+         </div>
       </div>
-    </div>
-    <div class="carousel-item hero-item">
-      <img src="{% static 'images/carousel3.png'%}" class="d-block w-100 hero-item-img" alt="Image of keyboard">
-      <div class="carousel-caption top-0 mt-5">
+      <div class="carousel-item hero-item">
+         <img src="{% static 'images/carousel3.png'%}" class="d-block w-100 hero-item-img" alt="Image of keyboard">
+         <div class="carousel-caption top-0 mt-5">
+         </div>
       </div>
-    </div>
-    <div class="carousel-item hero-item">
-      <img src="{% static 'images/carousel4.png'%}" class="d-block w-100 hero-item-img" alt="Image of keyboard">
-      <div class="carousel-caption top-0 mt-5">
+      <div class="carousel-item hero-item">
+         <img src="{% static 'images/carousel4.png'%}" class="d-block w-100 hero-item-img" alt="Image of keyboard">
+         <div class="carousel-caption top-0 mt-5">
+         </div>
       </div>
-    </div>
-  </div>
-  <!-- Left and right controls/icons -->
-  <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#hero-carousel" data-bs-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </button>
+   </div>
+   <!-- Left and right controls/icons -->
+   <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev">
+   <span class="carousel-control-prev-icon"></span>
+   </button>
+   <button class="carousel-control-next" type="button" data-bs-target="#hero-carousel" data-bs-slide="next">
+   <span class="carousel-control-next-icon"></span>
+   </button>
 </div>
 <div class="main-text-carousel hidden-xs">
-  <div class="col-md-12 text-center">
-    <h1>Show the community </br><span class="lime-h1">your</span> keyboard</h1>
-    <p>Join in and register on the site to create posts, make comments</br>
-      and get inspired by all custom builds!
-    </p>
-    {% if user.is_authenticated %}
-    <br>
-    <a href="{% url 'posts' %}" class="btn btn-lime mt-5">See all posts</a>
-    {% else %}
-    <a href="{% url 'register' %}" class="btn btn-lime mt-5">Register now!</a><a href="{% url 'login' %}"
-      class="btn btn-lime mt-5 ms-3">Login</a>
-    {% endif %}
-  </div>
+   <div class="col-md-12 text-center">
+      <h1>Show the community <br><span class="lime-h1">your</span> keyboard</h1>
+      <p>Join in and register on the site to create posts, make comments<br>
+         and get inspired by all custom builds!
+      </p>
+      {% if user.is_authenticated %}
+      <br>
+      <a href="{% url 'posts' %}" class="btn btn-lime mt-5">See all posts</a>
+      {% else %}
+      <a href="{% url 'register' %}" class="btn btn-lime mt-5">Register now!</a><a href="{% url 'login' %}"
+         class="btn btn-lime mt-5 ms-3">Login</a>
+      {% endif %}
+   </div>
 </div>
 <br>
 <div class="container">
-  <div class="row justify-content-md-center">
-    <div class="col col-lg-2 text-center">
-      <h5><span class="lime-h1">Total Posts</span> </br>
-        {{ post_numbers }}</h5>
-    </div>
-    <div class="col col-lg-2 text-center">
-      <h5><span class="lime-h1">Total Likes</span> </br>
-        {{ total_likes }} </h5>
-      {% for message in messages %}
-      <div class="alert {{ message.tags }} alert-dismissible" role="alert">
-        <p>{{ messages }}</p>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        {{ message }}
+   <div class="row justify-content-md-center">
+      <div class="col col-lg-2 text-center">
+         <h5><span class="lime-h1">Total Posts</span><br>
+            {{ post_numbers }}
+         </h5>
       </div>
-      {% endfor %}
-    </div>
-  </div>
+      <div class="col col-lg-2 text-center">
+         <h5><span class="lime-h1">Total Likes</span><br>
+            {{ total_likes }} 
+         </h5>
+         {% for message in messages %}
+         <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+            <p>{{ messages }}</p>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+            {{ message }}
+         </div>
+         {% endfor %}
+      </div>
+   </div>
 </div>
 <div class="container">
-  <div class="row">
-    <!-- 1st column -->
-    <div class="col-md">
-      <div class="text-center">
-        <h3>Latest <span class="lime-h1">Posts</span></h3>
-      </div>
-      {% for post in latest_posts %}
-      <div class="card text-white bg-dark mb-3 shadow-lg" style="max-width: 540px">
-        <div class="card-header">{{ post.created }} By: {{ post.user }}</div>
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="{{ post.image.url }}" class="img-fluid rounded-start"
-              style="width: 100%; height: 100%; object-fit: cover;" alt="image of keyboard">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <a href="{% url 'post_detail' post.pk %}" class="card-link">
-                <h5 class="card-title">{{ post.title }}</h5>
-              </a>
-              <p class="card-text">{{ post.description|slice:":150" }}</p>
-              <br>
-              <p class="card-text text-end text-white">
-                <i class="fa-solid fa-heart fa-sm text-white"></i> {{ post.total_likes }}
-                <i class="fa-solid fa-comment fa-sm text-white"></i> {{ post.comments.count }}
-              </p>
+   <div class="row">
+      <!-- 1st column -->
+      <div class="col-md">
+         <div class="text-center">
+            <h3>Latest <span class="lime-h1">Posts</span></h3>
+         </div>
+         {% for post in latest_posts %}
+         <div class="card text-white bg-dark mb-3 shadow-lg" style="max-width: 540px">
+            <div class="card-header">{{ post.created }} By: {{ post.user }}</div>
+            <div class="row g-0">
+               <div class="col-md-4">
+                  <img src="{{ post.image.url }}" class="img-fluid rounded-start"
+                     style="width: 100%; height: 100%; object-fit: cover;" alt="image of keyboard">
+               </div>
+               <div class="col-md-8">
+                  <div class="card-body">
+                     <a href="{% url 'post_detail' post.pk %}" class="card-link">
+                        <h5 class="card-title">{{ post.title }}</h5>
+                     </a>
+                     <p class="card-text">{{ post.description|slice:":150" }}</p>
+                     <br>
+                     <p class="card-text text-end text-white">
+                        <i class="fa-solid fa-heart fa-sm text-white"></i> {{ post.total_likes }}
+                        <i class="fa-solid fa-comment fa-sm text-white"></i> {{ post.comments.count }}
+                     </p>
+                  </div>
+               </div>
             </div>
-          </div>
-        </div>
+         </div>
+         {% endfor %}
       </div>
-      {% endfor %}
-    </div>
-    <!-- 2nd column -->
-    <div class="col-md">
-      <div class="text-center">
-        <h3>Activity <span class="lime-h1">Feed</span></h3>
-      </div>
-      {% for comment in latest_comments %}
-      <div class="card text-white bg-dark mb-3 shadow-lg" style="max-width: 540px">
-        <div class="card-header">Commented on: <a href="{% url 'post_detail' comment.post.pk %}" style="color:black;"
-            class="card-link">{{ comment.post }}</a></div>
-        <div class="row g-0">
-          <div class="col-md-4 text-center">
-            <img src="{{ comment.user_profile.profile.image.url }}" class="mt-4 rounded-circle" alt="avatar" width="90"
-              height="90" alt="Profile image">
-            <p class="small mt-4">{{ comment.user_profile }}</p>
-            <p class="text-white" style="font-size: 12px;">{{ comment.created_on }}</p>
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <p class="card-text p-3">"{{ comment.body }}"</p>
+      <!-- 2nd column -->
+      <div class="col-md">
+         <div class="text-center">
+            <h3>Activity <span class="lime-h1">Feed</span></h3>
+         </div>
+         {% for comment in latest_comments %}
+         <div class="card text-white bg-dark mb-3 shadow-lg" style="max-width: 540px">
+            <div class="card-header">Commented on: <a href="{% url 'post_detail' comment.post.pk %}" style="color:black;"
+               class="card-link">{{ comment.post }}</a></div>
+            <div class="row g-0">
+               <div class="col-md-4 text-center">
+                  <img src="{{ comment.user_profile.profile.image.url }}" class="mt-4 rounded-circle" alt="avatar" width="90"
+                     height="90">
+                  <p class="small mt-4">{{ comment.user_profile }}</p>
+                  <p class="text-white" style="font-size: 12px;">{{ comment.created_on }}</p>
+               </div>
+               <div class="col-md-8">
+                  <div class="card-body">
+                     <p class="card-text p-3">"{{ comment.body }}"</p>
+                  </div>
+                  <br>
+                  <div class="position-absolute bottom-0 end-0">
+                     <a href="{% url 'post_detail' comment.post.pk %}" class="btn btn-sm btn-lime m-3">See more</a>
+                  </div>
+               </div>
             </div>
-            <br>
-            <div class="position-absolute bottom-0 end-0">
-              <a href="{% url 'post_detail' comment.post.pk %}" class="btn btn-sm btn-lime m-3">See more</a>
-            </div>
-          </div>
-        </div>
+         </div>
+         {% endfor %}
       </div>
-      {% endfor %}
-    </div>
-  </div>
-</div>
+   </div>
 </div>
 {% endblock %}

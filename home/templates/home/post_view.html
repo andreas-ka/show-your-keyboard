@@ -1,49 +1,47 @@
 {% extends 'base.html' %}
 {% load static %}
-
 {% block title %} Show your Keyboard Posts {% endblock %}
-
 {% block content %}
 <!-- See all posts -->
 <div class="container text-center mt-5 mb-5">
-  <h1>Keyboard <span class="lime-h1">posts</span></h1>
+   <h1>Keyboard <span class="lime-h1">posts</span></h1>
 </div>
 <div class="container">
-  <div class="row">
-    {% for post in object_list %}
-    <div class="col-md-6">
-      <div class="card text-white bg-dark mb-3 shadow-lg mb-4">
-        <div class="view overlay">
-          <img class="card-img-top" src="{{ post.image.url }}" alt="Card image cap" alt="Image of keyboard">
-          <a href="#!">
-            <div class="mask rgba-white-slight"></div>
-          </a>
-        </div>
-        <div class="card-body">
-          <h4 class="card-title">{{ post.title }}</h4>
-          <small>By - {{ post.user }} - {{ post.created }}</small>
-          <p class="card-text mt-1">Description: {{ post.description|slice:":100" }}....</p>
-          {% if user.is_authenticated %}
-          {% if user.id == post.user.id %}
-          <a href="{% url 'post_edit' post.pk %}">Edit</a>
-          <a href="{% url 'post_delete' post.pk %}">Delete</a></p>
-          {% endif %}
-          {% endif %}
-          <div class="row">
-            <div class="col">
-              <a href="{% url 'post_detail' post.pk %}" class="btn btn-lime mt-1">See more</a>
+   <div class="row">
+      {% for post in object_list %}
+      <div class="col-md-6">
+         <div class="card text-white bg-dark mb-3 shadow-lg mb-4">
+            <div class="view overlay">
+               <img class="card-img-top" src="{{ post.image.url }}" alt="Card image cap" alt="Image of keyboard">
+               <a href="#!">
+                  <div class="mask rgba-white-slight"></div>
+               </a>
             </div>
-            <div class="col mt-3">
-              <p class="card-text text-end text-white">
-                <i class="fa-solid fa-heart fa-sm text-white"></i> {{ post.total_likes }}
-                <i class="fa-solid fa-comment fa-sm text-white"></i> {{ post.comments.count }}
-              </p>
+            <div class="card-body">
+               <h4 class="card-title">{{ post.title }}</h4>
+               <small>By - {{ post.user }} - {{ post.created }}</small>
+               <p class="card-text mt-1">Description: {{ post.description|slice:":100" }}....</p>
+               {% if user.is_authenticated %}
+               {% if user.id == post.user.id %}
+               <a href="{% url 'post_edit' post.pk %}">Edit</a>
+               <a href="{% url 'post_delete' post.pk %}">Delete</a></p>
+               {% endif %}
+               {% endif %}
+               <div class="row">
+                  <div class="col">
+                     <a href="{% url 'post_detail' post.pk %}" class="btn btn-lime mt-1">See more</a>
+                  </div>
+                  <div class="col mt-3">
+                     <p class="card-text text-end text-white">
+                        <i class="fa-solid fa-heart fa-sm text-white"></i> {{ post.total_likes }}
+                        <i class="fa-solid fa-comment fa-sm text-white"></i> {{ post.comments.count }}
+                     </p>
+                  </div>
+               </div>
             </div>
-          </div>
-        </div>
+         </div>
       </div>
-    </div>
-    {% endfor %}
-  </div>
+      {% endfor %}
+   </div>
 </div>
 {% endblock %}

@@ -1,149 +1,149 @@
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Roboto:wght@400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Roboto:wght@400;500&display=swap");
 
 * {
-    box-sizing: border-box;
-    margin: 0;
+  box-sizing: border-box;
+  margin: 0;
 }
 
 :root {
-    /** Fonts and colors */
-    --title: 'EB Garamond', serif;
-    --main-font: 'Roboto', serif;
-    --lime: #C9F234;
-    --black: #000000;
+  /** Fonts and colors */
+  --title: "EB Garamond", serif;
+  --main-font: "Roboto", serif;
+  --lime: #c9f234;
+  --black: #000000;
 }
 
 html,
 body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    margin: 0;
-    flex-direction: column;
-    min-height: 100vh;
-    display: flex;
+  margin: 0;
+  flex-direction: column;
+  min-height: 100vh;
+  display: flex;
 }
 
 /* btn and link styling */
 .btn-lime:hover {
-    color: #C9F234;
-    background-color: #3a3a3a;
+  color: #c9f234;
+  background-color: #3a3a3a;
 }
 
 a:hover {
-    color: #C9F234;
+  color: #c9f234;
 }
 
 a {
-    color: #FFF;
+  color: #fff;
 }
 
 /* Total likes on post details */
 #total_likes {
-    padding-right: 10px;
+  padding-right: 10px;
 }
 
 /* Background image for site */
 body {
-    background: url("/static/images/background.jpg") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    color: white;
+  background: url("https://res.cloudinary.com/dkqjunjze/image/upload/v1686910848/static/images/background.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: white;
 }
 
 /* navbar styling */
-.navbar-background {
-    background-color: #C9F234;
+.custom-color-navbar {
+  background-color: #c9f234;
 }
 
 .navbar {
-    z-index: 2;
+  z-index: 2;
 }
 
 /* Carousel Styling*/
 .hero-item {
-    height: 480px;
+  height: 480px;
 }
 
 .hero-item-img {
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(0.5);
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.5);
 }
 
 .lime-h1 {
-    color: #C9F234;
+  color: #c9f234;
 }
 
 .btn-lime {
-    background-color: #C9F234;
+  background-color: #c9f234;
 }
 
 .main-text {
-    position: absolute;
-    top: 50px;
-    width: 96.66666666666666%;
-    color: #FFF;
+  position: absolute;
+  top: 50px;
+  width: 96.66666666666666%;
+  color: #fff;
 }
 
 .main-text-carousel {
-    position: absolute;
-    top: 100px;
-    width: 96.66666666666666%;
-    color: #FFF;
+  position: absolute;
+  top: 100px;
+  width: 96.66666666666666%;
+  color: #fff;
 }
 
 /* Post view cards*/
 .card {
-    margin: 5% 0%;
+  margin: 5% 0%;
 }
 
 /* Create Post Form */
 .form-group {
-    max-width: 360px;
-    min-width: 280px;
-    margin: auto;
+  max-width: 360px;
+  min-width: 280px;
+  margin: auto;
 }
 
 /* Index.html columns */
 .card-header {
-    background-color: #C9F234;
-    color: #000000;
+  background-color: #c9f234;
+  color: #000000;
 }
 
 .card-body {
-    border-color: #FFF;
-    border-style: 1px solid;
+  border-color: #fff;
+  border-style: none;
 }
 
 .cards:hover {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.16), 0 4px 10px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.16), 0 4px 10px rgba(0, 0, 0, 0.23);
 }
 
 /* footer */
 footer {
-    font-size: 16px;
-    background-color: #C9F234;
-    margin-top: auto;
+  font-size: 16px;
+  background-color: #c9f234;
+  margin-top: auto;
 }
 
 .messages {
-    background: #f6f6f6;
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-bottom: 10px;
+  background: #f6f6f6;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
 }
 
 .messages.success {
-    background: #d4edda;
-    color: #155724;
+  background: #d4edda;
+  color: #155724;
 }
 
 .messages.error {
-    background: #f8d7da;
-    color: #721c24;
+  background: #f8d7da;
+  color: #721c24;
 }

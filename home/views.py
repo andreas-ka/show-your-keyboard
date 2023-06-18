@@ -1,8 +1,11 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.views.generic import ( 
-                                  ListView, DeleteView, DetailView, 
-                                  CreateView, UpdateView
-                                )
+from django.views.generic import (
+    ListView,
+    DeleteView,
+    DetailView,
+    CreateView,
+    UpdateView,
+)
 from .models import Post, Comment
 from django.http import HttpResponseRedirect
 from .forms import CreatePostForm, EditPostForm, CommentPostForm
@@ -13,62 +16,63 @@ from django.db.models import Q
 from django.contrib import messages
 from django.contrib.messages import get_messages
 from django.contrib.messages.views import SuccessMessageMixin
-    
+
 
 class Index(SuccessMessageMixin, ListView):
     """View for the index or home page"""
-    template_name = 'home/index.html'
+
+    template_name = "home/index.html"
     model = Post
-    context_object_name = 'post'
+    context_object_name = "post"
     success_message = "Success message"
 
-    
     def get_messages(self):
         storage = get_messages(self.request)
         for message in storage:
             print(message)
 
-
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         post_numbers = Post.objects.all().count()
-        context['post_numbers'] = post_numbers
+        context["post_numbers"] = post_numbers
 
-        latest_comments = Comment.objects.order_by('-created_on')[:3]
-        context['latest_comments'] = latest_comments
+        latest_comments = Comment.objects.order_by("-created_on")[:3]
+        context["latest_comments"] = latest_comments
 
-        latest_posts = Post.objects.order_by('-created')[:3]
-        context['latest_posts'] = latest_posts
-        
-        context['messages'] = messages.get_messages(self.request)
+        latest_posts = Post.objects.order_by("-created")[:3]
+        context["latest_posts"] = latest_posts
+
+        context["messages"] = messages.get_messages(self.request)
 
         total_likes = 0
-        for post in context['post']:
+        for post in context["post"]:
             total_likes += post.likes.count()
-            context['total_likes'] = total_likes
+            context["total_likes"] = total_likes
 
         return context
 
 
 class PostView(ListView):
     """View for seeing all the posts"""
+
     model = Post
-    template_name = 'home/post_view.html'
-    ordering = ['-created']
+    template_name = "home/post_view.html"
+    ordering = ["-created"]
 
 
 class PostDetailView(DetailView):
     """View too see details about a specific post"""
+
     model = Post
     form_class = CommentPostForm
-    template_name = 'home/post_detail.html'
+    template_name = "home/post_detail.html"
 
     def get_context_data(self, *args, **kwargs):
         context = super(PostDetailView, self).get_context_data(**kwargs)
-        context = super().get_context_data(**kwargs) 
-        context['comment_form'] = CommentPostForm()
+        context = super().get_context_data(**kwargs)
+        context["comment_form"] = CommentPostForm()
 
-        get_post = get_object_or_404(Post, id=self.kwargs['pk'])
+        get_post = get_object_or_404(Post, id=self.kwargs["pk"])
         total_likes = get_post.total_likes()
 
         liked = False
@@ -87,7 +91,7 @@ class PostDetailView(DetailView):
     def post(self, request, *args, **kwargs):
 
         queryset = Post.objects.all
-        post = get_object_or_404(Post, id=self.kwargs['pk'])
+        post = get_object_or_404(Post, id=self.kwargs["pk"])
         comments = post.comments.order_by("-created_on")
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():
@@ -106,20 +110,17 @@ class PostDetailView(DetailView):
         return render(
             request,
             "home/post_detail.html",
-            {
-                "post": post,
-                "comment_form": comment_form,
-                "liked": liked
-            },
+            {"post": post, "comment_form": comment_form, "liked": liked},
         )
 
 
 class PostCreateView(LoginRequiredMixin, CreateView):
     """View to create a new post"""
+
     model = Post
     form_class = CreatePostForm
-    template_name = 'home/post_create.html'
-    success_url = reverse_lazy('posts')
+    template_name = "home/post_create.html"
+    success_url = reverse_lazy("posts")
 
     def form_valid(self, form):
         form.instance.user = self.request.user
@@ -128,22 +129,24 @@ class PostCreateView(LoginRequiredMixin, CreateView):
 
 class PostUpdateView(UpdateView):
     """View to update your post when logged in"""
+
     model = Post
     form_class = EditPostForm
-    template_name = 'home/post_edit.html'
-    success_url = reverse_lazy('posts')
+    template_name = "home/post_edit.html"
+    success_url = reverse_lazy("posts")
 
 
 class PostDeleteView(DeleteView):
     """View to delete your posts"""
+
     model = Post
-    template_name = 'home/post_delete.html'
-    success_url = reverse_lazy('posts')
+    template_name = "home/post_delete.html"
+    success_url = reverse_lazy("posts")
 
 
 def LikeView(request, pk):
     """View to see likes"""
-    post = get_object_or_404(Post, id=request.POST.get('post_like_btn'))
+    post = get_object_or_404(Post, id=request.POST.get("post_like_btn"))
     liked = False
     if post.likes.filter(id=request.user.id).exists():
         post.likes.remove(request.user)
@@ -151,18 +154,20 @@ def LikeView(request, pk):
     else:
         post.likes.add(request.user)
         liked = True
-    return HttpResponseRedirect(reverse('post_detail', args=[str(pk)]))
+    return HttpResponseRedirect(reverse("post_detail", args=[str(pk)]))
 
 
 class SearchResultsView(ListView):
-    """ Search the website and posts """
+    """Search the website and posts"""
+
     model = Post
-    template_name = 'home/search_results.html'
+    template_name = "home/search_results.html"
 
     def get_queryset(self):  # new
         query = self.request.GET.get("q")
         object_list = Post.objects.filter(
-            Q(title__icontains=query) | Q(description__icontains=query) | Q(tags__icontains=query)
+            Q(title__icontains=query)
+            | Q(description__icontains=query)
+            | Q(tags__icontains=query)
         )
         return object_list
-    

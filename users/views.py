@@ -10,35 +10,40 @@ from django.contrib.auth import authenticate, login, logout
 
 
 def login_user(request):
-    """ Login form and messages """
+    """Login form and messages"""
     if request.method == "POST":
-        username = request.POST['username']
-        password = request.POST['password']
+        username = request.POST["username"]
+        password = request.POST["password"]
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
             messages.success(request, "You have been successfully logged in.")
-            return redirect('home')
+            return redirect("home")
         else:
             messages.error(request, "There was an error during login.")
-            return redirect('login')
+            return redirect("login")
     else:
-        return render(request, 'register/login.html', {'messages': messages.get_messages(request)})
+        return render(
+            request, "register/login.html",
+            {"messages": messages.get_messages(request)}
+        )
 
 
 class UserRegister(generic.CreateView):
-    """ View for user registration """
+    """View for user registration"""
+
     form_class = RegisterForm
-    template_name = 'registration/register.html'
-    success_url = reverse_lazy('login')
+    template_name = "registration/register.html"
+    success_url = reverse_lazy("login")
 
 
 class ProfileEdit(generic.UpdateView):
-    """ View for edit your profile """
+    """View for edit your profile"""
+
     model = Profile
     form_class = ProfileEditForm
-    template_name = 'registration/profile.html'
-    success_url = reverse_lazy('posts')
+    template_name = "registration/profile.html"
+    success_url = reverse_lazy("posts")
 
     def get_object(self):
         return self.request.user.profile

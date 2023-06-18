@@ -262,6 +262,8 @@ ____________________________________________________________________________
 
 
 ### W3 CSS Checker
+![CSS checker](http://jigsaw.w3.org/css-validator/images/vcss)
+![CSS checker](http://jigsaw.w3.org/css-validator/images/vcss-blue)
 
 
 ### Contrast Checker
