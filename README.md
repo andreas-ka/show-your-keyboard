@@ -4,9 +4,12 @@
 ### Create a user and, post your keyboard, like and comment on others' posts.
       
 
-### Link to the finished site: 
+### Link to the finished site: [LINK](https://show-your-keyboard.herokuapp.com)
 _____________________________________________________________________________
 ## Am I responsive image 
+
+![Screenshot](./static/images/amiresponsive_readme.png)
+
 
 _____________________________________________________________________________
 ## Content:

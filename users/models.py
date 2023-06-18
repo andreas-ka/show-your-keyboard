@@ -18,7 +18,7 @@ class Profile(models.Model):
         on_delete=models.CASCADE
     )
     image = ResizedImageField(
-        size=[100, None],
+        size=[90, 90],
         quality=100,
         upload_to="profiles/",
         force_format="WEBP",
