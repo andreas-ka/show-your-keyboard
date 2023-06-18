@@ -20,13 +20,12 @@ Used a11ys Color contrast validatyor [Link](https://color.a11y.com)
 
 ### Lighthouse
 
-
-### Bug testing
+### Rensponsiveness and further testing
 
 - All done and registered in my google todo docs, bugs also logged in my kanban board under projects on github.   
-[Link](https://docs.google.com/spreadsheets/d/1s44J9bTQyVY0vnPAtlb3FIwGDRyj-bNHVxq4E8CToME/edit?usp=sharing)
+[Link to google docs](https://docs.google.com/spreadsheets/d/1s44J9bTQyVY0vnPAtlb3FIwGDRyj-bNHVxq4E8CToME/edit?usp=sharing)    
+![Screenshot](./static/images/testing_docs_readme.png)   
+Project boards with bugs [Link](https://github.com/-ka/projects/6)    
 
 
-### Responsiveness and Further Testing
-
-[Back to top](README.md)
+[Back to Readme](README.md)

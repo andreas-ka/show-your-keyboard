@@ -45,14 +45,7 @@ _____________________________________________________________________________
     - [Languages used](#languages)
     - [Frameworks, Packages & Programs Used](#frameworks-packages--programs-used)
 - ### Testing
-    - [PEP8](#pep8)
-    - [W3 HTML Checker](#w3-html-checker)
-    - [CSS Checker](#w3-css-checker)
-    - [Contrast Checker](#contrast-checker)
-    - [Lighthouse](#lighthouse)
-    - [Bug testing](#bug-testing)
-    - [Responsiveness](#responsiveness-and-further-testing)
-    - [Fixed bugs](#fixed-bugs)
+    - [TESTING.md](#testingmd)
 - ### Development and Deployment
     - [Development](#development)
     - [Deploy to Heroku](#deployment)
@@ -91,10 +84,6 @@ _____________________________________________________________________________
 - Show your keyboard was developed using an agile method. That includes using GitHub issues, user stories and kanban boards.
 That gave me an overview of tasks structured in a to-do, in-progress and done way.
 Project board with user stories [Link](https://github.com/users/andreas-ka/projects/5)
-
-- Also used a project with a Kanban board for all my bugs during development; they were also categorized to keep track
-of critical ones and minor ones. 
-Project board with bugs [Link](https://github.com/users/andreas-ka/projects/6)   
 
 _____________________________________________________________________________  
 ## Site user goal
@@ -254,34 +243,10 @@ ____________________________________________________________________________
 
 [Back to top](#show-your-keyboard)
 ____________________________________________________________________________  
-## Testing
+## Testing.md
 
-### PEP8
-
-
-
-### W3 HTML Checker
-
-
-### W3 CSS Checker
-![CSS checker](http://jigsaw.w3.org/css-validator/images/vcss)
-![CSS checker](http://jigsaw.w3.org/css-validator/images/vcss-blue)
-
-
-### Contrast Checker
-Used a11ys Color contrast validatyor [Link](https://color.a11y.com)   
-![Screenshot](./static/images/contrast-readme.png)
-
-### Lighthouse
-
-
-### Bug testing
-
-- All done and registered in my google todo docs, bugs also logged in my kanban board under projects on github.   
-[Link](https://docs.google.com/spreadsheets/d/1s44J9bTQyVY0vnPAtlb3FIwGDRyj-bNHVxq4E8CToME/edit?usp=sharing)
-
-
-### Responsiveness and Further Testing
+- For tests i refer to my [TESTING.md](TESTING.md) file.  
+It contains website and code checkers, bug reports and fixes.
 
 [Back to top](#show-your-keyboard)
 _____________________________________________________________________________  
