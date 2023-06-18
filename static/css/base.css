@@ -47,7 +47,7 @@ a {
 
 /* Background image for site */
 body {
-  background: url("https://res.cloudinary.com/dkqjunjze/image/upload/v1686910848/static/images/background.jpg") no-repeat center center fixed;
+  background: url("/static/images/background.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
