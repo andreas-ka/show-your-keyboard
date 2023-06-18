@@ -258,6 +258,8 @@ ____________________________________________________________________________
 
 ### PEP8
 
+
+
 ### W3 HTML Checker
 
 
@@ -267,6 +269,8 @@ ____________________________________________________________________________
 
 
 ### Contrast Checker
+Used a11ys Color contrast validatyor [Link](https://color.a11y.com)   
+![Screenshot](./static/images/contrast-readme.png)
 
 ### Lighthouse
 
