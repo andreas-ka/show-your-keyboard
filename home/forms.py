@@ -3,7 +3,7 @@ from .models import Post, Comment
 
 
 class CreatePostForm(forms.ModelForm):
-    # Create a new post form #
+    """ Create a new post form """
     class Meta:
         model = Post
         fields = ('title', 'description', 'case', 'switches', 'keycaps',
@@ -21,7 +21,7 @@ class CreatePostForm(forms.ModelForm):
 
 
 class EditPostForm(forms.ModelForm):
-    # Edit post form #
+    """ Edit post form """
     class Meta:
         model = Post
         fields = ('title', 'description', 'case', 'switches',
@@ -38,7 +38,7 @@ class EditPostForm(forms.ModelForm):
 
 
 class CommentPostForm(forms.ModelForm):
-    # Comment form #
+    """ Comment form """
     class Meta:
         model = Comment
         fields = ('body',)

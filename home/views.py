@@ -6,16 +6,15 @@ from django.views.generic import (
     CreateView,
     UpdateView,
 )
-from .models import Post, Comment
-from django.http import HttpResponseRedirect
-from .forms import CreatePostForm, EditPostForm, CommentPostForm
-from django.urls import reverse_lazy, reverse
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.db.models import Sum, Count
+from django.urls import reverse_lazy, reverse
+from django.http import HttpResponseRedirect
 from django.db.models import Q
 from django.contrib import messages
 from django.contrib.messages import get_messages
 from django.contrib.messages.views import SuccessMessageMixin
+from .models import Post, Comment
+from .forms import CreatePostForm, EditPostForm, CommentPostForm
 
 
 class Index(SuccessMessageMixin, ListView):
@@ -163,7 +162,7 @@ class SearchResultsView(ListView):
     model = Post
     template_name = "home/search_results.html"
 
-    def get_queryset(self):  # new
+    def get_queryset(self):
         query = self.request.GET.get("q")
         object_list = Post.objects.filter(
             Q(title__icontains=query)

@@ -28,7 +28,8 @@ Used a11ys Color contrast validator [Link](https://color.a11y.com)
 
 ### Lighthouse
 Scores from googles Lighthouse below, worth noticing is that i supply the 3 pages that contains 
-images and more loading, register, login and profile page only contains forms.    
+images and more loading, register, login and profile page only contains forms.   
+Much of the low performance seem to be due to the host heroku, nothing i can fix myself. 
 
 #### Mobile
 Index.html.    
@@ -55,8 +56,12 @@ Post details.
 - All done and registered in my google todo docs, bugs also logged in my kanban board under projects on github.   
 Below is a screenshot snippet from the google docs, please click link to see the full document.   
 [Link to google docs](https://docs.google.com/spreadsheets/d/1s44J9bTQyVY0vnPAtlb3FIwGDRyj-bNHVxq4E8CToME/edit?usp=sharing)    
-![Screenshot](./static/images/testing_docs_readme.png)   
-Project boards with bugs [Link](https://github.com/-ka/projects/6)    
+![Screenshot](./static/images/testing_docs_readme.png)    
+
+
+
+### Full project board with bugs [Link](https://github.com/users/andreas-ka/projects/6/views/1)    
+![Screenshot](./static/images/kanban_board_bugs.png)  
 
 
 [Back to Readme](README.md)

@@ -1,13 +1,13 @@
+from datetime import datetime, date
 from django.db import models
 from django.contrib.auth.models import User
 from django_resized import ResizedImageField
 from PIL import Image
 from django.urls import reverse
-from datetime import datetime, date
 
 
 class Post(models.Model):
-    # Post model #
+    """ Post model """
     user = models.ForeignKey(User, related_name="post_owner", on_delete=models.CASCADE)
     title = models.CharField(max_length=200, null=False, blank=False)
     description = models.CharField(max_length=1000, null=False, blank=False)
@@ -37,7 +37,7 @@ class Post(models.Model):
 
 
 class Comment(models.Model):
-    # Comment model #
+    """ Comment model """
     post = models.ForeignKey(Post, on_delete=models.CASCADE,
                              related_name="comments")
     user_profile = models.ForeignKey(User, related_name="user_profile", on_delete=models.CASCADE)

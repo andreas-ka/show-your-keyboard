@@ -86,7 +86,8 @@ _____________________________________________________________________________
 
 - Show your keyboard was developed using an agile method. That includes using GitHub issues, user stories and kanban boards.
 That gave me an overview of tasks structured in a to-do, in-progress and done way.
-Project board with user stories [Link](https://github.com/users/andreas-ka/projects/5)
+Project board with user stories [Link](https://github.com/users/andreas-ka/projects/5)     
+![Screenshot](./static/images/kanban_board.png)
 
 _____________________________________________________________________________  
 ## Site user goal
@@ -276,6 +277,8 @@ _____________________________________________________________________________
 
 ## Credits.  
 
+Inspired by CI's blog tutorial "I think, therefor i blog"
+
 Docs for using Django-Resized 
 [Link](https://pypi.org/project/django-resized/)
 
@@ -302,14 +305,39 @@ This is the bootstrap footer template i used for the website
 [Link](https://mdbootstrap.com/docs/standard/navigation/footer/)
 
 Static text on a carousel
-[Link](http://www.prepbootstrap.com/bootstrap-template/carousel-static-headline)
+[Link](http://www.prepbootstrap.com/bootstrap-template/carousel-static-headline)    
 
-Helpful tutorial by CI's own Dee MC
+Several links to different posts on stackoverflow regarding DetailView
+and edit, delete.   
+[Link](https://stackoverflow.com/questions/46791757/having-an-edit-form-and-a-detail-view-on-the-same-page)
+[Link](https://stackoverflow.com/questions/70815356/update-data-inside-class-based-detail-view)
+[Link](https://stackoverflow.com/questions/61803490/django-modify-a-generic-detail-view-to-manage-a-form-and-post-data-django)
+
+_____________________________________________________________________________   
+
+## Youtube tutorials i have watched:    
+
+Helpful tutorial by CI's own Dee MC.
 [Link](https://www.youtube.com/watch?v=sBjbty691eI&ab_channel=DeeMc)
 
+Programming with Mosh.
+[Link](https://www.youtube.com/watch?v=rHux0gMZ3Eg)    
+
+Python Django 7 hours course
+[Link](https://www.youtube.com/watch?v=PtQiiknWUcI&t=6190s)   
+
+Bobs Programmning Academy
+[Link](https://www.youtube.com/watch?v=EUMpUUXKvP0&t=101s)   
+
+Telusko Django tutorial
+[Link](https://www.youtube.com/watch?v=OTmQOjsl0eg&t=1880s)
+
+_____________________________________________________________________________   
 
 ### Acknowledgements
 - My Mentor for continuous helpful feedback.
 
 - Tutor support at Code Institute for their support.    
+
+- My family for letting me pursue my career change.   
 [Back to top](#show-your-keyboard)

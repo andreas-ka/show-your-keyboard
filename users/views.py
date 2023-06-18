@@ -1,12 +1,12 @@
 from django.shortcuts import render, redirect
 from django.views.generic import UpdateView
 from django.views import generic
-from django.contrib.auth.forms import UserCreationForm, UserChangeForm
-from .forms import RegisterForm, ProfileEditForm
-from django.urls import reverse_lazy, reverse
-from .models import Profile
+from django.contrib.auth import authenticate, login
 from django.contrib import messages
-from django.contrib.auth import authenticate, login, logout
+from django.urls import reverse_lazy
+from .forms import RegisterForm, ProfileEditForm
+from .models import Profile
+
 
 
 def login_user(request):
