@@ -6,11 +6,11 @@
 <div class="container text-center mt-5 mb-5">
    <h1>Keyboard <span class="lime-h1">posts</span></h1>
 </div>
-<div class="container">
+<div class="container mb-5">
    <div class="row">
       {% for post in object_list %}
-      <div class="col-md-6">
-         <div class="card text-white bg-dark mb-3 shadow-lg mb-4">
+      <div class="col-md-6 col-lg-4">
+         <div class="card text-white bg-dark mb-3 shadow-lg mb-4 mx-auto">
             <div class="view overlay">
                <img class="card-img-top" src="{{ post.image.url }}" alt="Card image cap" alt="Image of keyboard">
                <a href="#!">
@@ -29,7 +29,7 @@
                {% endif %}
                <div class="row">
                   <div class="col">
-                     <a href="{% url 'post_detail' post.pk %}" class="btn btn-lime mt-1" aria-label="Link to see a detail view of that post">See more</a>
+                     <a href="{% url 'post_detail' post.pk %}" class="btn btn-lime mt-1" alt="Link the posts" aria-label="Link to see a detail view of that post">See more</a>
                   </div>
                   <div class="col mt-3">
                      <p class="card-text text-end text-white">

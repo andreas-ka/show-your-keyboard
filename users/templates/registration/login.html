@@ -9,23 +9,21 @@
    <ul class="messages">
       {% for message in messages %}
       <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>
-      {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
-      {{ message }}
-      </li>
-      {% endfor %}
+         {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+         {{ message }}
+         </li>
+         {% endfor %}
    </ul>
    {% endif %}
    <br>
    <div class="form-group">
       <form action="{%url 'login' %}" method="POST">
          {% csrf_token %}
-         {{ form.as_p }}
+         <input type="text" name="username" class="form-control" placeholder="Username">
+         <br>
+         <input type="password" name="password" class="form-control" placeholder="Password">
+         <br>
          <button input type="submit" value="login" class="btn btn-lime mb-4 mt-4">Sign in</button>
-         <!-- <input type="text" name="username" class="form-control" placeholder="Username">
-            <br>
-            <input type="password" name="password" class="form-control" placeholder="Password">
-            <br>
-            <button input type="submit" value="login" class="btn btn-lime mb-4 mt-4">Sign in</button>-->
       </form>
    </div>
    <!-- Register buttons -->

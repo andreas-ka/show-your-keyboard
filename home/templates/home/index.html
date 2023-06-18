@@ -6,9 +6,9 @@
 <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel">
    <!-- Indicators/dots -->
    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active" alt="button to show what images is shown in carousel"></button>
-      <button type="button" data-bs-target="#demo" data-bs-slide-to="1" alt="button to show what images is shown in carousel"></button>
-      <button type="button" data-bs-target="#demo" data-bs-slide-to="2" alt="button to show what images is shown in carousel"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active" aria-label="button to show what images is shown in carousel"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="1" aria-label="button to show what images is shown in carousel"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="2" aria-label="button to show what images is shown in carousel"></button>
    </div>
    <!-- The slideshow/carousel -->
    <div class="carousel-inner">
@@ -55,14 +55,14 @@
 <div class="container">
    <div class="row justify-content-md-center">
       <div class="col col-lg-2 text-center">
-         <h5><span class="lime-h1">Total Posts</span><br>
+         <h4><span class="lime-h1">Total Posts</span><br>
             {{ post_numbers }}
-         </h5>
+         </h4>
       </div>
       <div class="col col-lg-2 text-center">
-         <h5><span class="lime-h1">Total Likes</span><br>
+         <h4><span class="lime-h1">Total Likes</span><br>
             {{ total_likes }} 
-         </h5>
+         </h4>
          {% for message in messages %}
          <div class="alert {{ message.tags }} alert-dismissible" role="alert">
             <p>{{ messages }}</p>
