@@ -7,6 +7,14 @@ Below you will find all my tests on this project.
 
 
 ### W3 HTML Checker
+Index.html.    
+![Screenshot](./static/images/w3_html_index.png)    
+
+Posts view.        
+![Screenshot](./static/images/w3_html_posts.png)
+
+Postdetails   
+![Screenshot](./static/images/w3_html_postdetail.png)    
 
 
 ### W3 CSS Checker
@@ -19,6 +27,28 @@ Used a11ys Color contrast validator [Link](https://color.a11y.com)
 ![Screenshot](./static/images/contrast-readme.png)
 
 ### Lighthouse
+Scores from googles Lighthouse below, worth noticing is that i supply the 3 pages that contains 
+images and more loading, register, login and profile page only contains forms.    
+
+#### Mobile
+Index.html.    
+![Screenshot](./static/images/mobile_lighthouse_index.png)     
+
+Posts.    
+![Screenshot](./static/images/mobile_lighthouse_postview.png)    
+
+Post details.     
+![Screenshot](./static/images/mobile-lighthouse-postdetail.png)    
+
+#### Desktop
+Index.html.     
+![Screenshot](./static/images/desktop_lighthouse_index.png)
+
+Posts.   
+![Screenshot](./static/images/desktop_lighthouse_posts.png)     
+
+Post details.    
+![Screenshot](./static/images/desktop_lighthouse_postdetails.png)    
 
 ### Rensponsiveness and further testing
 
