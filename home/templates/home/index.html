@@ -13,26 +13,26 @@
    <!-- The slideshow/carousel -->
    <div class="carousel-inner">
       <div class="carousel-item active hero-item">
-         <img src="{% static 'images/carousel1.webp'%}" class="d-block w-100 hero-item-img" alt="Image of keyboard">
+         <img src="{% static 'images/carousel1.webp'%}" class="d-block w-100 hero-item-img" aria-label="Image of keyboard">
          <div class="carousel-caption top-0 mt-5">
          </div>
       </div>
       <div class="carousel-item hero-item">
-         <img src="{% static 'images/carousel3.webp'%}" class="d-block w-100 hero-item-img" alt="Image of keyboard">
+         <img src="{% static 'images/carousel3.webp'%}" class="d-block w-100 hero-item-img" aria-label="Image of keyboard">
          <div class="carousel-caption top-0 mt-5">
          </div>
       </div>
       <div class="carousel-item hero-item">
-         <img src="{% static 'images/carousel4.webp'%}" class="d-block w-100 hero-item-img" alt="Image of keyboard">
+         <img src="{% static 'images/carousel4.webp'%}" class="d-block w-100 hero-item-img" aria-label="Image of keyboard">
          <div class="carousel-caption top-0 mt-5">
          </div>
       </div>
    </div>
    <!-- Left and right controls/icons -->
-   <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev" alt="previous image">
+   <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev" aria-label="previous image">
    <span class="carousel-control-prev-icon"></span>
    </button>
-   <button class="carousel-control-next" type="button" data-bs-target="#hero-carousel" data-bs-slide="next" alt="next image">
+   <button class="carousel-control-next" type="button" data-bs-target="#hero-carousel" data-bs-slide="next" aria-label="next image">
    <span class="carousel-control-next-icon"></span>
    </button>
 </div>
@@ -114,7 +114,7 @@
          </div>
          {% for comment in latest_comments %}
          <div class="card text-white bg-dark mb-3 shadow-lg" style="max-width: 540px">
-            <div class="card-header">Commented on: <a href="{% url 'post_detail' comment.post.pk %}" style="color:black;"
+            <div class="card-header">Commented on: <a href="{% url 'post_detail' comment.post.pk %}" style="color:black;" aria-label="Link to commented post"
                class="card-link">{{ comment.post }}</a></div>
             <div class="row g-0">
                <div class="col-md-4 text-center">
@@ -129,7 +129,7 @@
                   </div>
                   <br>
                   <div class="position-absolute bottom-0 end-0">
-                     <a href="{% url 'post_detail' comment.post.pk %}" class="btn btn-sm btn-lime m-3">See more</a>
+                     <a href="{% url 'post_detail' comment.post.pk %}" class="btn btn-sm btn-lime m-3" aria-label="Link to specific posts detail page">See more</a>
                   </div>
                </div>
             </div>

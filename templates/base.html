@@ -20,7 +20,7 @@
     <!-- Navbar -->
       <nav class="navbar navbar-expand-lg custom-color-navbar">
          <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}">Show your Keyboard</a>
+            <a class="navbar-brand" href="{% url 'home' %}" aria-label="Link to landing page">Show your Keyboard</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -28,31 +28,31 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                     <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                     <a class="nav-link active" aria-current="page" href="{% url 'home' %}" aria-label="Link to landing page">Home</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="{% url 'posts' %}">Posts</a>
+                     <a class="nav-link" href="{% url 'posts' %}" aria-label="Link to posts page">Posts</a>
                   </li>
                   {% if user.is_authenticated %}
                   <li class="nav-item">
-                     <a class="nav-link" href="{% url 'post_create' %}">Create Post</a>
+                     <a class="nav-link" href="{% url 'post_create' %}" aria-label="Link to create a post">Create Post</a>
                   </li>
                   {% endif %}
                </ul>
                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                   {% if user.is_authenticated %}
                   <li class="nav-item">
-                     <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                     <a class="nav-link" href="{% url 'logout' %}" aria-label="Link to logout">Logout</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="{% url 'profile_edit' %}">Profile</a>
+                     <a class="nav-link" href="{% url 'profile_edit' %}" aria-label="Link to profile">Profile</a>
                   </li>
                   {% else %}
                   <li class="nav-item">
-                     <a class="nav-link" href="{% url 'register' %}">Register</a>
+                     <a class="nav-link" href="{% url 'register' %}" aria-label="Link to register">Register</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="{% url 'login' %}">Login</a>
+                     <a class="nav-link" href="{% url 'login' %}" aria-label="Link to login">Login</a>
                   </li>
                   {% endif %}
                </ul>
