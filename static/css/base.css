@@ -102,11 +102,19 @@ body {
   margin: 5% 0%;
 }
 
-/* Create Post Form */
+/* Form styling */
 .form-group {
   max-width: 360px;
-  min-width: 280px;
+  min-width: 230px;
   margin: auto;
+}
+
+#id_image {
+  max-width: 250px;
+}
+
+.form-group a {
+  max-width: 250px;
 }
 
 /* Index.html columns */
@@ -147,3 +155,12 @@ footer {
   background: #f8d7da;
   color: #721c24;
 }
+
+/* Smaller screens like smartphones 
+@media (max-width: 300px) {
+
+.form-group {
+  width: 90% !important;
+}
+}
+*/

@@ -19,12 +19,16 @@
       </div>
    </form>
 </div>
-{% else %}
-<h3>Please register and login to view this page...</h3>
-<br />
-<a href="{% url 'posts' %}" class="btn btn-lime">Back</a>
 {% endif %}
 {% else %}
-<h3>Please register and login to view this page...</h3>
+<br>
+<div class="row text-center">
+   <h3>Please register and login to view this page...</h3>
+   <br>
+   <div class="col">
+      <br>
+      <a href="{% url 'posts' %}" class="btn btn-lg btn-lime">Back</a>
+   </div>
+</div>
 {% endif %}
 {% endblock %}

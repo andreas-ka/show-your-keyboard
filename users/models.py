@@ -29,10 +29,10 @@ class Profile(models.Model):
         return str(self.user.username)
 
 
-""" Creates a profile for user when they register on the website
-    Got help from CI tutors implementing this """
 @receiver(post_save, sender=User)
 def create_or_update_user_profile(sender, instance, created, **kwargs):
+    """ Creates a profile for user when they register on the website
+    Got help from CI tutors implementing this """
 
     if created:
         Profile.objects.create(user=instance)

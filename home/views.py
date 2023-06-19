@@ -30,6 +30,7 @@ class Index(SuccessMessageMixin, ListView):
         for message in storage:
             print(message)
 
+    """ Get total posts, total likes, and latest post and comments """
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         post_numbers = Post.objects.all().count()
@@ -66,6 +67,8 @@ class PostDetailView(DetailView):
     form_class = CommentPostForm
     template_name = "home/post_detail.html"
 
+    """ Get total likes for the specific post and display it
+    Set the comment form """
     def get_context_data(self, *args, **kwargs):
         context = super(PostDetailView, self).get_context_data(**kwargs)
         context = super().get_context_data(**kwargs)
@@ -88,6 +91,7 @@ class PostDetailView(DetailView):
         return context
 
     def post(self, request, *args, **kwargs):
+        """ Creates the comments and displays all comments """
 
         queryset = Post.objects.all
         post = get_object_or_404(Post, id=self.kwargs["pk"])
@@ -122,6 +126,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
     success_url = reverse_lazy("posts")
 
     def form_valid(self, form):
+        """ Check so the form is valid """
         form.instance.user = self.request.user
         return super(PostCreateView, self).form_valid(form)
 
@@ -163,6 +168,7 @@ class SearchResultsView(ListView):
     template_name = "home/search_results.html"
 
     def get_queryset(self):
+        """ Query the object_list to get all posts that matches the search """
         query = self.request.GET.get("q")
         object_list = Post.objects.filter(
             Q(title__icontains=query)

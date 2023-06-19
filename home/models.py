@@ -8,7 +8,9 @@ from django.urls import reverse
 
 class Post(models.Model):
     """ Post model """
-    user = models.ForeignKey(User, related_name="post_owner", on_delete=models.CASCADE)
+    user = models.ForeignKey(
+        User, related_name="post_owner", on_delete=models.CASCADE
+        )
     title = models.CharField(max_length=200, null=False, blank=False)
     description = models.CharField(max_length=1000, null=False, blank=False)
     case = models.CharField(max_length=100)
@@ -40,7 +42,9 @@ class Comment(models.Model):
     """ Comment model """
     post = models.ForeignKey(Post, on_delete=models.CASCADE,
                              related_name="comments")
-    user_profile = models.ForeignKey(User, related_name="user_profile", on_delete=models.CASCADE)
+    user_profile = models.ForeignKey(
+        User, related_name="user_profile", on_delete=models.CASCADE
+        )
     email = models.EmailField()
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)

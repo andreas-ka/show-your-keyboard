@@ -65,17 +65,40 @@ _____________________________________________________________________________
 ### Achieved:
 
 -   Creating a website similar to a social media app where users can create posts and upload images, interact 
-And share their joy for custom mechanical keyboards.
+and share their joy for custom mechanical keyboards.
 
 ### Future projects: 
 
-- Create profile pages where you can see statistics for each user
-- Implement a recovery password function
+- Create profile pages where you can see statistics for each user.
+- Implement a recovery password function.
 
 ## Audience:
 
-- This site is mainly targeted against people who already have an interest in mechanical keyboards, but
-It can also inspire people to join the hobby.
+- This site is mainly targeted at people who already have an interest in mechanical keyboards, but
+it can also inspire people to join the hobby.   
+- Expected age range 14-50, primarily males.   
+- People who have an income because the hobby is quite expensive.
+
+## Why would they visit the website in the first place
+
+- They have an interest in mechanical keyboards.
+- Seek information about mechanical keyboards.
+- Learn more about mechanical keyboards.
+- Getting inspired by other builds.
+- Connect with others in the community.
+- Recruit people to a group buy.
+
+## Why would they return to the website
+
+- Getting inspired by others' custom keyboards.
+- See what's new in the build community.
+- Create a new post for their new build.
+- Change their profile image.
+- Search for info about a specific keyboard.
+- Connect with others in the community.
+- Ask questions to peers.
+- Recruit people to a group buy
+
 
 [Back to top](#show-your-keyboard)
 
@@ -91,30 +114,30 @@ Project board with user stories [Link](https://github.com/users/andreas-ka/proje
 
 _____________________________________________________________________________  
 ## Site user goal
-Users of Show Your Keyboard could have several goals, share and take part in keyboards posts, praise posts with comments and follow content pandering to their interests. Users can also use the site to keep an inventory of their keyboards, meet like minded people and hopefully 
+Users of Show Your Keyboard could have several goals, share and take part in keyboards posts, praise posts with comments and follow content pandering to their interests. Users can also use the site to keep an inventory of their keyboards, meet like-minded people and, hopefully 
 get a friend for life along the way.
 
 ## Site owner goal
-As a site owner the goal is to provide a stable and enjoyable user experience with a good website design, that also encourages user interaction. Making sure the content is well structured, and easily managed through the admin panel.
+As a site owner, the goal is to provide a stable and enjoyable user experience with a good website design that encourages user interaction. Ensure the content is well structured and easily managed through the admin panel.
 
 [Back to top](#show-your-keyboard)
 _____________________________________________________________________________  
 ## User Stories
-- As a Site User I want the navigation to be user-friendly so that I'm able to easily navigate through the app content.
-- As a Site User I want to know info on what the app is about so that I can use its functionality for mutual benefit
-- As a Site User I can be able to register, login and logout from the website so that I can have a safe environment to work with
-- As a Site User I can visit the post page and view all the posts that's been made to the website
-- As a Site User I can click on a post and get a detail view of that particular post
-- As a Site User I can if im logged in click on a post and add comments and like that post
-- As a Site User I can easily see on the landing page the newset post and comments that has been made
-- As a Site User I can if im logged in go to my profile page and then change my profile image
-- As a Site User I can if im registreted create my own post
-- As a Site User I can if im logged in edit and delete my created posts if i want to
-- As a Site User I can easly see the links inte the footer and contact the creator of the website
+- As a Site User, I want the navigation to be user-friendly so I can easily navigate the app content.
+- As a Site User, I want to know info on what the app is about so that I can use its functionality for mutual benefit
+- As a Site User, I can be able to register, login and logout from the website so that I can have a safe environment to work with
+- As a Site User, I can visit the posting page and view all the posts that have been made to the website
+- As a Site User, I can click on a post and get a detailed view of that particular post
+- As a Site User, I can, if I'm logged in, click on a post and add comments and like that post
+- As a Site User, I can easily see on the landing page the newest post and comments that have been made
+- As a Site User, I can, if I'm logged in, go to my profile page and then change my profile image
+- As a Site User, I can, if I'm registered, create my post
+- As a Site User, I can, if I'm logged in, edit and delete my created posts if I want to
+- As a Site User, I can easily see the links in the footer and contact the creator of the website
 
 ## Site Owner Stories
-- As a Site Owner I want to restrict access to sections of an app to unauthenticated users so that basic standards of data protection are met
-- As a Site Owner I would like that authenticated users have full access to web app and its functionality
+- As a Site Owner, I want to restrict access to sections of an app to unauthenticated users so that basic standards of data protection are met
+- As a Site Owner, I would like that authenticated users to have full access to the web app and its functionality
 
 _____________________________________________________________________________ 
 
@@ -222,7 +245,7 @@ _____________________________________________________________________________
 ## Imagery
 
 - All images on the website are from Tristan ("Captain Sterling"), a legend in the keyboard community.
-- Profile avatars are free images found on [Pexel](https://www.pexels.com/)
+- Profile avatars are free images found on [Pexel](https://www.pexels.com/) and [freepik](https://www.freepik.com)
 - Avatars and background are from [freepik](https://www.freepik.com/) and free to use.
 [Back to top](#show-your-keyboard)
 
@@ -256,17 +279,81 @@ It contains website and code checkers, bug reports and fixes.
 _____________________________________________________________________________  
 
 ## Development
-- Was done in Gitpod
+
+- All code was done in Gitpod
 - Comitted and pushed to my GitHub repository
-[ElephantSQL](https://www.elephantsql.com/) used for Postgres
+[ElephantSQL](https://www.elephantsql.com/) used for Postgres.
+
+## How to start a Django project
+- Created a new repository on GitHub "Show your Keyboard"
+- Opened the workspace on Gitpod
+- In the terminal run the command "pip3 install django"
+- Install your supporting libraries with
+    - pip3 install dj_database_url==0.5.0 psycopg2 (PostgresSQL)
+    - pip3 install dj3-cloudinary-storage (Cloudinary Libraries)
+    - pip3 install urllib3==1.26.15 (Cloudinary Libraries)
+- Create a requirements.txt to later on tell heroku what libraries it need to install
+    - pip3 freeze --local > requirements.txt
+- Create your project with the following command
+    - django-admin startproject ShowYourKeyboard . (Don't forget to add the dot at the end)
+- Create your app 
+    - python3 manage.py startapp home (created the "home" app)
+- Add the apps to "INSTALLED APPS" in your settings.py file
+- Migrate your changes to the database with python3 manage.py migrate
+- Create an account on ElephantSQL
+- Create an account on Heroku, create a new "app," and add your DATABASE_URL to config vars in settings
+- !IMPORTANT create an env.py file in the top root directory
+    - In your env.py, at the top, "import os"
+    - Set environment variables: os.environ["DATABASE_URL"] = "Paste in ElephantSQL database URL"
+    - Add a secret key: os.environ["SECRET_KEY"] = "Make up your own randomSecretKey"
+    - Add the secret key to your config vars on Heroku
+    - Go to your settings.py and add the following code:
+        ("This will hide all your secret information on the website from being deployed to GitHub")
+        from pathlib import Path     
+        import os      
+        import dj_database_url    
+        if os.path.isfile("env.py"):    
+        import env   
+    - Remove the insecure key from settings.py SECRET_KEY = os.environ.get('SECRET_KEY')
+- Comment out the Database section in settings.py and add:
+    - DATABASES = {     
+        'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))    
+        }   
+- Go back to Heroku and add your Cloudinary url to config vars:
+    - CLOUDINARY_URL, cloudinary://**********
+- In your settings.py, add Cloudinary to your INSTALLED APPS in this order:
+    - 'cloudinary_storage',
+    - 'django.contrib.staticfiles',
+    - 'Cloudinary',
+- Now you need to tell Django to use Cloudinary to store media and static files:
+    - STATIC_URL = '/static/'
+
+    - STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+    - STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
+    - STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+    - MEDIA_URL = '/media/'
+    - DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+- Link the templates dir:
+    - TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+    - Change templates dir to TEMPLATES_DIR
+        TEMPLATES =      
+        …,    
+        'DIRS': [TEMPLATES_DIR],   
+- Create the following folder in top root directory:
+    - media
+    - static
+    - templates
+    - Procfile (!IMPORTANT to use capital P)
+- Now add . commit and push the project to GitHub.
+- Go to Heroku and follow the Deployment guide below.  
+
 
 ## Deployment
 Was deployed using Heroku with the following steps:
 - Before deployment hide the confidential data in env.py
-- Set debug to False in settings.py
+- Set debug to False in settings.py (if project is going live)
 - Login to [Heroku](https://www.heroku.com) (Create an account if necessary)
-- Click New in the Heroku dashboard and select ”Create new app.”
-- Write a name for the app and choose your region and click ”Create App.”
 - In the settings tab for the new application, created one Config name PORT and has a value of 8000
 - Connect your Heroku with your GitHub account and the repository you are working on
 - Then at the bottom, you can do a manual deployment or set it to automatic deployment to deploy every time your repo is updated.   
