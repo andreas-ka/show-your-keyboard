@@ -101,6 +101,9 @@ body {
 .card {
   margin: 5% 0%;
 }
+.bg-special {
+  background-color: rgb(48 48 48 / 46%);
+}
 
 /* Form styling */
 .form-group {

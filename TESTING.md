@@ -1,11 +1,11 @@
 # Show your Keyboard
 
-Below you will find all my tests on this project.
+I've included for you below all my tests on this project.
 
 _____________________________________________________________________________
 
 ### W3 HTML Checker
-Done by chossing "View Page Source" and past in on the W3 HTML checker.    
+Done by choosing "View Page Source" and past in on the W3 HTML checker.    
 
 Index.html.    
 ![Screenshot](./static/images/w3_html_index.png)    
@@ -36,8 +36,8 @@ WAVE Web Accessibility Evaluation Tool.
 _____________________________________________________________________________
 
 ### Lighthouse
-Scores from googles Lighthouse below, worth noticing is that i supply the 3 pages that contains 
-images and more loading, register, login and profile page only contains forms.   
+Scores from googles Lighthouse below, worth noticing is that I supply the three pages that contain 
+images and more loading, the register, login and profile page only includes forms.   
 Much of the low performance seem to be due to the host heroku, nothing i can fix myself. 
 
 #### Mobile
@@ -66,16 +66,19 @@ _____________________________________________________________________________
 
 ### Rensponsiveness and further testing
 
-- All done and registered in my google todo docs, bugs also logged in my kanban board under projects on github.   
-Below is a screenshot snippet from the google docs, please click link to see the full document.   
+- All done and registered in my Google todo docs, bugs also logged in my Kanban board under projects on Git Hub.   
+Below is a screenshot snippet from the google docs, please click the link to see the entire document.   
 [Link to google docs](https://docs.google.com/spreadsheets/d/1s44J9bTQyVY0vnPAtlb3FIwGDRyj-bNHVxq4E8CToME/edit?usp=sharing)    
 ![Screenshot](./static/images/testing_docs_readme.png)    
 
 _____________________________________________________________________________
 
 
-### Full project board with bugs [Link](https://github.com/users/andreas-ka/projects/6/views/1)    
-![Screenshot](./static/images/kanban_board_bugs.png)  
+### Full project board with bugs [Link](https://github.com/users/andreas-ka/projects/6/views/1)     
+Worth noticing is that i have now a new column "Not Solvable", it contains a bug regarding "messages"   
+that will not unfortunally be solved. Neither Tutor or stackoverflow have been able to help put or official documentation.    
+![Screenshot](./static/images/kanban_board_bugs.png)   
+
 
 _____________________________________________________________________________
 

@@ -2,136 +2,119 @@
 {% load cloudinary %}
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <title>Show your Keyboard</title>
-      <meta name="description" content="Free website to display custom keyboards">
-      <meta name="Show Your Keyboard" content="Free website to display custom keyboards">
-      <meta name="keywords" content="Mechanical Keyboard, Custom, keycaps">
-      <meta name="author" content="Andreas Karlsson">
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-      <script src="https://kit.fontawesome.com/bd05bc0350.js" crossorigin="anonymous"></script>
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-      <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
-   </head>
-   <body>
-    <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg custom-color-navbar">
-         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}" aria-label="Link to landing page">Show your Keyboard</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-               aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+<head>
+   <title>Show your Keyboard</title>
+   <meta name="description" content="Free website to display custom keyboards">
+   <meta name="Show Your Keyboard" content="Free website to display custom keyboards">
+   <meta name="keywords" content="Mechanical Keyboard, Custom, keycaps">
+   <meta name="author" content="Andreas Karlsson">
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+   <!-- Fontswesome -->
+   <script src="https://kit.fontawesome.com/bd05bc0350.js" crossorigin="anonymous"></script>
+   <!-- Bottstrap Js -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
+   </script>
+   <!-- Bootstrap css -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+   <!-- base.css -->
+   <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+</head>
+
+<body>
+   <!-- Navbar -->
+   <nav class="navbar navbar-expand-lg custom-color-navbar">
+      <div class="container-fluid">
+         <a class="navbar-brand" href="{% url 'home' %}" aria-label="Link to landing page">Show your Keyboard</a>
+         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                     <a class="nav-link active" aria-current="page" href="{% url 'home' %}" aria-label="Link to landing page">Home</a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link" href="{% url 'posts' %}" aria-label="Link to posts page">Posts</a>
-                  </li>
-                  {% if user.is_authenticated %}
-                  <li class="nav-item">
-                     <a class="nav-link" href="{% url 'post_create' %}" aria-label="Link to create a post">Create Post</a>
-                  </li>
-                  {% endif %}
-               </ul>
-               <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                  {% if user.is_authenticated %}
-                  <li class="nav-item">
-                     <a class="nav-link" href="{% url 'logout' %}" aria-label="Link to logout">Logout</a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link" href="{% url 'profile_edit' %}" aria-label="Link to profile">Profile</a>
-                  </li>
-                  {% else %}
-                  <li class="nav-item">
-                     <a class="nav-link" href="{% url 'register' %}" aria-label="Link to register">Register</a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link" href="{% url 'login' %}" aria-label="Link to login">Login</a>
-                  </li>
-                  {% endif %}
-               </ul>
-               <form action="{% url 'search_results' %}" method="get" class="d-flex" role="search">
-                  <input class="form-control me-2" type="text" placeholder="Search" name="q" aria-label="Search">
-                  <button class="btn btn-dark" type="submit">Search</button>
-               </form>
-            </div>
-         </div>
-      </nav>
-      <!-- Alert container when logged in -->
-      {% if messages %}
-      <div class="container">
-      <div class="row">
-         <div class="col-md-8 offset-md-2">
-            {% for message in messages %}
-            {% if message.tags == 'error' %}
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+         </button>
+         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+               <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="{% url 'home' %}"
+                     aria-label="Link to landing page">Home</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="{% url 'posts' %}" aria-label="Link to posts page">Posts</a>
+               </li>
+               {% if user.is_authenticated %}
+               <li class="nav-item">
+                  <a class="nav-link" href="{% url 'post_create' %}" aria-label="Link to create a post">Create Post</a>
+               </li>
+               {% endif %}
+            </ul>
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+               {% if user.is_authenticated %}
+               <li class="nav-item">
+                  <a class="nav-link" href="{% url 'logout' %}" aria-label="Link to logout">Logout</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="{% url 'profile_edit' %}" aria-label="Link to profile">Profile</a>
+               </li>
                {% else %}
-               <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
-                  {% endif %}
-                  {{ message }}
-                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-               </div>
-               {% endfor %}
-            </div>
+               <li class="nav-item">
+                  <a class="nav-link" href="{% url 'register' %}" aria-label="Link to register">Register</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="{% url 'login' %}" aria-label="Link to login">Login</a>
+               </li>
+               {% endif %}
+            </ul>
+            <form action="{% url 'search_results' %}" method="get" class="d-flex" role="search">
+               <input class="form-control me-2" type="text" placeholder="Search" name="q" aria-label="Search">
+               <button class="btn btn-dark" type="submit">Search</button>
+            </form>
          </div>
       </div>
-      </div>
-      {% endif %}
-      {% block content %}
-      <!-- Content goes here -->
-      {% endblock content %}
-      <!-- Footer with links -->
-      <footer class="bg-dark text-center text-white">
-         <!-- Grid container -->
-         <div class="container p-2 pb-0">
-            <!-- Section: Social media -->
-            <div class="mb-2">
-               <!-- Facebook -->
-               <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/andreas.krln"
-                  target="_blank" rel="noopener" aria-label="Visit my facebook page, opens in new tab"><i
+   </nav>
+   {% block content %}
+   <!-- Content goes here -->
+   {% endblock content %}
+   <!-- Footer with links -->
+   <footer class="bg-dark text-center text-white">
+      <!-- Grid container -->
+      <div class="container p-2 pb-0">
+         <!-- Section: Social media -->
+         <div class="mb-2">
+            <!-- Facebook -->
+            <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/andreas.krln"
+               target="_blank" rel="noopener" aria-label="Visit my facebook page, opens in new tab"><i
                   class="fab fa-facebook-f fa-xl"></i></a>
-               <!-- Twitter -->
-               <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com/" role="button"
-                  target="_blank" rel="noopener" aria-label="Visit Twitter, opens in new tab"><i
-                  class="fab fa-twitter fa-xl"></i></a>
-               <!-- Instagram -->
-               <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/akarlsson_/?hl=en"
-                  target="_blank" rel="noopener"
-                  aria-label="Visit my instagram page, opens in new tab"><i class="fab fa-instagram fa-xl"></i></a>
-               <!-- Linkedin -->
-               <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/in/andreas-karlsson-48902249/"
-                  target="_blank" rel="noopener"
-                  aria-label="Visit my Linkedin page, opens in new tab"><i class="fab fa-linkedin-in fa-xl"></i></a>
-               <!-- Github -->
-               <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/andreas-ka"
-                  target="_blank" rel="noopener" aria-label="Visit my Github page, opens in new tab"><i
+            <!-- Twitter -->
+            <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com/" role="button" target="_blank"
+               rel="noopener" aria-label="Visit Twitter, opens in new tab"><i class="fab fa-twitter fa-xl"></i></a>
+            <!-- Instagram -->
+            <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/akarlsson_/?hl=en"
+               target="_blank" rel="noopener" aria-label="Visit my instagram page, opens in new tab"><i
+                  class="fab fa-instagram fa-xl"></i></a>
+            <!-- Linkedin -->
+            <a class="btn btn-outline-light btn-floating m-1"
+               href="https://www.linkedin.com/in/andreas-karlsson-48902249/" target="_blank" rel="noopener"
+               aria-label="Visit my Linkedin page, opens in new tab"><i class="fab fa-linkedin-in fa-xl"></i></a>
+            <!-- Github -->
+            <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/andreas-ka" target="_blank"
+               rel="noopener" aria-label="Visit my Github page, opens in new tab"><i
                   class="fab fa-github fa-xl"></i></a>
-            </div>
-            <!-- Section: Social media -->
          </div>
-         <!-- Grid container -->
-         <!-- Copyright -->
-         <div class="text-center p-1" style="background-color: #C9F234;">
-            <p class="text-black"> © 2023 Andreas Karlsson. Only for educational purpose.</p>
-            <p class="text-black"> All images courtesy of <a href="https://www.instagram.com/captain.sterling/?hl=en"
+         <!-- Section: Social media -->
+      </div>
+      <!-- Grid container -->
+      <!-- Copyright -->
+      <div class="text-center p-1" style="background-color: #C9F234;">
+         <p class="text-black"> © 2023 Andreas Karlsson. Only for educational purpose.</p>
+         <p class="text-black"> All images courtesy of <a href="https://www.instagram.com/captain.sterling/?hl=en"
                target="_blank" rel="noopener" aria-label="Visit Captain Sterlings Instagram to see all his images"><span
-               class="text-black">Captain Sterling</span></a></p>
-         </div>
-         <!-- Copyright -->
-      </footer>
-      <!-- Bootstrap js and scripts -->
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
-         integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
-   </body>
+                  class="text-black">Captain Sterling</span></a></p>
+      </div>
+      <!-- Copyright -->
+   </footer>
+</body>
+
 </html>
