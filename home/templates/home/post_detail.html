@@ -5,7 +5,7 @@
 {% block content %}
 <!-- Post details section -->
 <div class="wrapper d-flex justify-content-center">
-   <div class="card text-white bg-dark mb-3 shadow-lg mb-6" style="max-width: 840px;">
+   <div class="card text-white bg-special mb-3 shadow-lg mb-6" style="max-width: 840px;">
       <div class="row no-gutters">
          <div class="col-md-4">
             <img src="{{ post.image.url }}" class="card-img" alt="...">
@@ -84,7 +84,7 @@
       {% else %}
       {% for comment in post.comments.all %}
       <div class="container">
-         <div class="row bg-dark">
+         <div class="row bg-special">
             <div class="col-4 text-center">
                <div class="row">
                   <div class="col">
