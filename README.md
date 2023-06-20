@@ -232,6 +232,8 @@ _____________________________________________________________________________
 _____________________________________________________________________________ 
 
 ## Login and Logout message displaying on index.html
+- I have chosen not to use a js script to autoclose the alert, due to the fact that i get a strange
+error in alert.js and also that it's better for accessibility to not auto close.   
 ![Screenshot](./static/images/login_message_readme.png)    
 ![Screenshot](./static/images/logout_message_readme.png) 
 
@@ -240,19 +242,21 @@ _____________________________________________________________________________
 ## Colour Scheme
 
 ### Wanted a simple design with good contrast. The "lime" green pops and makes it eye-catching.
-![Screenshot](./static/images/color_palette.png)
+![Screenshot](./static/images/color_palette.png)    
+
 [Back to top](#show-your-keyboard)
 _____________________________________________________________________________  
 
 ## Typography
-- Garamon and Roboto is used on the whole site.
+- Garamon and Roboto is used on the whole site.    
+
 [Back to top](#show-your-keyboard)
 _____________________________________________________________________________
 ## Imagery
 
 - All images on the website are from Tristan ("Captain Sterling"), a legend in the keyboard community.
-- Profile avatars are free images found on [Pexel](https://www.pexels.com/) and [freepik](https://www.freepik.com)
-- Avatars and background are from [freepik](https://www.freepik.com/) and free to use.
+- Profile avatars are free images found on [Pexel](https://www.pexels.com/) and [freepik](https://www.freepik.com)    
+
 [Back to top](#show-your-keyboard)
 
 _____________________________________________________________________________  
@@ -260,7 +264,8 @@ _____________________________________________________________________________
 
 - HTML5 from CodeInstitute Template(some own modifications to style the website)
 - CSS
-- Python / Django code, all done by myself
+- Python / Django code, all done by myself.   
+
 [Back to top](#show-your-keyboard)
 ____________________________________________________________________________  
 ## Frameworks, Packages & Programs Used
