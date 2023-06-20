@@ -174,5 +174,24 @@ class SearchResultsView(ListView):
             Q(title__icontains=query)
             | Q(description__icontains=query)
             | Q(tags__icontains=query)
+            | Q(user__username__icontains=query)
+            | Q(keycaps__icontains=query)
+            | Q(case__icontains=query)
+            | Q(switches__icontains=query)
         )
         return object_list
+
+
+def custom_page_not_found_view(request, exception):
+    """ Render error template """
+    return render(request, "templates/404.html", {})
+
+
+def custom_error_view(request, exception=None):
+    """ Render error template """
+    return render(request, "templates/500.html", {})
+
+
+def custom_permission_denied_view(request, exception=None):
+    """ Render error template """
+    return render(request, "templates/403.html", {})

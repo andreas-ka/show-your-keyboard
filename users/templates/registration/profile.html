@@ -21,6 +21,8 @@
    </div>
    <br>
    <hr>
+   {% if user.is_authenticated %}
+   {% if user.id == profile.user.id %}
    <!-- Edit profile form -->
       <div class="row">
          <div class="col">
@@ -37,5 +39,7 @@
             </div>
          </div>
       </div>
+      {% endif %}
+      {% endif %}
    </div>
    {% endblock %}

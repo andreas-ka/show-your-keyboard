@@ -39,6 +39,7 @@ _____________________________________________________________________________
 Scores from googles Lighthouse below, worth noticing is that I supply the three pages that contain 
 images and more loading, the register, login and profile page only includes forms.   
 Much of the low performance seem to be due to the host heroku, nothing i can fix myself. 
+Result using Chrome and inkognito mode displays an increase in performence significantly.
 
 #### Mobile
 Index.html.    
@@ -76,7 +77,7 @@ _____________________________________________________________________________
 
 ### Full project board with bugs [Link](https://github.com/users/andreas-ka/projects/6/views/1)     
 Worth noticing is that i have now a new column "Not Solvable", it contains a bug regarding "messages"   
-that will not unfortunally be solved. Neither Tutor or stackoverflow have been able to help put or official documentation.    
+that will not unfortunally be solved. Neither tutor or stackoverflow have been able to help or official documentation.    
 ![Screenshot](./static/images/kanban_board_bugs.png)   
 
 
