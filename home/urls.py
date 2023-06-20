@@ -17,5 +17,10 @@ urlpatterns = [
     path('home/<int:pk>/delete', PostDeleteView.as_view(), name='post_delete'),
     path('postlike/<int:pk>', LikeView, name='post_like'),
     path("search", SearchResultsView.as_view(), name="search_results"),
-
 ]
+
+""" Error handlers """
+
+HANDLER404 = "ShowYourKeyboard.views.page_not_found_view"
+HANDLER500 = "ShowYourKeyboard.views.custom_500_error_view"
+HANDLER403 = "ShowYourKeyboard.views.custom_403_error_view"

@@ -12,26 +12,19 @@ from django.http import HttpResponseRedirect
 from django.db.models import Q
 from django.contrib import messages
 from django.contrib.messages import get_messages
-from django.contrib.messages.views import SuccessMessageMixin
 from .models import Post, Comment
 from .forms import CreatePostForm, EditPostForm, CommentPostForm
 
 
-class Index(SuccessMessageMixin, ListView):
+class Index(ListView):
     """View for the index or home page"""
 
     template_name = "home/index.html"
     model = Post
     context_object_name = "post"
-    success_message = "Success message"
 
-    def get_messages(self):
-        storage = get_messages(self.request)
-        for message in storage:
-            print(message)
-
-    """ Get total posts, total likes, and latest post and comments """
     def get_context_data(self, **kwargs):
+        """ Get total posts, total likes, and latest post and comments """
         context = super().get_context_data(**kwargs)
         post_numbers = Post.objects.all().count()
         context["post_numbers"] = post_numbers

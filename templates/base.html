@@ -73,7 +73,17 @@
          </div>
       </div>
    </nav>
+   <!-- Messages shows here -->
+   {% if messages %}
+   {% for message in messages %}
+   <div class="alert alert-success alert-dismissible text-center fade show" id="msg" role="alert">
+      <strong class="text-center">{{ message }}</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+   {% endfor %}
+   {% endif %}
    {% block content %}
+   <br>
    <!-- Content goes here -->
    {% endblock content %}
    <!-- Footer with links -->
@@ -114,6 +124,14 @@
       </div>
       <!-- Copyright -->
    </footer>
+   <!-- Script to close login and logout message -->
+   <script>
+      setTimeout(function () {
+          let messages = document.getElementById('msg');
+          let alert = new bootstrap.Alert(messages);
+          alert.close();
+      }, 4000);
+  </script>
 </body>
 
 </html>

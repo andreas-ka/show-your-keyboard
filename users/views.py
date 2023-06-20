@@ -1,20 +1,22 @@
 from django.shortcuts import render, redirect
 from django.views.generic import UpdateView
 from django.views import generic
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.urls import reverse_lazy
 from .forms import RegisterForm, ProfileEditForm
 from .models import Profile
 
 
-
 def login_user(request):
     """Login form and messages"""
     if request.method == "POST":
         username = request.POST["username"]
+        print('USERNAME: ', username)
         password = request.POST["password"]
+        print('PASSWORD: ', password)
         user = authenticate(request, username=username, password=password)
+        print('REQUEST = POST')
         if user is not None:
             login(request, user)
             messages.success(request, "You have been successfully logged in.")
@@ -23,10 +25,13 @@ def login_user(request):
             messages.error(request, "There was an error during login.")
             return redirect("login")
     else:
-        return render(
-            request, "register/login.html",
-            {"messages": messages.get_messages(request)}
-        )
+        return render(request, "registration/login.html")
+
+
+def logout_user(request):
+    logout(request)
+    messages.error(request, "You have been successfully logged out.")
+    return redirect("home")
 
 
 class UserRegister(generic.CreateView):
