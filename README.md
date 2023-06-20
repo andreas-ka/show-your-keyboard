@@ -229,6 +229,12 @@ _____________________________________________________________________________
 ![Screenshot](./static/images/search_result_readme.png)    
 ![Screenshot](./static/images/search_noresult_readme.png)  
 
+_____________________________________________________________________________ 
+
+## Login and Logout message displaying on index.html
+![Screenshot](./static/images/login_message_readme.png)    
+![Screenshot](./static/images/logout_message_readme.png) 
+
 
 _____________________________________________________________________________  
 ## Colour Scheme
@@ -398,7 +404,10 @@ Several links to different posts on stackoverflow regarding DetailView
 and edit, delete.   
 [Link](https://stackoverflow.com/questions/46791757/having-an-edit-form-and-a-detail-view-on-the-same-page)
 [Link](https://stackoverflow.com/questions/70815356/update-data-inside-class-based-detail-view)
-[Link](https://stackoverflow.com/questions/61803490/django-modify-a-generic-detail-view-to-manage-a-form-and-post-data-django)
+[Link](https://stackoverflow.com/questions/61803490/django-modify-a-generic-detail-view-to-manage-a-form-and-post-data-django)    
+
+This is my post on Stackoverflow that after 3 days finally solved my problem rendering messages (THANK YOU NIKO)
+[Link](https://stackoverflow.com/questions/76491626/django-messages-wont-show-up-in-template?noredirect=1#comment134876317_76491626)
 
 _____________________________________________________________________________   
 

@@ -76,8 +76,6 @@ _____________________________________________________________________________
 
 
 ### Full project board with bugs [Link](https://github.com/users/andreas-ka/projects/6/views/1)     
-Worth noticing is that i have now a new column "Not Solvable", it contains a bug regarding "messages"   
-that will not unfortunally be solved. Neither tutor or stackoverflow have been able to help or official documentation.    
 ![Screenshot](./static/images/kanban_board_bugs.png)   
 
 
