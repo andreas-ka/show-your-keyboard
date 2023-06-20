@@ -105,6 +105,10 @@ body {
   background-color: rgb(48 48 48 / 46%);
 }
 
+.fontawesome-links {
+  text-decoration: none;
+}
+
 /* Form styling */
 .form-group {
   max-width: 360px;

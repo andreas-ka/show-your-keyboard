@@ -79,8 +79,9 @@
             <div class="card-header">{{ post.created }} By: {{ post.user }}</div>
             <div class="row g-0">
                <div class="col-md-4">
+                  <a href="{% url 'post_detail' post.pk %}">
                   <img src="{{ post.image.url }}" class="img-fluid rounded-start"
-                     style="width: 100%; height: 100%; object-fit: cover;" alt="image of keyboard">
+                     style="width: 100%; height: 100%; object-fit: cover;" alt="image of keyboard"></a>
                </div>
                <div class="col-md-8">
                   <div class="card-body bg-special">
@@ -90,8 +91,12 @@
                      <p class="card-text">{{ post.description|slice:":150" }}</p>
                      <br>
                      <p class="card-text text-end text-white">
+                        <a href="{% url 'post_detail' post.pk %}" class="fontawesome-links">
                         <i class="fa-solid fa-heart fa-sm text-white"></i> {{ post.total_likes }}
+                        </a>
+                        <a href="{% url 'post_detail' post.pk %}" class="fontawesome-links">
                         <i class="fa-solid fa-comment fa-sm text-white"></i> {{ post.comments.count }}
+                        </a>
                      </p>
                   </div>
                </div>

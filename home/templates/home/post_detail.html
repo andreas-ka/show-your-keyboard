@@ -65,7 +65,7 @@
                   </div>
                   {% endif %}
                   {% else %}
-                  <p>You must register or login to like posts...</p>
+                  <p>You must <a href="{% url 'register' %}">register</a> or <a href="{% url 'login' %}">login</a> to like posts...</p>
                   {% endif %}
                </form>
             </div>
