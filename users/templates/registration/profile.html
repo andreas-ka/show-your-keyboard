@@ -10,14 +10,20 @@
          <div class="card-up aqua-gradient"></div>
          <div class="card-img-overlay text-center"><h4 class="card-title font-weight-bold">{{ user.username }}</h4></div>
          <div class="avatar mx-auto white">
+            {% if user.profile.image %}
             <img src="{{ user.profile.image.url }}" class="rounded-circle img-fluid" alt="user avatar" width="90"
             height="90">
+            {% else %}
+            <img src="{% static 'images/user-default.png' %}" width="90" height="90" class="rounded-circle"
+            alt="Default Profile Image">
+            {% endif %}
          </div>
          <div class="card-body text-center text-white">
             <p>Member since: {{ user.date_joined|date:"F j, Y" }}</p>
             <hr>
-            <h5>Total Posts: {{ user.post_owner.count }}</h5>
-            <h5>Total Likes: {{ user.post_likes.count }}</h5>
+            <h5>Posts created: {{ user.post_owner.count }}</h5>
+            <h5>Post liked: {{ user.post_likes.count }}</h5>
+            <h5>Comments made: {{ user.user_profile.count }}</h5>
             <h5>Keyboards: {{ user.profile.keyboards }}</h5>
          </div>
       </div>

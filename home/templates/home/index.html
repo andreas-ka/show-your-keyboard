@@ -69,7 +69,7 @@
 <!-- Loops and creates 2 cols for recent posts and comments -->
 <div class="container">
    <div class="row">
-      <!-- 1st column -->
+      <!-- 1st column wit the 3 latest posts-->
       <div class="col-md mb-5">
          <div class="text-center">
             <h3>Latest <span class="lime-h1">Posts</span></h3>
@@ -104,7 +104,7 @@
          </div>
          {% endfor %}
       </div>
-      <!-- 2nd column -->
+      <!-- 2nd column with the 3 latest comments -->
       <div class="col-md mb-5">
          <div class="text-center">
             <h3>Activity <span class="lime-h1">Feed</span></h3>
@@ -115,8 +115,13 @@
                class="card-link">{{ comment.post }}</a></div>
             <div class="row g-0">
                <div class="col-md-4 text-center">
+                  {% if comment.user_profile.profile.image %}
                   <img src="{{ comment.user_profile.profile.image.url }}" class="mt-4 rounded-circle" alt="avatar" width="90"
                      height="90">
+                     {% else %}
+                     <img src="{% static 'images/user-default.png' %}" width="90" height="90" class="rounded-circle"
+                        alt="Default Profile Image">
+                  {% endif %}
                   <p class="small mt-4">{{ comment.user_profile }}</p>
                   <p class="text-white" style="font-size: 12px;">{{ comment.created_on }}</p>
                </div>
