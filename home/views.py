@@ -140,6 +140,9 @@ class PostDeleteView(DeleteView):
     template_name = "home/post_delete.html"
     success_url = reverse_lazy("posts")
 
+    def get_object(self, queryset=None):
+        return get_object_or_404(Post, pk=self.kwargs.get('pk'))
+
 
 def LikeView(request, pk):
     """View to see likes"""

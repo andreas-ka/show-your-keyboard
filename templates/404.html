@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
    <head>
@@ -20,14 +21,19 @@
          integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
       <link rel="stylesheet" href="{% static 'css/base.css' %}">
    </head>
-   <body>
-      <!--Show the error 404 image -->
-      <div class="container text-center mt-5 md-1">
-         <img src="{% static 'images/404-image.png'%}">
-      </div>
-      <div class="d-flex justify-content-center">
-         <a href="{% url 'home' %}" class="btn btn-dark mt-5 mb-5">Back</a>
-      </div>
+   <body style="background: white;">
+      <main>
+         <!--Show the error 404 image -->
+         <div class="d-flex justify-content-center">
+            <a href="{% url 'home' %}" class="btn btn-dark mt-5 mb-5">Back</a>
+         </div>
+         <div class="container text-center mt-5 md-12">
+            <img class="img-fluid" src="{% static 'images/404-image.png'%}">
+         </div>
+         <div class="d-flex justify-content-center">
+            <a href="{% url 'home' %}" class="btn btn-dark mt-5 mb-5">Back</a>
+         </div>
+      </main>
    </body>
    <footer>
    </footer>
