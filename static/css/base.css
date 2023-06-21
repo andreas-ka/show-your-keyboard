@@ -69,7 +69,7 @@ body {
   font-weight: 500;
 }
 
-/* Carousel Styling*/
+/* Carousel Styling */
 .hero-item {
   height: 480px;
 }
@@ -102,7 +102,7 @@ body {
   color: #fff;
 }
 
-/* Post view cards*/
+/* Post view cards */
 .card {
   margin: 5% 0%;
 }
@@ -152,7 +152,7 @@ body {
   border-top-right-radius: .25rem;
 }
 
-.aqua-gradient {
+.lime-gradient {
   background: rgb(0,0,0);
   background: linear-gradient(0deg, rgba(0,0,0,0.68531162464986) 0%, rgba(201,242,52,0.850577731092437) 37%, rgba(201,242,52,1) 55%);
 }
