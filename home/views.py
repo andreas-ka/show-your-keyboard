@@ -6,7 +6,7 @@ from django.views.generic import (
     CreateView,
     UpdateView,
 )
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.urls import reverse_lazy, reverse
 from django.http import HttpResponseRedirect
 from django.db.models import Q
@@ -29,9 +29,11 @@ class Index(ListView):
         post_numbers = Post.objects.all().count()
         context["post_numbers"] = post_numbers
 
+        """ Get the 3 latest comments """
         latest_comments = Comment.objects.order_by("-created_on")[:3]
         context["latest_comments"] = latest_comments
 
+        """ Get the 3 latest post """
         latest_posts = Post.objects.order_by("-created")[:3]
         context["latest_posts"] = latest_posts
 
@@ -124,7 +126,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
         return super(PostCreateView, self).form_valid(form)
 
 
-class PostUpdateView(UpdateView):
+class PostUpdateView(UserPassesTestMixin, UpdateView):
     """View to update your post when logged in"""
 
     model = Post
@@ -132,8 +134,12 @@ class PostUpdateView(UpdateView):
     template_name = "home/post_edit.html"
     success_url = reverse_lazy("posts")
 
+    def test_func(self):
+        """ check if the user is the creator of post """
+        return self.request.user == self.get_object().user
 
-class PostDeleteView(DeleteView):
+
+class PostDeleteView(UserPassesTestMixin, DeleteView):
     """View to delete your posts"""
 
     model = Post
@@ -141,7 +147,12 @@ class PostDeleteView(DeleteView):
     success_url = reverse_lazy("posts")
 
     def get_object(self, queryset=None):
+        """ Get specific object to delete """
         return get_object_or_404(Post, pk=self.kwargs.get('pk'))
+
+    def test_func(self):
+        """ check if the user is the creator of post """
+        return self.request.user == self.get_object().user
 
 
 def LikeView(request, pk):
