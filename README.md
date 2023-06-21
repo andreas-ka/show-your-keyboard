@@ -171,7 +171,7 @@ _____________________________________________________________________________
 
 ## Navbar
 _____________________________________________________________________________ 
-### Bootstrap navbar that also collapses on smaller devices
+### Bootstrap navbar with active links that also collapses on smaller devices.    
 ![Screenshot](./static/images/navbar_readme.png)   
 
 
@@ -214,7 +214,8 @@ _____________________________________________________________________________
 
 ## Update your profile image
 _____________________________________________________________________________ 
-### On the profile page you can add your inventory of keyboards and upload a profile image.   
+### On the profile page you can add your inventory of keyboards and upload a profile image.  
+### You can also see how many likes you given and posts you made.     
 ![Screenshot](./static/images/profile_image_readme.png)     
 
 

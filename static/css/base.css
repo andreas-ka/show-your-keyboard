@@ -158,11 +158,8 @@ body {
 }
 
 .testimonial-card .avatar {
-  width: 120px;
   margin-top: -60px;
   overflow: hidden;
-  border: 1px solid #000000;
-  border-radius: 50%;
 }
 
 .testimonial-card {

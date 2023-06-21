@@ -10,7 +10,8 @@
          <div class="card-up aqua-gradient"></div>
          <div class="card-img-overlay text-center"><h4 class="card-title font-weight-bold">{{ user.username }}</h4></div>
          <div class="avatar mx-auto white">
-            <img src="{{ user.profile.image.url }}" class="rounded-circle img-fluid" alt="user avatar">
+            <img src="{{ user.profile.image.url }}" class="rounded-circle img-fluid" alt="user avatar" width="90"
+            height="90">
          </div>
          <div class="card-body text-center text-white">
             <p>Member since: {{ user.date_joined|date:"F j, Y" }}</p>

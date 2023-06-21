@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.generic import UpdateView
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import generic
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
@@ -42,7 +43,7 @@ class UserRegister(generic.CreateView):
     success_url = reverse_lazy("login")
 
 
-class ProfileEdit(generic.UpdateView):
+class ProfileEdit(LoginRequiredMixin, generic.UpdateView):
     """View for edit your profile"""
 
     model = Profile
