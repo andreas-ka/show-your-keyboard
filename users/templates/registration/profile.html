@@ -3,43 +3,48 @@
 {% block title %} Profile {% endblock %}
 {% block content %}
 <!-- Profile information -->
-<div class="container text-center mt-5 md-1">
-   <div class="row">
-      <div class="col">
-         <h5>{{ user.username }}</h5>
-         <h5>Profile image:</h5>
-         <img src="{{ user.profile.image.url }}" width="100" height="100" class="rounded-circle mb-2"
-            alt="Creator of posts profile image">
-            <h5>Member since: {{ user.date_joined|date:"F j, Y" }}</h5>  
-         <br>
-         <hr>
-         <h5>Statistics:</h5>
-         <h5>Total Posts: {{ user.post_owner.count }}</h5>
-         <h5>Total Likes: {{ user.post_likes.count }}</h5>
-         <h5>Keyboards: {{ user.profile.keyboards }}</h5>
-      </div>
-   </div>
-   <br>
-   <hr>
-   {% if user.is_authenticated %}
-   {% if user.id == profile.user.id %}
-   <!-- Edit profile form -->
-      <div class="row">
-         <div class="col">
-            <h5 class="mb-5">Update your profile</h5>
-            <div class="form-group">
-               <form method="POST" enctype="multipart/form-data">
-                  {% csrf_token %}
-                  {{ form.media }}
-                  {{ form.as_p }}
-                  <div class="col text-center mt-4 mb-5">
-                     <button type="submit" class="btn btn-lime">Update Profile</button>
-                  </div>
-               </form>
-            </div>
+<div class="container">
+   <section class="mx-auto my-5" style="max-width: 23rem;">
+
+      <div class="card testimonial-card mt-2 mb-3">
+         <div class="card-up aqua-gradient"></div>
+         <div class="card-img-overlay text-center"><h4 class="card-title font-weight-bold">{{ user.username }}</h4></div>
+         <div class="avatar mx-auto white">
+            <img src="{{ user.profile.image.url }}" class="rounded-circle img-fluid" alt="user avatar">
+         </div>
+         <div class="card-body text-center text-white">
+            <p>Member since: {{ user.date_joined|date:"F j, Y" }}</p>
+            <hr>
+            <h5>Total Posts: {{ user.post_owner.count }}</h5>
+            <h5>Total Likes: {{ user.post_likes.count }}</h5>
+            <h5>Keyboards: {{ user.profile.keyboards }}</h5>
          </div>
       </div>
-      {% endif %}
-      {% endif %}
+
+   </section>
+</div>
+<hr>
+{% if user.is_authenticated %}
+{% if user.id == profile.user.id %}
+<!-- Edit profile form -->
+<div class="container">
+   <div class="row">
+      <div class="col">
+         <h5 class="mb-5 text-center">Update your profile</h5>
+         <div class="form-group">
+            <form method="POST" enctype="multipart/form-data">
+               {% csrf_token %}
+               {{ form.media }}
+               {{ form.as_p }}
+               <div class="col text-center mt-4 mb-5">
+                  <button type="submit" class="btn btn-lime">Update Profile</button>
+               </div>
+            </form>
+         </div>
+      </div>
    </div>
-   {% endblock %}
+</div>
+{% endif %}
+{% endif %}
+</div>
+{% endblock %}

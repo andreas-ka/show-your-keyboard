@@ -232,11 +232,9 @@ _____________________________________________________________________________
 _____________________________________________________________________________ 
 
 ## Login and Logout message displaying on index.html
-- I have chosen not to use a js script to autoclose the alert, due to the fact that i get a strange
-error in alert.js and also that it's better for accessibility to not auto close.   
+- I have chosen not to use a js script to autoclose the alert, due to that it's better for accessibility to not auto close.   
 ![Screenshot](./static/images/login_message_readme.png)    
 ![Screenshot](./static/images/logout_message_readme.png) 
-
 
 _____________________________________________________________________________  
 ## Colour Scheme
@@ -413,6 +411,9 @@ and edit, delete.
 
 This is my post on Stackoverflow that after 3 days finally solved my problem rendering messages (THANK YOU NIKO)
 [Link](https://stackoverflow.com/questions/76491626/django-messages-wont-show-up-in-template?noredirect=1#comment134876317_76491626)
+
+Website to help you make gradient background colors.    
+[Link](https://cssgradient.io/)
 
 _____________________________________________________________________________   
 

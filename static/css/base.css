@@ -64,6 +64,11 @@ body {
   z-index: 2;
 }
 
+.navbar-nav .nav-link.active {
+  text-decoration: underline;
+  font-weight: 500;
+}
+
 /* Carousel Styling*/
 .hero-item {
   height: 480px;
@@ -137,6 +142,31 @@ body {
 
 .cards:hover {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.16), 0 4px 10px rgba(0, 0, 0, 0.23);
+}
+
+/* Profile card styling */
+.testimonial-card .card-up {
+  height: 120px;
+  overflow: hidden;
+  border-top-left-radius: .25rem;
+  border-top-right-radius: .25rem;
+}
+
+.aqua-gradient {
+  background: rgb(0,0,0);
+  background: linear-gradient(0deg, rgba(0,0,0,0.68531162464986) 0%, rgba(201,242,52,0.850577731092437) 37%, rgba(201,242,52,1) 55%);
+}
+
+.testimonial-card .avatar {
+  width: 120px;
+  margin-top: -60px;
+  overflow: hidden;
+  border: 1px solid #000000;
+  border-radius: 50%;
+}
+
+.testimonial-card {
+background-color: #000000;
 }
 
 /* footer */
