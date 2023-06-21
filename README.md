@@ -28,7 +28,7 @@ _____________________________________________________________________________
     - [Database Structure](#database-and-structure)
     - [Balsamiq Template](#balsamiq-templates)
 - ### Design and Features
-    - [Design and Features](#design-and-features)
+    - [Design and Features](#design-and-features-1)
         - [Navbar](#navbar)
         - [Register](#register)
         - [Login](#login)
@@ -54,8 +54,7 @@ _____________________________________________________________________________
     - [Deploy to Heroku](#deployment)
 - ### Credits
     - [Code](#code)
-    - [Content](#contents)
-    - [Media](#media)
+    - [Youtube tutorials](#youtube-tutorials-i-have-watched)
     - [Acknowledgements](#acknowledgements)
 
 
@@ -254,7 +253,7 @@ _____________________________________________________________________________
 ## Imagery
 
 - All images on the website are from Tristan ("Captain Sterling"), a legend in the keyboard community.
-- Profile avatars are free images found on [Pexel](https://www.pexels.com/) and [freepik](https://www.freepik.com)    
+- Profile avatars and background are free images found on [Pexel](https://www.pexels.com/) and [freepik](https://www.freepik.com)    
 
 [Back to top](#show-your-keyboard)
 
@@ -263,6 +262,7 @@ _____________________________________________________________________________
 
 - HTML5 from CodeInstitute Template(some own modifications to style the website)
 - CSS
+- JavaScript from Bootstrap 5
 - Python / Django code, all done by myself.   
 
 [Back to top](#show-your-keyboard)
@@ -273,7 +273,7 @@ ____________________________________________________________________________
 - Google Sheets to make a bug testing sheet.
 - DrawSql for the database
 - Django packages used:
-    - render, reverse_lazy, reverse, messages, HttpResponseDirect, get_object_or_404
+    - render, reverse_lazy, reverse, redirect, messages, HttpResponseDirect, get_object_or_404
     - ListView, DeleteView, DetalView, CreateView, UpdateView, LoginRequiredMixin
     - Sum, Count, Q
 
@@ -291,8 +291,8 @@ _____________________________________________________________________________
 ## Development
 
 - All code was done in Gitpod
-- Comitted and pushed to my GitHub repository
-[ElephantSQL](https://www.elephantsql.com/) used for Postgres.
+- Comitted and pushed to my GitHub repository and 
+[ElephantSQL](https://www.elephantsql.com/) used for Postgres server.   
 
 ## How to start a Django project
 - Created a new repository on GitHub "Show your Keyboard"
@@ -374,6 +374,8 @@ _____________________________________________________________________________
 
 ## Credits.  
 
+### Code
+
 Inspired by CI's blog tutorial "I think, therefor i blog"
 
 Docs for using Django-Resized 
@@ -438,6 +440,8 @@ Telusko Django tutorial
 _____________________________________________________________________________   
 
 ### Acknowledgements
+- Tristan for letting me use his fantastic images.   
+
 - My Mentor for continuous helpful feedback.
 
 - Tutor support at Code Institute for their support.    
