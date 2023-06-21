@@ -29,12 +29,15 @@ class Post(models.Model):
     likes = models.ManyToManyField(User, related_name='post_likes', blank=True)
 
     def __str__(self):
+        """ return title + user """
         return self.title + ' | ' + str(self.user)
 
     def get_absolute_url(self):
+        """ Reverse for post_detail """
         return reverse('post_detail', args=(str(self.id)))
 
     def total_likes(self):
+        """ Return total likes """
         return self.likes.count()
 
 
@@ -50,7 +53,9 @@ class Comment(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
 
     class Meta:
+        """ Comment order displayed """
         ordering = ["-created_on"]
 
     def __str__(self):
+        """ Comment + self comment body """
         return f"Comment {self.body}"

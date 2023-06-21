@@ -16,6 +16,16 @@ Posts view.
 Postdetails   
 ![Screenshot](./static/images/w3_html_postdetail.png)    
 
+Profile   
+![Screenshot](./static/images/w3_html_profile.png)  
+
+Create post  
+![Screenshot](./static/images/w3_html_create_post.png)  
+
+Register (shows 4 errors but thats code directly from django's form, see image below)   
+![Screenshot](./static/images/w3_html_postdetail.png)  
+![Screenshot](./static/images/w3_html_register_code.png)  
+
 _____________________________________________________________________________
 
 
@@ -31,7 +41,7 @@ Used a11ys Color contrast validator [Link](https://color.a11y.com)
 ![Screenshot](./static/images/contrast-readme.png)    
 
 WAVE Web Accessibility Evaluation Tool.   
-(Contrast warnings noted)    
+(Contrast warnings noted, i have decided to keep it due to aesthetics)    
 ![Screenshot](./static/images/wave_tool.png)
 _____________________________________________________________________________
 

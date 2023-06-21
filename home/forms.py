@@ -21,7 +21,7 @@ class CreatePostForm(forms.ModelForm):
 
 
 class EditPostForm(forms.ModelForm):
-    """ Edit post form """
+    """ Edit post form and fields """
     class Meta:
         model = Post
         fields = ('title', 'description', 'case', 'switches',

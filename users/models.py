@@ -6,6 +6,7 @@ from django.dispatch import receiver
 
 
 def profile_image_upload_path(instance, filename):
+    """ defining the profile image upload path """
     return f"profiles/{instance.user.username}/{filename}"
 
 
@@ -26,6 +27,7 @@ class Profile(models.Model):
     keyboards = models.CharField(max_length=1000, null=True, blank=True)
 
     def __str__(self):
+        """ Define the self string """
         return str(self.user.username)
 
 

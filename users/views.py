@@ -30,6 +30,7 @@ def login_user(request):
 
 
 def logout_user(request):
+    """ Logout user """
     logout(request)
     messages.error(request, "You have been successfully logged out.")
     return redirect("home")
@@ -52,4 +53,5 @@ class ProfileEdit(LoginRequiredMixin, generic.UpdateView):
     success_url = reverse_lazy("posts")
 
     def get_object(self):
+        """ Define the get object to user profile """
         return self.request.user.profile

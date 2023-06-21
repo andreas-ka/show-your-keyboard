@@ -232,7 +232,7 @@ _____________________________________________________________________________
 _____________________________________________________________________________ 
 
 ## Login and Logout message displaying on index.html
-- I have chosen not to use a js script to autoclose the alert, due to that it's better for accessibility to not auto close.   
+- Autocloses after 3 seconds.    
 ![Screenshot](./static/images/login_message_readme.png)    
 ![Screenshot](./static/images/logout_message_readme.png) 
 

@@ -131,7 +131,8 @@
       </div>
       <!-- Copyright -->
    </footer>
-   <!-- Script used to set active on current page on navbar -->
+   <!-- Script used to set active on current page on navbar,
+   and removes alert login and logout message after 3 seconds -->
    <script>
       document.querySelectorAll(".nav-link").forEach((link) => {
          if (link.href === window.location.href) {
@@ -139,6 +140,11 @@
             link.setAttribute("aria-current", "page");
          }
       });
+   
+      const alert = document.getElementsByClassName('alert');
+      setTimeout(() => {
+         $('#alert').alert('close')
+      }, 3000)
    </script>
 </body>
 

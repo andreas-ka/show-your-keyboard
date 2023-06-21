@@ -5,10 +5,11 @@ from django import forms
 from .models import User, Profile
 
 
-
 class RegisterForm(UserCreationForm):
     """ Register on the site form """
-    email = forms.EmailField(widget=forms.EmailInput({'class': 'form-control'}))
+    email = forms.EmailField(widget=forms.EmailInput(
+        {'class': 'form-control'})
+        )
     first_name = forms.CharField(max_length=150, widget=forms.TextInput(
         attrs={'class': 'form-control'})
         )
@@ -17,8 +18,8 @@ class RegisterForm(UserCreationForm):
         )
     image = CloudinaryField('image', blank=True, null=True)
 
-
     class Meta:
+        """ Fields that are being displayed in the registration form """
         model = User
         fields = (
                 'username', 'first_name',
