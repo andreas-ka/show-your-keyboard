@@ -41,6 +41,8 @@ _____________________________________________________________________________
         - [Update your profile image](#update-your-profile-image)
         - [Footer](#footer)
         - [Search page with results](#search-page-with-or-without-results)
+        - [Login and logout message](#login-and-logout-message-displaying-on-indexhtml)
+        - [404 and 403](#404-and-403-error-messages-are-shown-on-the-website)
     - [Colour Scheme](#colour-scheme)
     - [Typography](#typography)
     - [Imagery](#imagery)
@@ -133,6 +135,7 @@ _____________________________________________________________________________
 - As a Site User, I can, if I'm registered, create my post
 - As a Site User, I can, if I'm logged in, edit and delete my created posts if I want to
 - As a Site User, I can easily see the links in the footer and contact the creator of the website
+- As a Site User, I can see the correct error message when i do something wrong or go to a forbidden link    
 
 ## Site Owner Stories
 - As a Site Owner, I want to restrict access to sections of an app to unauthenticated users so that basic standards of data protection are met

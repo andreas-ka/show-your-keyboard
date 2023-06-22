@@ -1,8 +1,26 @@
 # Show your Keyboard
 
 I've included for you below all my tests on this project.
+_____________________________________________________________________________
+
+## Content:
+- ### HTML, CSS and Contrast
+    - [W3 validator](#w3-html-checker)
+    - [W3 CSS](#w3-css-checker)
+    - [Contrast](#contrast-checker)
+- ### Lighthouse
+    - [Mobile](#mobile)
+    - [Desktop](#desktop)
+- ### Rensponsiveness and testing
+    - [Rensponsiveness](#rensponsiveness-and-further-testing)
+- ### Kanban board with bugs
+    - [Rensponsiveness](#kanban-board-with-bugs)
+- ### PEP8
+    - [PEP8](#pep8-1)
+
 
 _____________________________________________________________________________
+
 
 ### W3 HTML Checker
 Done by choosing "View Page Source" and past in on the W3 HTML checker.    
