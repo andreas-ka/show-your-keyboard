@@ -236,6 +236,13 @@ _____________________________________________________________________________
 ![Screenshot](./static/images/login_message_readme.png)    
 ![Screenshot](./static/images/logout_message_readme.png) 
 
+_____________________________________________________________________________ 
+
+## 404 and 403 error messages are shown on the website.       
+![Screenshot](./static/images/403_error_live_site.png)    
+![Screenshot](./static/images/404_error_live_site.png) 
+
+
 _____________________________________________________________________________  
 ## Colour Scheme
 

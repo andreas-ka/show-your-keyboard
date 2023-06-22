@@ -24,7 +24,19 @@ Create post
 
 Register (shows 4 errors but thats code directly from django's form, see image below)   
 ![Screenshot](./static/images/w3_html_postdetail.png)  
-![Screenshot](./static/images/w3_html_register_code.png)  
+![Screenshot](./static/images/w3_html_register_code.png)    
+
+Login.     
+![Screenshot](./static/images/w3_html_login.png)    
+
+Error 403.     
+![Screenshot](./static/images/w3_html_403.png)  
+
+Error 404.    
+![Screenshot](./static/images/w3_html_404.png)  
+
+Error 500.    
+![Screenshot](./static/images/w3_html_500.png)  
 
 _____________________________________________________________________________
 
@@ -41,13 +53,13 @@ Used a11ys Color contrast validator [Link](https://color.a11y.com)
 ![Screenshot](./static/images/contrast-readme.png)    
 
 WAVE Web Accessibility Evaluation Tool.   
-(Contrast warnings noted, i have decided to keep it due to aesthetics)    
+(Contrast warnings noted, I have decided to keep it due to aesthetics)   
+Lighthouse shows accessibility very high, and that contradicts this.     
 ![Screenshot](./static/images/wave_tool.png)
 _____________________________________________________________________________
 
 ### Lighthouse
-Scores from googles Lighthouse below, worth noticing is that I supply the three pages that contain 
-images and more loading, the register, login and profile page only includes forms.   
+Scores from googles Lighthouse are below.     
 Much of the low performance seem to be due to the host heroku, nothing i can fix myself. 
 Result using Chrome and inkognito mode displays an increase in performence significantly.
 
@@ -56,10 +68,19 @@ Index.html.
 ![Screenshot](./static/images/mobile_lighthouse_index.png)     
 
 Posts.    
-![Screenshot](./static/images/mobile_lighthouse_postview.png)    
+![Screenshot](./static/images/mobile_lighthouse_posts.png)    
 
 Post details.     
-![Screenshot](./static/images/mobile-lighthouse-postdetail.png)    
+![Screenshot](./static/images/mobile_lighthouse_postdetail.png)    
+
+Login.        
+![Screenshot](./static/images/mobile_lighthouse_login.png) 
+
+Profile.       
+![Screenshot](./static/images/mobile_lighthouse_profile.png) 
+
+Register.        
+![Screenshot](./static/images/mobile_lighthouse_register.png) 
 
 _____________________________________________________________________________
 
@@ -68,10 +89,19 @@ Index.html.
 ![Screenshot](./static/images/desktop_lighthouse_index.png)
 
 Posts.   
-![Screenshot](./static/images/desktop_lighthouse_posts.png)     
+![Screenshot](./static/images/dekstop_lighthouse_posts.png)     
 
 Post details.    
 ![Screenshot](./static/images/desktop_lighthouse_postdetails.png)    
+
+Register.   
+![Screenshot](./static/images/desktop_lighthouse_register.png)     
+
+Profile.    
+![Screenshot](./static/images/desktop_lighthouse_profile.png)    
+
+Login.       
+![Screenshot](./static/images/desktop_lighthouse_login.png) 
 
 _____________________________________________________________________________
 

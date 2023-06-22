@@ -21,18 +21,17 @@
          integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
       <link rel="stylesheet" href="{% static 'css/base.css' %}">
    </head>
-   <body>
-      <body style="background: white;">
-         <main>
-            <!--Show the error 500 image -->
-            <div class="d-flex justify-content-center">
-               <a href="{% url 'home' %}" class="btn btn-dark mt-5 mb-5">Back</a>
-            </div>
-            <div class="container text-center mt-5 md-12">
-               <img class="img-fluid" src="{% static 'images/500-image.jpg'%}">
-            </div>
-         </main>
+   <body style="background: white;">
+      <main>
+         <!--Show the error 500 image -->
+         <div class="d-flex justify-content-center">
+            <a href="{% url 'home' %}" class="btn btn-dark mt-5 mb-5">Back</a>
+         </div>
+         <div class="container text-center mt-5 md-12">
+            <img class="img-fluid" src="{% static 'images/500-image.jpg'%}" alt="500 error image">
+         </div>
+      </main>
+      <footer>
+      </footer>
    </body>
-   <footer>
-   </footer>
 </html>
