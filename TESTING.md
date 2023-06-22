@@ -14,7 +14,7 @@ _____________________________________________________________________________
 - ### Rensponsiveness and testing
     - [Rensponsiveness](#rensponsiveness-and-further-testing)
 - ### Kanban board with bugs
-    - [Rensponsiveness](#kanban-board-with-bugs)
+    - [Kanban board](#full-project-board-with-bugs-link)
 - ### PEP8
     - [PEP8](#pep8-1)
 
